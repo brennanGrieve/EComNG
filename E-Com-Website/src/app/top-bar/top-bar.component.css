@@ -9,7 +9,7 @@ body {
     border-radius: 0%;
     background: transparent;
     font-size: large;   
-    color: lightgray; 
+    color: #F4F6FA; 
 }
 
 .fill-space {
@@ -28,7 +28,7 @@ body {
   }
 
 h1{
-    color: lightgray;
+    color: #F4F6FA;
 }
 
   .title{
@@ -38,5 +38,5 @@ h1{
       cursor: pointer;
   }
   .mat-toolbar{
-      background-color: darkblue;
+      background-color: #262697;
   }
