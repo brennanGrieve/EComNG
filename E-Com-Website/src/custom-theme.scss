@@ -1,0 +1,14 @@
+
+@import '~@angular/material/theming';
+@include mat-core();
+
+$E-Com-Website-primary: mat-palette($mat-indigo);
+$E-Com-Website-accent: mat-palette($mat-pink, A200, A100, A400);
+
+$E-Com-Website-warn: mat-palette($mat-red);
+$E-Com-Website-theme: mat-light-theme($E-Com-Website-primary, $E-Com-Website-accent, $E-Com-Website-warn);
+
+$E-Com-Website-primary : mat-palette($mat-blue-grey);
+$E-Com-Website-accent : mat-palette($mat-indigo);
+$E-Com-Website-theme: mat-light-theme($E-Com-Website-primary, $E-Com-Website-accent);
+@include angular-material-theme($E-Com-Website-theme);

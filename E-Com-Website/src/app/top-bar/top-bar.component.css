@@ -1,0 +1,42 @@
+
+body {
+    margin: 0;
+    height: auto;
+}
+
+.cartbtn {
+    height: 64px;
+    border-radius: 0%;
+    background: transparent;
+    font-size: large;   
+    color: lightgray; 
+}
+
+.fill-space {
+    flex: 1 1 auto;
+  }
+
+.btnSep{
+    border-left:1px solid silver;
+    height:30px
+}
+
+.searchField {
+    margin-left:15px;
+    margin-top:5px;
+    width: 300px;
+  }
+
+h1{
+    color: lightgray;
+}
+
+  .title{
+      margin-right: 15px;
+      margin-left: 15px;
+      outline: none;
+      cursor: pointer;
+  }
+  .mat-toolbar{
+      background-color: darkblue;
+  }

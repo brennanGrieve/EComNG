@@ -1,0 +1,34 @@
+<body>
+  <mat-toolbar>
+    <div class = fill-space></div>
+    <div class="btnSep"></div>
+    <div class = title [routerLink]="['']">
+      <h1>Sample E-Com Website</h1>
+    </div>
+    <div class="btnSep"></div>
+    <button mat-button class = cartbtn [routerLink]="['']" >Home</button>
+    <div class="btnSep"></div>
+    <button mat-button class = cartbtn [routerLink]="['productList']">Products</button> 
+    <div class="btnSep"></div>
+    <button mat-button class = cartbtn [routerLink]="['contactUs']">Contact Us</button>
+    <div class="btnSep"></div>
+    <mat-form-field class="searchField">
+      <input matInput type="text" [(ngModel)]="value">
+      <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+    <button mat-button class = cartbtn (click)="updateSearchTerms()" [routerLink] = "['search']">
+      <mat-icon>search</mat-icon>
+    </button>
+    <div class="btnSep"></div>
+    <button mat-button class = cartbtn [routerLink] = "['myCart']">
+     <mat-icon>shopping_cart</mat-icon>
+     My Cart
+    </button>
+    <div class="btnSep"></div>
+    <button mat-button class = cartbtn [routerLink] = "['signIn']">Sign In</button>
+    <div class="btnSep"></div>
+    <div class = fill-space></div>
+  </mat-toolbar>
+</body>
