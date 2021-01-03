@@ -8,3 +8,6 @@ mat-grid-tile {
     border: solid 1px #E0E6E6;
     font-size: 1vw;
 }
+mat-grid-tile:hover{
+    border: solid 1px darkblue;
+}

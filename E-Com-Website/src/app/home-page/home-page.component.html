@@ -4,12 +4,13 @@
 </header>
 <mat-grid-list cols="4" rowHeight="175px" gutterSize = 4px>
 <!-- When Catalogue data becomes more detailed, update here to display it-->
-    <mat-grid-tile *ngFor="let storeItem of catalog"> 
-      {{storeItem.name}}
-      <br>
-      ${{storeItem.price}}
+    <mat-grid-tile *ngFor="let storeItem of catalog" matRipple> 
+        {{storeItem.name}}
+        <br>
+        ${{storeItem.price}}
     </mat-grid-tile>
-</mat-grid-list>    
+</mat-grid-list>   
+<br> 
 <header>
   Popular Right Now
   <hr>
