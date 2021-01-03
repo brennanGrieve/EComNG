@@ -24,6 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { DummyStoreDataService } from './dummy-store-data.service';
 import { StoreDataClientService } from './store-data-client-service.service';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { StoreDataClientService } from './store-data-client-service.service';
     SignInPageComponent,
     CartPageComponent,
     SearchPageComponent,
+    ProductDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,6 +59,7 @@ import { StoreDataClientService } from './store-data-client-service.service';
       { path : 'signIn', component : SignInPageComponent },
       { path : 'myCart', component : CartPageComponent },
       { path : 'search', component : SearchPageComponent },
+      { path : 'products/:productId', component : ProductDetailsComponent},
     ]),
   HttpClientModule,
   HttpClientInMemoryWebApiModule.forRoot(

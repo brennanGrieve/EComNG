@@ -21,6 +21,10 @@ body {
     height:30px
 }
 
+.btnText{
+    font-size: 1vw;
+}
+
 .searchField {
     margin-left:15px;
     margin-top:5px;

@@ -1,0 +1,10 @@
+<h1>{{currentProduct.name}}</h1>
+    {{currentProduct.shortDesc}}
+    {{currentProduct.longDesc}}
+    Price: ${{currentProduct.price}}
+    <br>
+    <br>
+    Specs:
+    <div *ngFor= "let spec of currentProduct.specs">
+        {{spec}}
+    </div>

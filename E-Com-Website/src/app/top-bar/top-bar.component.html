@@ -6,11 +6,11 @@
       <h1>Sample E-Com Website</h1>
     </div>
     <div class="btnSep"></div>
-    <button mat-button class = cartbtn [routerLink]="['']" >Home</button>
+    <button mat-button class = cartbtn [routerLink]="['']" ><div class="btnText">Home</div></button>
     <div class="btnSep"></div>
-    <button mat-button class = cartbtn [routerLink]="['productList']">Products</button> 
+    <button mat-button class = cartbtn [routerLink]="['productList']"><div class="btnText">Products</div></button> 
     <div class="btnSep"></div>
-    <button mat-button class = cartbtn [routerLink]="['contactUs']">Contact Us</button>
+    <button mat-button class = cartbtn [routerLink]="['contactUs']"><div class="btnText">Contact Us</div></button>
     <div class="btnSep"></div>
     <mat-form-field class="searchField">
       <input matInput type="text" [(ngModel)]="value">
@@ -23,11 +23,13 @@
     </button>
     <div class="btnSep"></div>
     <button mat-button class = cartbtn [routerLink] = "['myCart']">
-     <mat-icon>shopping_cart</mat-icon>
-     My Cart
+     <div class="btnText">
+      <mat-icon>shopping_cart</mat-icon>
+       My Cart
+      </div>
     </button>
     <div class="btnSep"></div>
-    <button mat-button class = cartbtn [routerLink] = "['signIn']">Sign In</button>
+    <button mat-button class = cartbtn [routerLink] = "['signIn']"><div class="btnText">Sign In</div></button>
     <div class="btnSep"></div>
     <div class = fill-space></div>
   </mat-toolbar>

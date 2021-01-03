@@ -11,7 +11,7 @@ import { InMemoryDbService } from 'angular-in-memory-web-api';
 export class DummyStoreDataService implements InMemoryDbService{
   createDb(){
     const catalog = [
-      {id : 1, name: 'Gyroscope', price: 17},
+      {id : 1, name: 'Gyroscope', price: 17, shortDesc: "Compact Gyroscopic Sensor", longDesc: "", specs: ["These are placeholder specs. Each array will be properly populated soon.", "Low Size", "Energy Efficient"]},
       {id : 2, name: 'IEEE 802.11 Wireless Transmitter', price: 18},
       {id : 3, name: 'Accelerometer', price: 10},
       {id : 4, name: 'Proximity Sensor', price: 11},

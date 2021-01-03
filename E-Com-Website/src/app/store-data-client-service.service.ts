@@ -20,4 +20,9 @@ export class StoreDataClientService {
     return this.http.get<StoreItem[]>(this.resourceUrl);
   }
 
+  getItemById(toFetch : number) : Observable<StoreItem>{
+    const targetUrl = this.resourceUrl + "/" + toFetch;
+    return this.http.get<StoreItem>(targetUrl);
+  }
+
 }
