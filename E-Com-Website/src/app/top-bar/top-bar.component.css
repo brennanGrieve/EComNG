@@ -38,8 +38,7 @@ h1{
 }
 
   .title{
-      margin-right: 15px;
-      margin-left: 15px;
+      margin: 0px;
       outline: none;
       cursor: pointer;
   }
