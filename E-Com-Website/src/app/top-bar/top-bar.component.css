@@ -1,7 +1,9 @@
 
-body {
-    margin: 0;
+.mat-toolbar{
+    margin:0;
+    margin-left: -20px;
     height: auto;
+    width:auto;
 }
 
 .cartbtn {
