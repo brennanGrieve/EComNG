@@ -7,6 +7,8 @@
     <mat-grid-tile *ngFor="let storeItem of catalog" matRipple [title]="storeItem.name" [routerLink]="['/products', storeItem.id]"> 
         {{storeItem.name}}
         ${{storeItem.price}}
+        <br>
+        {{storeItem.shortDesc}}
     </mat-grid-tile>
 </mat-grid-list>   
 <br> 
