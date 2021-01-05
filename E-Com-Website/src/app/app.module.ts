@@ -10,6 +10,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import {MatRippleModule} from '@angular/material/core';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { FormsModule } from '@angular/forms';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -23,6 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { DummyStoreDataService } from './dummy-store-data.service';
 import { StoreDataClientService } from './store-data-client-service.service';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 
 @NgModule({
@@ -35,6 +37,7 @@ import { StoreDataClientService } from './store-data-client-service.service';
     SignInPageComponent,
     CartPageComponent,
     SearchPageComponent,
+    ProductDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,6 +50,7 @@ import { StoreDataClientService } from './store-data-client-service.service';
     MatIconModule,
     MatInputModule,
     MatGridListModule,
+    MatRippleModule,
     FormsModule,
     RouterModule.forRoot([
       { path : '', component : HomePageComponent },
@@ -55,6 +59,7 @@ import { StoreDataClientService } from './store-data-client-service.service';
       { path : 'signIn', component : SignInPageComponent },
       { path : 'myCart', component : CartPageComponent },
       { path : 'search', component : SearchPageComponent },
+      { path : 'products/:productId', component : ProductDetailsComponent},
     ]),
   HttpClientModule,
   HttpClientInMemoryWebApiModule.forRoot(

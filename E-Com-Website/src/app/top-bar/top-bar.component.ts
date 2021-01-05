@@ -16,7 +16,6 @@ export class TopBarComponent implements OnInit {
   }
   updateSearchTerms(){
     this.search.updateTerms(this.value);
-    console.log(this.value);
   }
   
 }

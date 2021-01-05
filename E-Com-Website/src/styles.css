@@ -1,8 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
 html { height: 100%; width: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;  height: 100%; width: 100%; background-color: aliceblue;}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;  height: 100%; width: 100%; background-color: white   ;}
 .router {margin-right: 10%; margin-left: 10%; margin-top: 10px}
 header {font-size:x-large;}
 mat-grid-tile {
-    background-color: white;
+    background-color: #F4F6FA;
+    border: solid 1px #E0E6E6;
+    font-size: 1vw;
+}
+mat-grid-tile:hover{
+    border: solid 1px darkblue;
+}
+
+.gridTileContent{
+    margin: 7px; 
+    width: 100%;
+}
+
+.prodName{
+    font-size: large;
+    color: rgb(84, 84, 230);
+}
+
+.gridItemPrice{
+    width: 100%; 
+    text-align: right; 
+    bottom: 0;
 }

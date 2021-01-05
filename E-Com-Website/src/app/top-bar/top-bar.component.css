@@ -1,7 +1,9 @@
 
-body {
-    margin: 0;
+.mat-toolbar{
+    margin:0;
+    margin-left: -20px;
     height: auto;
+    width:auto;
 }
 
 .cartbtn {
@@ -9,7 +11,7 @@ body {
     border-radius: 0%;
     background: transparent;
     font-size: large;   
-    color: lightgray; 
+    color: #F4F6FA; 
 }
 
 .fill-space {
@@ -21,6 +23,10 @@ body {
     height:30px
 }
 
+.btnText{
+    font-size: 1vw;
+}
+
 .searchField {
     margin-left:15px;
     margin-top:5px;
@@ -28,15 +34,15 @@ body {
   }
 
 h1{
-    color: lightgray;
+    color: #F4F6FA;
 }
 
   .title{
-      margin-right: 15px;
-      margin-left: 15px;
+      margin-left: 0px;
+      margin-right: 6px;
       outline: none;
       cursor: pointer;
   }
   .mat-toolbar{
-      background-color: darkblue;
+      background-color: #262697;
   }
