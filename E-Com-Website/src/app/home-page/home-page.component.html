@@ -4,15 +4,28 @@
 </header>
 <mat-grid-list cols="4" rowHeight="175px" gutterSize = 4px>
 <!-- When Catalogue data becomes more detailed, update here to display it-->
-    <mat-grid-tile *ngFor="let storeItem of catalog" matRipple [title]="storeItem.name" [routerLink]="['/products', storeItem.id]"> 
-        {{storeItem.name}}
-        ${{storeItem.price}}
+    <mat-grid-tile *ngFor="let storeItem of catalog" matRipple [title]="storeItem.name" [routerLink]="['/products', storeItem.id]">
+      <div class ="gridTileContent">
+        <span class="prodName">
+          {{storeItem.name}}
+        </span>
         <br>
-        {{storeItem.shortDesc}}
+        <span class="prodDesc">
+          {{storeItem.shortDesc}}
+        </span>
+        <br>
+        <div class="gridItemPrice">
+          ${{storeItem.price}}
+        </div>
+      </div>
     </mat-grid-tile>
 </mat-grid-list>   
 <br> 
 <header>
   Popular Right Now
+  <hr>
+</header>
+<header>
+  Your Recent Viewings
   <hr>
 </header>

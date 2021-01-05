@@ -11,3 +11,19 @@ mat-grid-tile {
 mat-grid-tile:hover{
     border: solid 1px darkblue;
 }
+
+.gridTileContent{
+    margin: 7px; 
+    width: 100%;
+}
+
+.prodName{
+    font-size: large;
+    color: rgb(84, 84, 230);
+}
+
+.gridItemPrice{
+    width: 100%; 
+    text-align: right; 
+    bottom: 0;
+}
