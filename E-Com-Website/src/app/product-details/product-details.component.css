@@ -1,7 +1,12 @@
+h1{
+    color: #262697;
+}
+
 .prodDetailedImage{
     float: left;
     height: 50vh;
     width:25vw;
+    margin: 10px;
 }
 
 .prodDetailsCard{
@@ -13,8 +18,9 @@
 
 .customerActionCard{
     width:16vw;
-    height: 60vh;
-    background-color: #F4F6FA;  
+    height: 45vh;
+    background-color: #F4F6FA;
+      
 }
 
 .cartButton{

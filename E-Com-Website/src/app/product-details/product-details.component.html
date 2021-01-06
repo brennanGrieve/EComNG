@@ -8,14 +8,18 @@
     </mat-card>
     <mat-card class="customerActionCard">
         <h1>
-        Price: ${{currentProduct.price}}
+        ${{currentProduct.price}}
         </h1>
+        <hr>
+        Stock Levels go here.
+        <hr>
         <button mat-button class="cartButton" [routerLink] = "['/myCart']">
             Add to Cart
         </button>
     </mat-card>
 </div>
-    Specs:
+    <h1>Specifications:</h1>
+    <hr>
     <div *ngFor= "let spec of currentProduct.specs">
         {{spec}}
     </div>
