@@ -16,3 +16,8 @@
     height: 60vh;
     background-color: #F4F6FA;  
 }
+
+.cartButton{
+    background-color: #262697;
+    color: white;
+}

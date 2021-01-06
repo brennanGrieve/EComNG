@@ -1,5 +1,5 @@
 <h1>{{currentProduct.name}}</h1>
-<div style="display: flex; flex-direction: row; padding: 5px;">
+<div style="display: flex; flex-direction: row;">
     <mat-card class="prodDetailsCard">
         <mat-card-content>
         <img class="prodDetailedImage" src="/assets/stockdummy.png">
@@ -7,8 +7,12 @@
 </mat-card-content>
     </mat-card>
     <mat-card class="customerActionCard">
+        <h1>
         Price: ${{currentProduct.price}}
-        Add to Cart
+        </h1>
+        <button mat-button class= "cartButton" [routerLink] = "['myCart']">
+            Add to Cart
+        </button>
     </mat-card>
 </div>
     Specs:
