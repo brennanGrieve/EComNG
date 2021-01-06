@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { StoreDataClientService } from '../store-data-client-service.service';
 import { StoreItem } from '../store-item';
 
+
 @Component({
   selector: 'app-product-details',
   templateUrl: './product-details.component.html',

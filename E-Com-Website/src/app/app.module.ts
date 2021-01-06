@@ -17,7 +17,7 @@ import { FormsModule } from '@angular/forms';
 import { HomePageComponent } from './home-page/home-page.component';
 import { RouterModule } from '@angular/router';
 import { ProductPageComponent } from './product-page/product-page.component';
-import { ContactPageComponent } from './contact-page/contact-page.component';
+import { ContactPageComponent } from './contact-page/contact-page.component'; 
 import { SignInPageComponent } from './sign-in-page/sign-in-page.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { SearchPageComponent } from './search-page/search-page.component';
