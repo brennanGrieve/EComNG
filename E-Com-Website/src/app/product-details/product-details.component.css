@@ -1,0 +1,18 @@
+.prodDetailedImage{
+    float: left;
+    height: 50vh;
+    width:25vw;
+}
+
+.prodDetailsCard{
+    min-height: 60vh;
+    max-width: 58vw;
+    background-color: #F4F6FA;
+    margin-right: 20px;
+}
+
+.customerActionCard{
+    width:16vw;
+    height: 60vh;
+    background-color: #F4F6FA;  
+}

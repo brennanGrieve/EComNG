@@ -12,6 +12,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import {MatRippleModule} from '@angular/material/core';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatCardModule} from '@angular/material/card';
 import { FormsModule } from '@angular/forms';
 import { HomePageComponent } from './home-page/home-page.component';
 import { RouterModule } from '@angular/router';
@@ -51,6 +52,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     MatInputModule,
     MatGridListModule,
     MatRippleModule,
+    MatCardModule,
     FormsModule,
     RouterModule.forRoot([
       { path : '', component : HomePageComponent },

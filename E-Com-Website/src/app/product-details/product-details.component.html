@@ -1,8 +1,16 @@
 <h1>{{currentProduct.name}}</h1>
+<div style="display: flex; flex-direction: row; padding: 5px;">
+    <mat-card class="prodDetailsCard">
+        <mat-card-content>
+        <img class="prodDetailedImage" src="/assets/stockdummy.png">
     {{currentProduct.longDesc}}
-    Price: ${{currentProduct.price}}
-    <br>
-    <br>
+</mat-card-content>
+    </mat-card>
+    <mat-card class="customerActionCard">
+        Price: ${{currentProduct.price}}
+        Add to Cart
+    </mat-card>
+</div>
     Specs:
     <div *ngFor= "let spec of currentProduct.specs">
         {{spec}}
