@@ -11,7 +11,7 @@
         ${{currentProduct.price}}
         </h1>
         <hr>
-        Stock Levels go here.
+        Units in Stock: {{currentProduct.stock}}.
         <hr>
         <button mat-button class="cartButton" [routerLink] = "['/myCart']">
             Add to Cart
@@ -21,5 +21,7 @@
     <h1>Specifications:</h1>
     <hr>
     <div *ngFor= "let spec of currentProduct.specs">
-        {{spec}}
+        <div *ngFor="let entry of spec | keyvalue">
+            {{entry.key}} : {{entry.value}}
+        </div>
     </div>

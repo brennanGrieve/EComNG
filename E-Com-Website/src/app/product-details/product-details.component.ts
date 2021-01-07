@@ -13,7 +13,7 @@ export class ProductDetailsComponent implements OnInit {
   currentProduct : StoreItem;
   constructor(    
     private clientService : StoreDataClientService,
-    private currentRoute: ActivatedRoute
+    private currentRoute: ActivatedRoute,
     ) {   }
 
   ngOnInit() {
@@ -24,5 +24,6 @@ export class ProductDetailsComponent implements OnInit {
   getProductById(toFetch){
     this.clientService.getItemById(toFetch).subscribe(currentProduct => this.currentProduct = currentProduct);
   }
+
 
 }
