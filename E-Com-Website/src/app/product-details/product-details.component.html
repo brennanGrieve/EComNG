@@ -24,7 +24,8 @@
     <div *ngFor= "let spec of currentProduct.specs">
         <tr>
         <div *ngFor="let entry of spec | keyvalue">
-            <td>{{entry.key}}</td><td>{{entry.value}}</td>
+            <td>{{entry.key}}</td>
+            <td>{{entry.value}}</td>
         </div>
         </tr>
     </div>
