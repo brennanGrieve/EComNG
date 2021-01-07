@@ -10,9 +10,10 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-import {MatRippleModule} from '@angular/material/core';
-import {MatGridListModule} from '@angular/material/grid-list';
-import {MatCardModule} from '@angular/material/card';
+import { MatRippleModule } from '@angular/material/core';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { MatTableModule } from '@angular/material/table';
 import { FormsModule } from '@angular/forms';
 import { HomePageComponent } from './home-page/home-page.component';
 import { RouterModule } from '@angular/router';
@@ -53,6 +54,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     MatGridListModule,
     MatRippleModule,
     MatCardModule,
+    MatTableModule,
     FormsModule,
     RouterModule.forRoot([
       { path : '', component : HomePageComponent },

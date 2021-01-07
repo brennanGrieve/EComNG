@@ -11,6 +11,7 @@ import { StoreItem } from '../store-item';
 })
 export class ProductDetailsComponent implements OnInit {
   currentProduct : StoreItem;
+  columnsToDisplay = ['Key', 'Value'];
   constructor(    
     private clientService : StoreDataClientService,
     private currentRoute: ActivatedRoute,

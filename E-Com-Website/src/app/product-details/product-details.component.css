@@ -2,6 +2,20 @@ h1{
     color: #262697;
 }
 
+table{
+    width: 58vw;
+    border-spacing: 0px;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 0px;
+    min-width: 450px;
+    height: 50px;
+    font-size: large;
+  }
+
 .prodDetailedImage{
     float: left;
     height: 50vh;
