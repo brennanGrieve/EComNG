@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { StoreDataClientService } from '../store-data-client-service.service';
 import { StoreItem } from '../store-item';
 
+
 @Component({
   selector: 'app-product-details',
   templateUrl: './product-details.component.html',
@@ -10,9 +11,11 @@ import { StoreItem } from '../store-item';
 })
 export class ProductDetailsComponent implements OnInit {
   currentProduct : StoreItem;
+  columnsToDisplay = ['Key', 'Value'];
+  stockLevelColor;
   constructor(    
     private clientService : StoreDataClientService,
-    private currentRoute: ActivatedRoute
+    private currentRoute: ActivatedRoute,
     ) {   }
 
   ngOnInit() {
@@ -21,7 +24,21 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   getProductById(toFetch){
-    this.clientService.getItemById(toFetch).subscribe(currentProduct => this.currentProduct = currentProduct);
+    this.clientService.getItemById(toFetch).subscribe(
+      currentProduct => {
+        this.currentProduct = currentProduct;
+        if(currentProduct.stock < 10){
+          this.stockLevelColor = "orange"
+        }
+        if(currentProduct.stock == 0){
+          this.stockLevelColor = "red";
+        }
+        if(currentProduct.stock > 10){
+          this.stockLevelColor = "#262697";
+        }
+      }
+    );
   }
+
 
 }
