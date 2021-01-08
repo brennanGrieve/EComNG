@@ -1,7 +1,12 @@
 footer{
     background-color: #262697;
-    color: white;
+    color: whitesmoke;
     height:64px;
     bottom: 0px;
     margin-top:20px;
+    text-align: center;
+    font-size: small;
+}
+a{
+    color:whitesmoke;
 }
