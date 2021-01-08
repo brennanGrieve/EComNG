@@ -12,6 +12,7 @@ import { StoreItem } from '../store-item';
 export class ProductDetailsComponent implements OnInit {
   currentProduct : StoreItem;
   columnsToDisplay = ['Key', 'Value'];
+  stockLevelColor;
   constructor(    
     private clientService : StoreDataClientService,
     private currentRoute: ActivatedRoute,
@@ -23,7 +24,20 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   getProductById(toFetch){
-    this.clientService.getItemById(toFetch).subscribe(currentProduct => this.currentProduct = currentProduct);
+    this.clientService.getItemById(toFetch).subscribe(
+      currentProduct => {
+        this.currentProduct = currentProduct;
+        if(currentProduct.stock < 10){
+          this.stockLevelColor = "orange"
+        }
+        if(currentProduct.stock == 0){
+          this.stockLevelColor = "red";
+        }
+        if(currentProduct.stock > 10){
+          this.stockLevelColor = "#262697";
+        }
+      }
+    );
   }
 
 
