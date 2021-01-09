@@ -5,19 +5,18 @@
     <div class="btnSep"></div>
     <button mat-button class = cartbtn [routerLink]="['']" ><div class="btnText">Home</div></button>
     <div class="btnSep"></div>
-    <button mat-button class = cartbtn [routerLink]="['productList']"><div class="btnText">Products</div></button> 
-    <div class="btnSep"></div>
-    <button mat-button class = cartbtn [routerLink]="['contactUs']"><div class="btnText">Contact Us</div></button>
-    <div class="btnSep"></div>
     <mat-form-field class="searchField">
       <input matInput type="text" [(ngModel)]="value">
       <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
         <mat-icon>close</mat-icon>
       </button>
     </mat-form-field>
+    
     <button mat-button class = cartbtn (click)="updateSearchTerms()" [routerLink] = "['search']">
       <mat-icon>search</mat-icon>
     </button>
+    <div class="btnSep"></div>
+    <button mat-button class = cartbtn [routerLink]="['contactUs']"><div class="btnText">Contact Us</div></button>
     <div class="btnSep"></div>
     <button mat-button class = cartbtn [routerLink] = "['myCart']">
      <div class="btnText">

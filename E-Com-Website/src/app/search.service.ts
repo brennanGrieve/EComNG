@@ -1,17 +1,16 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class SearchService {
 
-  searchTerms;
+  searchTerms = new BehaviorSubject("");
 
   public updateTerms(newTerms) : void {
-    this.searchTerms = newTerms;
-  }
-  public getTerms() : string {
-    return this.searchTerms;
+    this.searchTerms.next(newTerms);
   }
 
   constructor() { }

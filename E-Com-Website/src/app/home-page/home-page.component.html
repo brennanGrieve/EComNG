@@ -2,25 +2,7 @@
   New
   <hr>
 </header>
-<mat-grid-list cols="4" rowHeight="175px" gutterSize = 4px>
-<!-- When Catalogue data becomes more detailed, update here to display it-->
-    <mat-grid-tile *ngFor="let storeItem of catalog" matRipple [title]="storeItem.name" [routerLink]="['products', storeItem.id]">
-      <img src="/assets/stockdummy.png" style="width: 100px; height: 100px; margin-left: 5px;">
-      <div class ="gridTileContent">
-        <span class="prodName">
-          {{storeItem.name}}
-        </span>
-        <br>
-        <span class="prodDesc">
-          {{storeItem.shortDesc}}
-        </span>
-        <br>
-        <div class="gridItemPrice">
-          ${{storeItem.price}}
-        </div>
-      </div>
-    </mat-grid-tile>
-</mat-grid-list>   
+<app-product-grid [displayData]="catalog"></app-product-grid>
 <br> 
 <header>
   Popular Right Now
