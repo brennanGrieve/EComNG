@@ -1,0 +1,19 @@
+mat-grid-tile {
+    background-color: #F4F6FA;
+    border: solid 1px #E0E6E6;
+    font-size: 1vw;
+}
+mat-grid-tile:hover{
+    border: solid 1px darkblue;
+}
+
+.gridTileContent{
+    margin: 7px; 
+    width: 100%;
+}
+
+.gridItemPrice{
+    width: 100%; 
+    text-align: right; 
+    bottom: 0;
+}

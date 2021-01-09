@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SearchService } from '../search.service';
 import { StoreDataClientService } from '../store-data-client-service.service';
 import { StoreItem } from '../store-item';
+import { ProductGridComponent } from '../product-grid/product-grid.component';
 
 
 @Component({
@@ -22,12 +23,10 @@ export class SearchPageComponent implements OnInit {
   ngOnInit() {
     this.search.searchTerms.subscribe(newTerms => {
       this.value = newTerms; 
-      console.log("Updated terms!");
       this.clientService.searchItemByName(this.value).subscribe(
         results => this.results = results
       )
     });
-    console.log(this.results);
   }
 
 }

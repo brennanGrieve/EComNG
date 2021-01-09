@@ -26,6 +26,7 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { DummyStoreDataService } from './dummy-store-data.service';
 import { StoreDataClientService } from './store-data-client-service.service';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { ProductGridComponent } from './product-grid/product-grid.component';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     CartPageComponent,
     SearchPageComponent,
     ProductDetailsComponent,
+    ProductGridComponent,
   ],
   imports: [
     BrowserModule,

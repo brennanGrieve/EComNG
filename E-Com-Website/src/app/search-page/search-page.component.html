@@ -1,6 +1,4 @@
 <h1>Search Results</h1>
 <hr>
 {{value}}
-<div *ngFor="let item of results">
-    {{item}}
-</div>
+<app-product-grid [displayData]="results"></app-product-grid>
