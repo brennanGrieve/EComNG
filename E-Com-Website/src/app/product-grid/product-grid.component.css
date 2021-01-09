@@ -17,3 +17,8 @@ mat-grid-tile:hover{
     text-align: right; 
     bottom: 0;
 }
+
+.prodName{
+    font-size: large;
+    color: rgb(84, 84, 230);
+}
