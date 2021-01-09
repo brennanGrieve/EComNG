@@ -1,4 +1,10 @@
 <h1>Search Results</h1>
 <hr>
-{{value}}
+Search terms are: {{value}}<br>
+Please note: Searching does not currently work on the in-memory-api backend, except for empty search queries.
+Rather than waste time figuring out why this is, and potentially even having to reformat the in-memory-api test database again,
+I used the working query to model the page and will fully implement searching
+on a proper backend instead. To see the search results display in action, simply search with an empty query.
+<br>
+
 <app-product-grid [displayData]="results"></app-product-grid>

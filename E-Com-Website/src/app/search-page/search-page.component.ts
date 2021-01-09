@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { SearchService } from '../search.service';
 import { StoreDataClientService } from '../store-data-client-service.service';
 import { StoreItem } from '../store-item';
-import { ProductGridComponent } from '../product-grid/product-grid.component';
 
 
 @Component({
