@@ -20,10 +20,13 @@ export class SearchPageComponent implements OnInit {
   results : StoreItem[];
 
   ngOnInit() {
-    this.search.getTerms().subscribe(newTerms => this.value = newTerms);
-    this.clientService.searchItemByName(this.value).subscribe(
-      results => this.results = results
-    )
+    this.search.searchTerms.subscribe(newTerms => {
+      this.value = newTerms; 
+      console.log("Updated terms!");
+      this.clientService.searchItemByName(this.value).subscribe(
+        results => this.results = results
+      )
+    });
     console.log(this.results);
   }
 

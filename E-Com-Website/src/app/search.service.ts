@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 
 @Injectable({
@@ -7,13 +7,10 @@ import { Observable, of } from 'rxjs';
 })
 export class SearchService {
 
-  searchTerms;
+  searchTerms = new BehaviorSubject("");
 
   public updateTerms(newTerms) : void {
-    this.searchTerms = newTerms;
-  }
-  public getTerms() : Observable<String> {
-    return of(this.searchTerms);
+    this.searchTerms.next(newTerms);
   }
 
   constructor() { }
