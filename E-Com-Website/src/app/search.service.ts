@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +12,8 @@ export class SearchService {
   public updateTerms(newTerms) : void {
     this.searchTerms = newTerms;
   }
-  public getTerms() : string {
-    return this.searchTerms;
+  public getTerms() : Observable<String> {
+    return of(this.searchTerms);
   }
 
   constructor() { }

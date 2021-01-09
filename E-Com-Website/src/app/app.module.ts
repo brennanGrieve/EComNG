@@ -17,7 +17,6 @@ import { MatTableModule } from '@angular/material/table';
 import { FormsModule } from '@angular/forms';
 import { HomePageComponent } from './home-page/home-page.component';
 import { RouterModule } from '@angular/router';
-import { ProductPageComponent } from './product-page/product-page.component';
 import { ContactPageComponent } from './contact-page/contact-page.component'; 
 import { SignInPageComponent } from './sign-in-page/sign-in-page.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
@@ -34,7 +33,6 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     AppComponent,
     TopBarComponent,
     HomePageComponent,
-    ProductPageComponent,
     ContactPageComponent,
     SignInPageComponent,
     CartPageComponent,
@@ -58,7 +56,6 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     FormsModule,
     RouterModule.forRoot([
       { path : '', component : HomePageComponent },
-      { path : 'productList', component : ProductPageComponent },
       { path : 'contactUs', component : ContactPageComponent },
       { path : 'signIn', component : SignInPageComponent },
       { path : 'myCart', component : CartPageComponent },

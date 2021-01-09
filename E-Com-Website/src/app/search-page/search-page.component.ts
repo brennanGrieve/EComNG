@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchService } from '../search.service';
+import { StoreDataClientService } from '../store-data-client-service.service';
+import { StoreItem } from '../store-item';
+
 
 @Component({
   selector: 'app-search-page',
@@ -8,12 +11,20 @@ import { SearchService } from '../search.service';
 })
 export class SearchPageComponent implements OnInit {
 
-  constructor(private search : SearchService) { }
+  constructor(
+    private search : SearchService,
+    private clientService : StoreDataClientService
+    ) { }
 
   value;
+  results : StoreItem[];
 
   ngOnInit() {
-    this.value = this.search.getTerms();
+    this.search.getTerms().subscribe(newTerms => this.value = newTerms);
+    this.clientService.searchItemByName(this.value).subscribe(
+      results => this.results = results
+    )
+    console.log(this.results);
   }
 
 }

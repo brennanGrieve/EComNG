@@ -25,4 +25,10 @@ export class StoreDataClientService {
     return this.http.get<StoreItem>(targetUrl);
   }
 
+searchItemByName(searchTerms : string) : Observable<StoreItem[]>{
+    const searchUrl = this.resourceUrl + "/?name=$" + searchTerms;
+    console.log(searchUrl);
+    return this.http.get<StoreItem[]>(searchUrl);
+  }
+
 }
