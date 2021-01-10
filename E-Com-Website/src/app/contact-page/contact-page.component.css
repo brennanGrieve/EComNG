@@ -1,0 +1,23 @@
+mat-card{
+    background-color: #F4F6FA;
+}
+
+TextArea{
+    min-height: 300px;
+    min-width: 700px;
+    border: #E0E6E6 1px solid;
+}
+
+Input{
+    border: #E0E6E6 1px solid;
+}
+
+.mat-button{
+    background-color: #262697;
+    color: white;
+}
+
+Label{
+    color:#262697;
+    font-size: large;
+}

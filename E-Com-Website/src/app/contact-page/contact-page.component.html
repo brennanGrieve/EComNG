@@ -1,1 +1,28 @@
-<p>contact-page works!</p>
+<h1>Contact Us</h1>
+<hr>
+
+<mat-card>
+<p>
+    If you have a question, comment, or concern please get in contact with us! All queries are completely private and will
+    not be published nor kept after resolution.
+</p>
+
+<form [formGroup]="contactForm" id = "contactForm" (ngSubmit)="onSubmit(contactForm.value)">
+    <label for="name">Name</label>
+    <br>
+    <input id="name" type="text" formControlName="name">
+    <br>
+    <br>
+    <label for="email">Email</label>
+    <br>
+    <input id="email" type="email" formControlName="email">
+    <br>
+    <br>
+    <label for="query">Query</label>
+    <br>
+    <textarea name="query" form="contactForm" formControlName="query"></textarea>
+    <br>
+    <br>
+    <button mat-button type="submit">Submit</button>
+</form>
+</mat-card>

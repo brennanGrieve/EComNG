@@ -3,3 +3,6 @@ html { height: 100%; width: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;  height: 100%; width: 100%; background-color: white   ;}
 .router {margin-right: 10%; margin-left: 10%; margin-top: 10px; min-height: 90vh;}
 header {font-size:x-large;}
+h1{
+    color: #262697; 
+}
