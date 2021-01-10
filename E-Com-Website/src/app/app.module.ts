@@ -14,7 +14,8 @@ import { MatRippleModule } from '@angular/material/core';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
-import { FormsModule } from '@angular/forms';
+import { FormsModule } from'@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HomePageComponent } from './home-page/home-page.component';
 import { RouterModule } from '@angular/router';
 import { ContactPageComponent } from './contact-page/contact-page.component'; 
@@ -56,6 +57,7 @@ import { ProductGridComponent } from './product-grid/product-grid.component';
     MatCardModule,
     MatTableModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
       { path : '', component : HomePageComponent },
       { path : 'contactUs', component : ContactPageComponent },

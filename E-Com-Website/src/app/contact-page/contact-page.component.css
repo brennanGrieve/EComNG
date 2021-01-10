@@ -1,0 +1,14 @@
+TextArea{
+    min-height: 40vh;
+    min-width: 60vw;
+}
+
+.mat-button{
+    background-color: #262697;
+    color: white;
+}
+
+Label{
+    color:#262697;
+    font-size: large;
+}
