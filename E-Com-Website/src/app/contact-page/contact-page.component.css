@@ -1,14 +1,17 @@
+mat-card{
+    background-color: #F4F6FA;
+}
+
 TextArea{
     min-height: 300px;
     min-width: 700px;
-    background-color: #F4F6FA;
     border: #E0E6E6 1px solid;
 }
 
 Input{
-    background-color: #F4F6FA;
     border: #E0E6E6 1px solid;
 }
+
 .mat-button{
     background-color: #262697;
     color: white;
