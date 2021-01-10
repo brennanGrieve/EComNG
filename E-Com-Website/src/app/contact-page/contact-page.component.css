@@ -1,6 +1,6 @@
 TextArea{
-    min-height: 40vh;
-    min-width: 60vw;
+    min-height: 300px;
+    min-width: 700px;
     background-color: #F4F6FA;
     border: #E0E6E6 1px solid;
 }
