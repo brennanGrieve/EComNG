@@ -10,6 +10,7 @@ TextArea{
 
 Input{
     border: #E0E6E6 1px solid;
+    width: 250px;
 }
 
 .mat-button{
