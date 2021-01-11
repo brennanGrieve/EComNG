@@ -25,6 +25,7 @@ export class ContactPageComponent implements OnInit {
     * Once the backend is ready, use angular's HTTP module to POST to server. Perhaps encapsulate in another service that focuses
     * entirely on PUT/POST methods? Already have one for GET methods.
     */
+   console.log(queryData);
   }
 
 }

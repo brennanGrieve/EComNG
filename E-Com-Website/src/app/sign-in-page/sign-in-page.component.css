@@ -1,0 +1,28 @@
+mat-card{
+    text-align: center;
+    background-color: #F4F6FA;
+    width: 350px;
+    height:570px;
+    margin-top: 30px;
+}
+
+Label{
+    color: #262697;
+    font-size: x-large;
+}
+
+.mat-button{
+    background-color: #262697;
+    color:white;
+}
+
+.outerPage{
+    display:flex;
+    justify-content: center;
+}
+
+Input{
+    font-size: larger;
+    margin-top: 10px;
+    border: #E0E6E6 solid 1px;
+}
