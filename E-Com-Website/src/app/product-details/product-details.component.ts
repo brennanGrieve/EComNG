@@ -47,8 +47,8 @@ export class ProductDetailsComponent implements OnInit {
     expiry.setDate(expiry.getDate() + 7);
     var current = this.cookies.getCartCookie();
     current = current + this.currentProduct.id + ",";
-    document.cookie = "cart=" + current + "; expires=" + expiry.toUTCString() + ";path=/";
-    console.log(this.cookies.getCartCookie());
+    var newCookie = "cart=" + current + "; expires=" + expiry.toUTCString() + ";path=/";
+    this.cookies.addCookie(newCookie);
   }
 
 }
