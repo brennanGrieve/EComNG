@@ -14,7 +14,7 @@
         Units in Stock: 
         <span [ngStyle]="{'color' : stockLevelColor}" class="stockDisplay">{{currentProduct.stock}}</span>
         <hr>
-        <button mat-button class="cartButton" [routerLink] = "['/myCart']">
+        <button mat-button class="cartButton"  (click)= "addToCart()" [routerLink] = "['/myCart']">
             Add to Cart
         </button>
     </mat-card>

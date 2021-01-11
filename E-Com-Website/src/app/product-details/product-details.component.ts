@@ -40,5 +40,12 @@ export class ProductDetailsComponent implements OnInit {
     );
   }
 
+  addToCart(){
+    var expiry = new Date();
+    expiry.setDate(expiry.getDate() + 7);
+    document.cookie = "id = " + this.currentProduct.id + ";" + "expires = " + expiry.toUTCString() + ";path=/";
+    console.log(document.cookie);
+  }
+
 
 }
