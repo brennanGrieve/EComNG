@@ -13,7 +13,7 @@ import {Observable} from 'rxjs'
 export class CartPageComponent implements OnInit {
 
   private cartItems : StoreItem[] = [];
-  private cartList;
+  private cartList : number[];
 
   constructor(
     private cookies : CookiesService,
@@ -25,6 +25,10 @@ export class CartPageComponent implements OnInit {
     /*
     * Use for loops to subscribe each index of cartItems to a returned piece of cart data.
     */
-    console.log(this.cartItems)
+   for(var i = 0; i < this.cartList.length; i++){
+     this.client.getItemById(this.cartList[i]).subscribe(itemData =>{
+       this.cartItems.push(itemData);
+     })
+   }
   }
 }

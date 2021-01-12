@@ -20,11 +20,15 @@ export class CookiesService {
     document.cookie = toAdd;
   }
 
-  splitCartCookie(toSplit) : string[]{
-    var cookieList = toSplit.split(",");
-    console.log(cookieList);
-    return cookieList;
-    
+  splitCartCookie(toSplit) : number[]{
+    var cookieList : string[];
+    var cookieValues : number[] = [ ];
+    cookieList = toSplit.split(",");
+    cookieList.forEach(element => {
+      cookieValues.push(parseInt(element));
+    });
+    cookieValues.pop();
+    return cookieValues;    
   }
   
 }
