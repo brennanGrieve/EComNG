@@ -27,7 +27,6 @@ export class StoreDataClientService {
 
 searchItemByName(searchTerms : string) : Observable<StoreItem[]>{
     const searchUrl = this.resourceUrl + "/?name=$" + searchTerms;
-    console.log(searchUrl);
     return this.http.get<StoreItem[]>(searchUrl);
   }
 

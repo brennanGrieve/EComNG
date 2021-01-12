@@ -19,4 +19,12 @@ export class CookiesService {
   addCookie(toAdd){
     document.cookie = toAdd;
   }
+
+  splitCartCookie(toSplit) : string[]{
+    var cookieList = toSplit.split(",");
+    console.log(cookieList);
+    return cookieList;
+    
+  }
+  
 }
