@@ -2,7 +2,7 @@
 <hr>
 <div class="pageFlex">
     <div>
-        <div class="cartItemList" *ngFor="let cartItem of cartItems">
+        <div class="cartItemList" *ngFor="let cartItem of cartItems" matRipple [routerLink]="['/products', cartItem.id]">
             <img class="cartThumb" src="/assets/stockdummy.png">
             <div class="cartItemDetails">
                 <span class="cartItemName">{{cartItem.name}}</span>
