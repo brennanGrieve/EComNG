@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { CookiesService } from '../cookies.service';
 import { StoreDataClientService } from '../store-data-client-service.service';
 import { StoreItem } from '../store-item';
-import {Observable} from 'rxjs'
 
 
 @Component({
@@ -14,6 +13,7 @@ export class CartPageComponent implements OnInit {
 
   private cartItems : StoreItem[] = [];
   private cartList : number[];
+  private totalPrice = 0;
 
   constructor(
     private cookies : CookiesService,
@@ -28,6 +28,7 @@ export class CartPageComponent implements OnInit {
    for(var i = 0; i < this.cartList.length; i++){
      this.client.getItemById(this.cartList[i]).subscribe(itemData =>{
        this.cartItems.push(itemData);
+       this.totalPrice += itemData.price;
      })
    }
   }
