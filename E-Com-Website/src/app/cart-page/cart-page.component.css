@@ -59,4 +59,9 @@ mat-card{
 .mat-button{
     background-color: #262697;
     color:white;
+    margin-top: 25px;
+}
+
+.removeButton{
+    background-color: rgb(190, 0, 0);
 }

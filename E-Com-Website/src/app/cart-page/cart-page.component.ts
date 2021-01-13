@@ -32,4 +32,9 @@ export class CartPageComponent implements OnInit {
      })
    }
   }
+
+  removeFromCart(itemToRemove){
+    this.cartItems.splice(this.cartItems.indexOf(itemToRemove), 1);
+    this.totalPrice -= itemToRemove.price;
+  }
 }
