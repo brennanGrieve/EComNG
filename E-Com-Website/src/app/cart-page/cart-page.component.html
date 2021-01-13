@@ -1,1 +1,24 @@
-<p>cart-page works!</p>
+<h1>Your Cart</h1>
+<hr>
+<div class="pageFlex">
+    <div>
+        <div class="cartItemList" *ngFor="let cartItem of cartItems" >
+            <img class="cartThumb" src="/assets/stockdummy.png" matRipple [routerLink]="['/products', cartItem.id]">
+            <div class="cartItemDetails" matRipple [routerLink]="['/products', cartItem.id]">
+                <span class="cartItemName">{{cartItem.name}}</span>
+                <br>
+                <span class="cartItemDesc">{{cartItem.shortDesc}}</span>
+            </div>
+            <div class="cartItemPrice">
+                ${{cartItem.price}}
+                <br>
+                <button mat-button class="removeButton" (click)="removeFromCart(cartItem)">Remove from Cart</button>
+            </div>
+        </div>
+    </div>
+    <mat-card>
+        <h1>Checkout</h1>
+        <span class="purchaseHeading">Purchase total:</span><span class="priceDisplay">${{totalPrice}}</span>
+        <button mat-button>Proceed to Checkout</button>
+    </mat-card>
+</div>
