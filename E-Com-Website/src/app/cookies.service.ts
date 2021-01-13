@@ -30,5 +30,15 @@ export class CookiesService {
     cookieValues.pop();
     return cookieValues;    
   }
+
+  removeFromCartCookie(idToDelete : number){
+    var revisedCookieValue : string = this.getCartCookie();
+    var removalToken : string = idToDelete.toString() + "," ;
+    revisedCookieValue = revisedCookieValue.replace(removalToken, "")
+    var expiry = new Date();
+    expiry.setDate(expiry.getDate() + 7);
+    var revisedCookie = "cart=" + revisedCookieValue + "; expires=" + expiry.toUTCString() + ";path=/";
+    this.addCookie(revisedCookie);
+  }
   
 }
