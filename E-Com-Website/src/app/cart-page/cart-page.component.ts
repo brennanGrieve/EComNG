@@ -11,9 +11,9 @@ import { StoreItem } from '../store-item';
 })
 export class CartPageComponent implements OnInit {
 
-  private cartItems : StoreItem[] = [];
-  private cartList : number[];
-  private totalPrice = 0;
+  cartItems : StoreItem[] = [];
+  cartList : number[];
+  totalPrice = 0;
 
   constructor(
     private cookies : CookiesService,
