@@ -12,6 +12,7 @@ import { CookiesService} from '../cookies.service';
 })
 export class ProductDetailsComponent implements OnInit {
   currentProduct : StoreItem;
+  specs : Object[];
   columnsToDisplay = ['Key', 'Value'];
   stockLevelColor;
   constructor(    
@@ -26,21 +27,25 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   getProductById(toFetch){
+    console.log("Attempting to GET with the following ID:" + toFetch);
     this.clientService.getItemById(toFetch).subscribe(
       currentProduct => {
-        this.currentProduct = currentProduct;
-        if(currentProduct.stock < 10){
+        console.log(currentProduct);
+        this.currentProduct = currentProduct[0];
+        if(this.currentProduct.stock < 10){
           this.stockLevelColor = "orange"
         }
-        if(currentProduct.stock == 0){
+        if(this.currentProduct.stock == 0){
           this.stockLevelColor = "red";
         }
-        if(currentProduct.stock > 10){
+        if(this.currentProduct.stock > 10){
           this.stockLevelColor = "#262697";
         }
+        this.clientService.getItemSpecifications(this.currentProduct.id).subscribe(specs => {this.specs = specs; console.log(specs)})
       }
     );
   }
+
 
   addToCart(){
     var expiry = new Date();

@@ -24,7 +24,6 @@ import { CartPageComponent } from './cart-page/cart-page.component';
 import { SearchPageComponent } from './search-page/search-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { DummyStoreDataService } from './dummy-store-data.service';
 import { StoreDataClientService } from './store-data-client-service.service';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { ProductGridComponent } from './product-grid/product-grid.component';
@@ -67,9 +66,6 @@ import { ProductGridComponent } from './product-grid/product-grid.component';
       { path : 'products/:productId', component : ProductDetailsComponent},
     ]),
   HttpClientModule,
-  HttpClientInMemoryWebApiModule.forRoot(
-    DummyStoreDataService, {dataEncapsulation: false}
-  ),
   ],
   providers: [],
   bootstrap: [AppComponent]
