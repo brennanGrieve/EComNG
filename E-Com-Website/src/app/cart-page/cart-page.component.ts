@@ -12,6 +12,7 @@ import { StoreItem } from '../store-item';
 export class CartPageComponent implements OnInit {
 
   cartItems : StoreItem[] = [];
+  private cartList : number[];
   cartList : number[];
   totalPrice = 0;
 
@@ -22,13 +23,10 @@ export class CartPageComponent implements OnInit {
 
   ngOnInit() {
     this.cartList = this.cookies.splitCartCookie(this.cookies.getCartCookie());
-    /*
-    * Use for loops to subscribe each index of cartItems to a returned piece of cart data.
-    */
    for(var i = 0; i < this.cartList.length; i++){
      this.client.getItemById(this.cartList[i]).subscribe(itemData =>{
-       this.cartItems.push(itemData);
-       this.totalPrice += itemData.price;
+       this.cartItems.push(itemData[0]);
+       this.totalPrice += parseInt(itemData[0].price);
      })
    }
   }

@@ -23,7 +23,6 @@ export class HomePageComponent implements OnInit {
 
   getCatalog() : void {
     this.clientService.getStoreItems().subscribe(catalog => this.catalog = catalog);
-    console.log(this.catalog);
   }
 
 }

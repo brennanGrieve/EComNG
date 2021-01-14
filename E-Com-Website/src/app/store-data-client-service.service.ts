@@ -17,16 +17,20 @@ export class StoreDataClientService {
 
 
   getStoreItems() : Observable<StoreItem[]>{
-    return this.http.get<StoreItem[]>(this.resourceUrl);
+    console.log("Now attempting a backend GET. If you see this printout and the grid works, then the backend is providing.")
+    return this.http.get<StoreItem[]>('http://13.55.122.69/api/get/getRecent.php');
   }
 
-  getItemById(toFetch : number) : Observable<StoreItem>{
-    const targetUrl = this.resourceUrl + "/" + toFetch;
-    return this.http.get<StoreItem>(targetUrl);
+  getItemSpecifications(currentId : number) : Observable<Object[]>{
+    return this.http.get<Object[]>('http://13.55.122.69/api/get/getSpecs.php?id='+currentId);
+  }
+
+  getItemById(currentId : number) : Observable<StoreItem>{
+    return this.http.get<StoreItem>('http://13.55.122.69/api/get/getById.php?id='+currentId);
   }
 
 searchItemByName(searchTerms : string) : Observable<StoreItem[]>{
-    const searchUrl = this.resourceUrl + "/?name=$" + searchTerms;
+    const searchUrl = this.resourceUrl + "?name=$" + searchTerms;
     return this.http.get<StoreItem[]>(searchUrl);
   }
 
