@@ -27,21 +27,19 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   getProductById(toFetch){
-    console.log("Attempting to GET with the following ID:" + toFetch);
     this.clientService.getItemById(toFetch).subscribe(
       currentProduct => {
-        console.log(currentProduct);
         this.currentProduct = currentProduct[0];
-        if(this.currentProduct.stock < 10){
+        if(this.currentProduct.stockLevel < 10){
           this.stockLevelColor = "orange"
         }
-        if(this.currentProduct.stock == 0){
+        if(this.currentProduct.stockLevel == 0){
           this.stockLevelColor = "red";
         }
-        if(this.currentProduct.stock > 10){
+        if(this.currentProduct.stockLevel > 10){
           this.stockLevelColor = "#262697";
         }
-        this.clientService.getItemSpecifications(this.currentProduct.id).subscribe(specs => {this.specs = specs; console.log(specs)})
+        this.clientService.getItemSpecifications(this.currentProduct.id).subscribe(specs => this.specs = specs)
       }
     );
   }
