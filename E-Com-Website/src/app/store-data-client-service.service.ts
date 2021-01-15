@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, JsonpClientBackend } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { StoreItem } from './store-item';
 
@@ -35,7 +35,8 @@ searchItemByName(searchTerms : string) : Observable<StoreItem[]>{
   }
 
 POSTContactQuery(queryToPOST){
-  this.http.post('http://13.55.122.69/api/post/postQuery.php', queryToPOST);
-}
+  console.log(queryToPOST);
+  this.http.post('http://13.55.122.69/api/post/postQuery.php', queryToPOST).subscribe();
+  }
 
 }

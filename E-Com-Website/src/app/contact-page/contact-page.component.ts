@@ -29,7 +29,6 @@ export class ContactPageComponent implements OnInit {
     * entirely on PUT/POST methods? Already have one for GET methods.
     */
    this.client.POSTContactQuery(queryData);
-   console.log(queryData);
   }
 
 }
