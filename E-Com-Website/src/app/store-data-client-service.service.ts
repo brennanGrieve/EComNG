@@ -34,4 +34,8 @@ searchItemByName(searchTerms : string) : Observable<StoreItem[]>{
     return this.http.get<StoreItem[]>(searchUrl);
   }
 
+POSTContactQuery(queryToPOST){
+  this.http.post('http://13.55.122.69/api/post/postQuery.php', queryToPOST);
+}
+
 }
