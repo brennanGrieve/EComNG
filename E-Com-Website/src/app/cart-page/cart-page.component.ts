@@ -12,7 +12,6 @@ import { StoreItem } from '../store-item';
 export class CartPageComponent implements OnInit {
 
   cartItems : StoreItem[] = [];
-  private cartList : number[];
   cartList : number[];
   totalPrice = 0;
 

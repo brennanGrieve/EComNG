@@ -10,17 +10,25 @@
 <form [formGroup]="contactForm" id = "contactForm" (ngSubmit)="onSubmit(contactForm.value)">
     <label for="name">Name</label>
     <br>
+    <span class="warning" *ngIf="nameFailed">Please provide your name.</span>
+    <br>
     <input id="name" type="text" formControlName="name">
     <br>
     <br>
     <label for="email">Email</label>
+    <br>
+    <span class="warning" *ngIf="mailFailed">Please provide your contact email.</span>
     <br>
     <input id="email" type="email" formControlName="email">
     <br>
     <br>
     <label for="query">Query</label>
     <br>
+    <span class="warning" *ngIf="queryFailed">Please provide an inquiry.</span>
+    <br>
     <textarea name="query" form="contactForm" formControlName="query"></textarea>
+    <br>
+    <span class="success" *ngIf="sendSuccess">Inquiry has been sent successfully.</span> 
     <br>
     <br>
     <button mat-button type="submit">Submit</button>

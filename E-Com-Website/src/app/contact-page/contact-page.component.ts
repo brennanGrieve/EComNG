@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { StoreDataClientService } from '../store-data-client-service.service';
+
 
 @Component({
   selector: 'app-contact-page',
@@ -8,8 +10,14 @@ import { FormBuilder } from '@angular/forms';
 })
 export class ContactPageComponent implements OnInit {
   contactForm;  
+  nameFailed;
+  mailFailed;
+  queryFailed;
+  sendSuccess;
+
   constructor(
-    private builder: FormBuilder
+    private builder: FormBuilder,
+    private client: StoreDataClientService
   ) { }
 
   ngOnInit() {
@@ -25,7 +33,23 @@ export class ContactPageComponent implements OnInit {
     * Once the backend is ready, use angular's HTTP module to POST to server. Perhaps encapsulate in another service that focuses
     * entirely on PUT/POST methods? Already have one for GET methods.
     */
-   console.log(queryData);
+   this.sendSuccess = false;
+   this.checkQueryData(queryData);
+   if(this.queryFailed == true || this.mailFailed == true || this.nameFailed == true){return}
+   this.client.POSTContactQuery(queryData);
+   this.contactForm.reset();
+   this.sendSuccess = true;
   }
 
+  checkQueryData(queryData){
+    if(queryData.name == '' || queryData.name == null){
+      this.nameFailed = true;
+    }else{this.nameFailed = false}
+    if(queryData.email == '' || queryData.email == null){
+      this.mailFailed = true;
+    }else{this.mailFailed = false}
+    if(queryData.query == '' || queryData.query == null){
+      this.queryFailed = true;
+    }else{this.queryFailed = false}
+  }
 }
