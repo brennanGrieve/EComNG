@@ -27,7 +27,7 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   getProductById(toFetch){
-    this.clientService.getItemById(toFetch).subscribe(
+    this.clientService.getItemById(toFetch, true).subscribe(
       currentProduct => {
         this.currentProduct = currentProduct[0];
         if(this.currentProduct.stockLevel < 10){

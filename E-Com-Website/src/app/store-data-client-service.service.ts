@@ -28,8 +28,9 @@ export class StoreDataClientService {
     return this.http.get<Object[]>('http://13.55.122.69/api/get/getSpecs.php?id='+currentId);
   }
 
-  getItemById(currentId : number) : Observable<StoreItem>{
-    return this.http.get<StoreItem>('http://13.55.122.69/api/get/getById.php?id='+currentId);
+  getItemById(currentId : number, view : boolean) : Observable<StoreItem>{
+    if(view){return this.http.get<StoreItem>('http://13.55.122.69/api/get/getById.php?id='+currentId + '&inc=1')}
+    else{return this.http.get<StoreItem>('http://13.55.122.69/api/get/getById.php?id='+currentId)}
   }
 
 searchItemByName(searchTerms : string) : Observable<StoreItem[]>{
