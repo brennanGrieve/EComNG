@@ -22,3 +22,11 @@ Label{
     color:#262697;
     font-size: large;
 }
+
+.warning{
+    color: red;
+}
+
+.success{
+    color: #262697;
+}
