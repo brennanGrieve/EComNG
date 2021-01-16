@@ -11,6 +11,7 @@ import { StoreItem } from '../store-item';
 export class HomePageComponent implements OnInit {
 
   catalog : StoreItem[];
+  popular : StoreItem[];
 
   constructor(private clientService : StoreDataClientService
     ) { }
@@ -23,6 +24,9 @@ export class HomePageComponent implements OnInit {
 
   getCatalog() : void {
     this.clientService.getStoreItems().subscribe(catalog => this.catalog = catalog);
+  }
+  getPopular() : void{
+    this.clientService.getPopularItems().subscribe(popular => this.popular = popular);
   }
 
 }

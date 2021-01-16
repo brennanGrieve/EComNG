@@ -13,7 +13,6 @@ export class StoreDataClientService {
     private http: HttpClient,
     ){
   }
-  private resourceUrl = "api/catalog"
 
 
   getStoreItems() : Observable<StoreItem[]>{
@@ -21,17 +20,21 @@ export class StoreDataClientService {
     return this.http.get<StoreItem[]>('http://13.55.122.69/api/get/getRecent.php');
   }
 
+  getPopularItems() : Observable<StoreItem[]>{
+    return this.http.get<StoreItem[]>('http://13.55.122.69/api/get/getPopular.php');
+  }
+
   getItemSpecifications(currentId : number) : Observable<Object[]>{
     return this.http.get<Object[]>('http://13.55.122.69/api/get/getSpecs.php?id='+currentId);
   }
 
-  getItemById(currentId : number) : Observable<StoreItem>{
-    return this.http.get<StoreItem>('http://13.55.122.69/api/get/getById.php?id='+currentId);
+  getItemById(currentId : number, view : boolean) : Observable<StoreItem>{
+    if(view){return this.http.get<StoreItem>('http://13.55.122.69/api/get/getById.php?id='+currentId + '&inc=1')}
+    else{return this.http.get<StoreItem>('http://13.55.122.69/api/get/getById.php?id='+currentId)}
   }
 
 searchItemByName(searchTerms : string) : Observable<StoreItem[]>{
-    const searchUrl = this.resourceUrl + "?name=$" + searchTerms;
-    return this.http.get<StoreItem[]>(searchUrl);
+    return this.http.get<StoreItem[]>('http://13.55.122.69/api/get/searchByName.php?name=' + searchTerms);
   }
 
 POSTContactQuery(queryToPOST){

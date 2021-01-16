@@ -23,7 +23,7 @@ export class CartPageComponent implements OnInit {
   ngOnInit() {
     this.cartList = this.cookies.splitCartCookie(this.cookies.getCartCookie());
    for(var i = 0; i < this.cartList.length; i++){
-     this.client.getItemById(this.cartList[i]).subscribe(itemData =>{
+     this.client.getItemById(this.cartList[i],false).subscribe(itemData =>{
        this.cartItems.push(itemData[0]);
        this.totalPrice += parseInt(itemData[0].price);
      })
