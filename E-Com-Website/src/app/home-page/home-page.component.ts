@@ -19,6 +19,7 @@ export class HomePageComponent implements OnInit {
 
   ngOnInit() {
     this.getCatalog();
+    this.getPopular();
     //create tiles here
   }
 
