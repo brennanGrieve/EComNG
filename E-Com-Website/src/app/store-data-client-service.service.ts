@@ -13,12 +13,15 @@ export class StoreDataClientService {
     private http: HttpClient,
     ){
   }
-  private resourceUrl = "api/catalog"
 
 
   getStoreItems() : Observable<StoreItem[]>{
     console.log("Now attempting a backend GET. If you see this printout and the grid works, then the backend is providing.")
     return this.http.get<StoreItem[]>('http://13.55.122.69/api/get/getRecent.php');
+  }
+
+  getPopularItems() : Observable<StoreItem[]>{
+    return this.http.get<StoreItem[]>('http://13.55.122.69/api/get/getPopular.php');
   }
 
   getItemSpecifications(currentId : number) : Observable<Object[]>{
@@ -30,8 +33,7 @@ export class StoreDataClientService {
   }
 
 searchItemByName(searchTerms : string) : Observable<StoreItem[]>{
-    const searchUrl = this.resourceUrl + "?name=$" + searchTerms;
-    return this.http.get<StoreItem[]>(searchUrl);
+    return this.http.get<StoreItem[]>('http://13.55.122.69/api/get/searchByName.php?name=' + searchTerms);
   }
 
 }
