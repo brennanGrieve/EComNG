@@ -9,15 +9,13 @@ export class CookiesService {
 
 
   updateRecentViews(newID : number, expiry : Date){
-    console.log("Currently attempting to update recent view cookie...")
     var toEdit = this.splitCookie(this.extractCookieValue("recent="));
-    console.log(toEdit);
+    if(Number.isNaN(toEdit[0])){toEdit.pop()}
     if(toEdit.length >= 4){
       toEdit.pop();
     }
     toEdit.unshift(newID);
     var newRVCookie = toEdit.toString();
-    console.log(newRVCookie);
     this.addCookie("recent=" + newRVCookie + "; expires=" + expiry.toUTCString() + "; path=/");
   }
 

@@ -25,6 +25,8 @@ export class HomePageComponent implements OnInit {
     this.getCatalog();
     this.getPopular();
     this.getMyRecent();
+    console.log(this.catalog);
+    console.log(this.myRecent);
   }
 
   getCatalog() : void {
@@ -40,7 +42,6 @@ export class HomePageComponent implements OnInit {
         this.myRecent.push(itemData);
       })
     }
-    console.log(this.myRecent);
   }
 
 }
