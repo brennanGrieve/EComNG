@@ -12,9 +12,10 @@ import { CookiesService} from '../cookies.service';
 })
 export class ProductDetailsComponent implements OnInit {
   currentProduct : StoreItem;
-  specs : Object[];
+  specs : Object[] = [];
   columnsToDisplay = ['Key', 'Value'];
   stockLevelColor;
+  currentProductId = this.currentRoute.snapshot.paramMap.get('productId');
   constructor(    
     private clientService : StoreDataClientService,
     private cookies : CookiesService,
@@ -22,8 +23,9 @@ export class ProductDetailsComponent implements OnInit {
     ) {   }
 
   ngOnInit() {
-    const currentProductId = this.currentRoute.snapshot.paramMap.get('productId');
-    this.getProductById(currentProductId);
+    this.currentProductId = this.currentRoute.snapshot.paramMap.get('productId');
+    this.getProductById(this.currentProductId);
+    this.addToRecent();
   }
 
   getProductById(toFetch){
@@ -48,10 +50,18 @@ export class ProductDetailsComponent implements OnInit {
   addToCart(){
     var expiry = new Date();
     expiry.setDate(expiry.getDate() + 7);
-    var current = this.cookies.getCartCookie();
+    var current = this.cookies.extractCookieValue("cart=");
     current = current + this.currentProduct.id + ",";
     var newCookie = "cart=" + current + "; expires=" + expiry.toUTCString() + ";path=/";
     this.cookies.addCookie(newCookie);
+  }
+
+  addToRecent(){
+    console.log("Attempting add to recent cookie...");
+    var expiry = new Date();
+    expiry.setDate(expiry.getDate() + 1);
+    console.log("Date is set. Now comes the function call.");
+    this.cookies.updateRecentViews(parseInt(this.currentProductId), expiry);
   }
 
 }

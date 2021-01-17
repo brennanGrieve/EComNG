@@ -16,7 +16,6 @@ export class StoreDataClientService {
 
 
   getStoreItems() : Observable<StoreItem[]>{
-    console.log("Now attempting a backend GET. If you see this printout and the grid works, then the backend is providing.")
     return this.http.get<StoreItem[]>('http://13.55.122.69/api/get/getRecent.php');
   }
 
@@ -29,7 +28,7 @@ export class StoreDataClientService {
   }
 
   getItemById(currentId : number, view : boolean) : Observable<StoreItem>{
-    if(view){return this.http.get<StoreItem>('http://13.55.122.69/api/get/getById.php?id='+currentId + '&inc=1')}
+    if(view){return this.http.get<StoreItem>('http://13.55.122.69/api/get/getById.php?id='+currentId + '&inc=1');}
     else{return this.http.get<StoreItem>('http://13.55.122.69/api/get/getById.php?id='+currentId)}
   }
 
