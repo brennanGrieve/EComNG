@@ -11,9 +11,9 @@ import { CookiesService } from '../cookies.service';
 })
 export class HomePageComponent implements OnInit {
 
-  catalog : StoreItem[];
-  popular : StoreItem[];
-  myRecent : StoreItem[];
+  catalog : StoreItem[] = [];
+  popular : StoreItem[] = [];
+  myRecent : StoreItem[] = [];
 
   constructor(
     private clientService : StoreDataClientService,
@@ -25,7 +25,6 @@ export class HomePageComponent implements OnInit {
     this.getCatalog();
     this.getPopular();
     this.getMyRecent();
-    //create tiles here
   }
 
   getCatalog() : void {
@@ -35,12 +34,13 @@ export class HomePageComponent implements OnInit {
     this.clientService.getPopularItems().subscribe(popular => this.popular = popular);
   }
   getMyRecent() : void{
-    var recentViews : number[] = this.cookiesService.splitCookie(this.cookiesService.getRecentViewsCookie());
+    var recentViews : number[] = this.cookiesService.splitCookie(this.cookiesService.extractCookieValue("recent="));
     for(var i = 0; i < recentViews.length; i++){
       this.clientService.getItemById(recentViews[i], false).subscribe(itemData => {
         this.myRecent.push(itemData);
       })
     }
+    console.log(this.myRecent);
   }
 
 }

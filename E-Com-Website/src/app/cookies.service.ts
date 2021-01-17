@@ -7,18 +7,18 @@ export class CookiesService {
 
   constructor() { }
 
-  getCartCookie() : string{
-    return this.extractCookieValue("cart=")
-  }
 
-  getRecentViewsCookie() : string{
-    var tokens = document.cookie.split("recent=");
-    if(tokens.length > 1){return tokens.pop().split(";")[0];
-    }else{return ""}
-  }
-
-  updateRecentViews(newID : number){
-    var toEdit = this.splitCookie(this.getRecentViewsCookie());
+  updateRecentViews(newID : number, expiry : Date){
+    console.log("Currently attempting to update recent view cookie...")
+    var toEdit = this.splitCookie(this.extractCookieValue("recent="));
+    console.log(toEdit);
+    if(toEdit.length >= 4){
+      toEdit.pop();
+    }
+    toEdit.unshift(newID);
+    var newRVCookie = toEdit.toString();
+    console.log(newRVCookie);
+    this.addCookie("recent=" + newRVCookie + "; expires=" + expiry.toUTCString() + "; path=/");
   }
 
   extractCookieValue(cookieName : string) : string{
@@ -38,12 +38,11 @@ export class CookiesService {
     cookieList.forEach(element => {
       cookieValues.push(parseInt(element));
     });
-    cookieValues.pop();
     return cookieValues;    
   }
 
   removeFromCartCookie(idToDelete : number){
-    var revisedCookieValue : string = this.getCartCookie();
+    var revisedCookieValue : string = this.extractCookieValue("cart=");
     var removalToken : string = idToDelete.toString() + "," ;
     revisedCookieValue = revisedCookieValue.replace(removalToken, "")
     var expiry = new Date();

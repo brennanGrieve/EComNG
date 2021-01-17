@@ -12,7 +12,7 @@ import { StoreItem } from '../store-item';
 export class CartPageComponent implements OnInit {
 
   cartItems : StoreItem[] = [];
-  cartList : number[];
+  cartList : number[] = [];
   totalPrice = 0;
 
   constructor(
@@ -21,7 +21,8 @@ export class CartPageComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.cartList = this.cookies.splitCookie(this.cookies.getCartCookie());
+    this.cartList = this.cookies.splitCookie(this.cookies.extractCookieValue("cart="));
+    this.cartList.pop();
    for(var i = 0; i < this.cartList.length; i++){
      this.client.getItemById(this.cartList[i],false).subscribe(itemData =>{
        this.cartItems.push(itemData[0]);
