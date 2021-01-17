@@ -11,6 +11,7 @@ export class CookiesService {
   updateRecentViews(newID : number, expiry : Date){
     var toEdit = this.splitCookie(this.extractCookieValue("recent="));
     if(Number.isNaN(toEdit[0])){toEdit.pop()}
+    if(toEdit.includes(newID)){return}
     if(toEdit.length >= 4){
       toEdit.pop();
     }
