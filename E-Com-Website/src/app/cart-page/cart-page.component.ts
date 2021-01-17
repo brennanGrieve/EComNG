@@ -21,7 +21,7 @@ export class CartPageComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.cartList = this.cookies.splitCartCookie(this.cookies.getCartCookie());
+    this.cartList = this.cookies.splitCookie(this.cookies.getCartCookie());
    for(var i = 0; i < this.cartList.length; i++){
      this.client.getItemById(this.cartList[i],false).subscribe(itemData =>{
        this.cartItems.push(itemData[0]);

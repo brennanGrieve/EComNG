@@ -24,6 +24,7 @@ export class ProductDetailsComponent implements OnInit {
   ngOnInit() {
     const currentProductId = this.currentRoute.snapshot.paramMap.get('productId');
     this.getProductById(currentProductId);
+    this.addToRecent();
   }
 
   getProductById(toFetch){
@@ -52,6 +53,12 @@ export class ProductDetailsComponent implements OnInit {
     current = current + this.currentProduct.id + ",";
     var newCookie = "cart=" + current + "; expires=" + expiry.toUTCString() + ";path=/";
     this.cookies.addCookie(newCookie);
+  }
+
+  addToRecent(){
+    var expiry = new Date();
+    expiry.setDate(expiry.getDate() + 1);
+    this.cookies.updateRecentViews(this.currentProduct.id);
   }
 
 }
