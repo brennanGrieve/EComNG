@@ -2,7 +2,7 @@
 <div style="display: flex; flex-direction: row;">
     <mat-card class="prodDetailsCard">
         <mat-card-content>
-        <img class="prodDetailedImage" src="/assets/stockdummy.png">
+        <img class="prodDetailedImage" [src]="'/assets/stockImages/' + currentProduct.id + '.jpg'">
     {{currentProduct.longDesc}}
 </mat-card-content>
     </mat-card>
