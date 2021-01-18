@@ -33,7 +33,7 @@ export class StoreDataClientService {
   }
 
 searchItemByName(searchTerms : string) : Observable<StoreItem[]>{
-    return this.http.get<StoreItem[]>('http://13.55.122.69/api/get/searchByName.php?name=' + searchTerms);
+    return this.http.get<StoreItem[]>('http://13.55.122.69/api/get/getSearchResults.php?name=' + searchTerms);
   }
 
 POSTContactQuery(queryToPOST){

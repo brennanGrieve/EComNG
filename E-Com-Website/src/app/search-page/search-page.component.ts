@@ -22,9 +22,10 @@ export class SearchPageComponent implements OnInit {
   ngOnInit() {
     this.search.searchTerms.subscribe(newTerms => {
       this.value = newTerms; 
-      this.clientService.searchItemByName(this.value).subscribe(
-        results => this.results = results
-      )
+      this.clientService.searchItemByName(newTerms).subscribe(
+        results => {
+          this.results = results;
+      })
     });
   }
 
