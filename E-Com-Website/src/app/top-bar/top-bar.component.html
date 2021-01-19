@@ -1,31 +1,36 @@
-  <mat-toolbar>
-    <div class = title [routerLink]="['']" matRipple>
-      <img src ="/assets/logo.png" alt="logo" width="400" height="58">
-    </div>
-    <div class="btnSep"></div>
-    <button mat-button class = cartbtn [routerLink]="['']" ><div class="btnText">Home</div></button>
-    <div class="btnSep"></div>
-    <mat-form-field class="searchField">
-      <input matInput type="text" [(ngModel)]="value">
-      <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-        <mat-icon>close</mat-icon>
-      </button>
-    </mat-form-field>
+<mat-toolbar>
+  <div class = title [routerLink]="['']" matRipple>
+    <img src ="/assets/logo.png" alt="logo" width="400" height="58">
+  </div>
+
+  <div class="btnSep"></div>
+  <button mat-button class = cartbtn [routerLink]="['']" ><div class="btnText">Home</div></button>
+  <div class="btnSep"></div>
+
+  <mat-form-field class="searchField">
+    <input matInput type="text" [(ngModel)]="value">
+    <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
     
-    <button mat-button class = cartbtn (click)="updateSearchTerms()" [routerLink] = "['search']">
-      <mat-icon>search</mat-icon>
-    </button>
-    <div class="btnSep"></div>
-    <button mat-button class = cartbtn [routerLink]="['contactUs']"><div class="btnText">Contact Us</div></button>
-    <div class="btnSep"></div>
-    <button mat-button class = cartbtn [routerLink] = "['myCart']">
-     <div class="btnText">
+  <button mat-button class = cartbtn (click)="updateSearchTerms()" [routerLink] = "['search']">
+    <mat-icon>search</mat-icon>
+  </button>
+
+  <div class="btnSep"></div>
+  <button mat-button class = cartbtn [routerLink]="['contactUs']"><div class="btnText">Contact Us</div></button>
+  <div class="btnSep"></div>
+
+  <button mat-button class = cartbtn [routerLink] = "['myCart']">
+   <div class="btnText">
       <mat-icon>shopping_cart</mat-icon>
-       My Cart
-      </div>
-    </button>
-    <div class="btnSep"></div>
-    <button mat-button class = cartbtn [routerLink] = "['signIn']"><div class="btnText">Sign In</div></button>
-    <div class="btnSep"></div>
-    <div class = fill-space></div>
-  </mat-toolbar>
+        My Cart
+    </div>
+  </button>
+
+  <div class="btnSep"></div>
+  <button mat-button class = cartbtn [routerLink] = "['signIn']"><div class="btnText">Sign In</div></button>
+  <div class="btnSep"></div>
+  <div class = fill-space></div>
+</mat-toolbar>

@@ -20,6 +20,10 @@ export class ContactPageComponent implements OnInit {
     private client: StoreDataClientService
   ) { }
 
+  /**
+   * OnInit - Builds an angular reactive form with the fields name, email, and query.
+   */
+
   ngOnInit() {
     this.contactForm = this.builder.group({
       name: '',
@@ -28,11 +32,14 @@ export class ContactPageComponent implements OnInit {
     })
   }
 
+  /**
+   * onsubmit()
+   * Checks the contents of the query via checkQueryData(), then passes any acceptable queries into POSTContactQuery() to be sent 
+   * along to the server for storage until they can be addressed.
+   * @param queryData The contents of the query form, to be checked nad then submitted if found acceptable.
+   */
+
   onSubmit(queryData){
-    /*
-    * Once the backend is ready, use angular's HTTP module to POST to server. Perhaps encapsulate in another service that focuses
-    * entirely on PUT/POST methods? Already have one for GET methods.
-    */
    this.sendSuccess = false;
    this.checkQueryData(queryData);
    if(this.queryFailed == true || this.mailFailed == true || this.nameFailed == true){return}
@@ -41,6 +48,12 @@ export class ContactPageComponent implements OnInit {
    this.sendSuccess = true;
   }
 
+
+  /**
+   * Function to check for nulls or empty fields when a user attempts to submit a query.
+   * @param queryData Query attempt to be checked for nulls or empty strings.
+   */
+  
   checkQueryData(queryData){
     if(queryData.name == '' || queryData.name == null){
       this.nameFailed = true;

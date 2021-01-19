@@ -14,6 +14,11 @@ export class TopBarComponent implements OnInit {
   
   ngOnInit() {
   }
+
+  /** 
+   * Pass input from the search box (Property bound to value) to the search service. Called when the search button is pressed.
+   **/
+  
   updateSearchTerms(){
     this.search.updateTerms(this.value);
   }

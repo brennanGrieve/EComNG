@@ -1,14 +1,17 @@
-<h1>{{currentProduct.name}}</h1>
-<div style="display: flex; flex-direction: row;">
+<h1>
+    {{currentProduct.name}}
+</h1>
+<div class = prodDisplay>
     <mat-card class="prodDetailsCard">
         <mat-card-content>
-        <img class="prodDetailedImage" [src]="'/assets/stockImages/' + currentProduct.id + '.jpg'">
-    {{currentProduct.longDesc}}
-</mat-card-content>
+            <img class="prodDetailedImage" [src]="'/assets/stockImages/' + currentProduct.id + '.jpg'">
+            {{currentProduct.longDesc}}
+        </mat-card-content>
     </mat-card>
+
     <mat-card class="customerActionCard">
         <h1>
-        ${{currentProduct.price}}
+            ${{currentProduct.price}}
         </h1>
         <hr>
         Units in Stock: 
@@ -19,13 +22,14 @@
         </button>
     </mat-card>
 </div>
-    <h1>Specifications:</h1>
-    <hr>
-    <table>
-    <div *ngFor= "let spec of specs">
-        <tr>
-            <td class="specName">{{spec.specName}}</td>
-            <td class="specDetails">{{spec.specValue}}</td>
-        </tr>
-    </div>
+
+<h1>Specifications:</h1>
+<hr>
+<table>
+<div *ngFor= "let spec of specs">
+    <tr>
+        <td class="specName">{{spec.specName}}</td>
+        <td class="specDetails">{{spec.specValue}}</td>
+    </tr>
+</div>
 </table>

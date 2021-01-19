@@ -13,6 +13,10 @@ export class SignInPageComponent implements OnInit {
     private builder : FormBuilder
   ) { }
 
+  /**
+   * OnInit - Build the login form with the fields 'user' and 'pass'.
+   */
+
   ngOnInit() {
     this.loginForm = this.builder.group({
       user: '',

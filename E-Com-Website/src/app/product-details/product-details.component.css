@@ -2,6 +2,11 @@ h1{
     color: #262697;
 }
 
+.prodDisplay{
+    display: flex; 
+    flex-direction: row;
+}
+
 table{
     width: 58vw;
     border-spacing: 0px;
