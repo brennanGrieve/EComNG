@@ -11,16 +11,22 @@ import { CookiesService} from '../cookies.service';
   styleUrls: ['./product-details.component.css']
 })
 export class ProductDetailsComponent implements OnInit {
+  
   currentProduct : StoreItem;
   specs : Object[] = [];
   columnsToDisplay = ['Key', 'Value'];
   stockLevelColor;
   currentProductId = this.currentRoute.snapshot.paramMap.get('productId');
+
   constructor(    
     private clientService : StoreDataClientService,
     private cookies : CookiesService,
     private currentRoute: ActivatedRoute,
     ) {   }
+
+  /**
+  * OnInit - get the product ID from the current router route, then grab the product's data and add it to the recentViews cookie.
+  */
 
   ngOnInit() {
     this.currentProductId = this.currentRoute.snapshot.paramMap.get('productId');
@@ -28,24 +34,26 @@ export class ProductDetailsComponent implements OnInit {
     this.addToRecent();
   }
 
+  /**
+   * Get the data on the product via Id, then set this.stockLevelColor based on the product's stockLevel.
+   * @param toFetch id of the product to be fetched. Passed into clientService.getItemByID()
+   */
+
   getProductById(toFetch){
     this.clientService.getItemById(toFetch, true).subscribe(
       currentProduct => {
         this.currentProduct = currentProduct[0];
-        if(this.currentProduct.stockLevel < 10){
-          this.stockLevelColor = "orange"
-        }
-        if(this.currentProduct.stockLevel == 0){
-          this.stockLevelColor = "red";
-        }
-        if(this.currentProduct.stockLevel > 10){
-          this.stockLevelColor = "#262697";
-        }
+        if(this.currentProduct.stockLevel < 10){this.stockLevelColor = "orange"}
+        if(this.currentProduct.stockLevel == 0){this.stockLevelColor = "red";}
+        if(this.currentProduct.stockLevel > 10){this.stockLevelColor = "#262697";}
         this.clientService.getItemSpecifications(this.currentProduct.id).subscribe(specs => this.specs = specs)
       }
     );
   }
 
+  /**
+   * Add the ID of the product to the cart cookie, and refresh the cart cookies expiry date to 7 days from now.
+   */
 
   addToCart(){
     var expiry = new Date();
@@ -56,12 +64,13 @@ export class ProductDetailsComponent implements OnInit {
     this.cookies.addCookie(newCookie);
   }
 
+  /**
+   * Add the current product to the recent views cookie, and set the expiry date to 24 hours from now.
+   */
+
   addToRecent(){
-    console.log("Attempting add to recent cookie...");
     var expiry = new Date();
     expiry.setDate(expiry.getDate() + 1);
-    console.log("Date is set. Now comes the function call.");
     this.cookies.updateRecentViews(parseInt(this.currentProductId), expiry);
   }
-
 }

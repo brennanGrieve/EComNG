@@ -4,17 +4,17 @@
         <h1>Sign In</h1>
         <br>
         <form [formGroup] = "loginForm" (ngSubmit)="onSubmit(loginForm.value)">
-        <label for="user">Username</label>
-        <br>
-        <input id="user" formControlName="user">
-        <br>
-        <br>
-        <label for="pWord">Password</label>
-        <br>
-        <input id="pWord" formControlName="pass">
-        <br>
-        <br>
-        <button mat-button type="submit">Login</button>
+            <label for="user">Username</label>
+            <br>
+            <input id="user" formControlName="user">
+            <br>
+            <br>
+            <label for="pWord">Password</label>
+            <br>
+            <input id="pWord" formControlName="pass">
+            <br>
+            <br>
+            <button mat-button type="submit">Login</button>
         </form>
     </mat-card>
 </div>

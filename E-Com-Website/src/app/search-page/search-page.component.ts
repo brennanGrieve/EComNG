@@ -19,6 +19,12 @@ export class SearchPageComponent implements OnInit {
   value;
   results : StoreItem[];
 
+  /**
+   * ngOnInit()
+   * Subscribe to search terms from the search service, 
+   * then subscribe to the results of searchItemByName() from the client service on callback.
+   */
+
   ngOnInit() {
     this.search.searchTerms.subscribe(newTerms => {
       this.value = newTerms; 
