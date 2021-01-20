@@ -8,15 +8,13 @@
 
 .cartbtn {
     height: 64px;
+    width:8vw;
     border-radius: 0%;
     background: transparent;
-    font-size: large;   
     color: #F4F6FA; 
 }
 
-.fill-space {
-    flex: 1 1 auto;
-  }
+
 
 .btnSep{
     border-left:1px solid silver;
@@ -25,12 +23,17 @@
 
 .btnText{
     font-size: 1vw;
+    display:flex;
+    vertical-align: middle;
+    justify-content: center;
+    padding: 5px;
 }
 
 .searchField {
     margin-left:15px;
     margin-top:5px;
     width: 300px;
+    color: white;
   }
 
 h1{
@@ -49,5 +52,9 @@ h1{
 
   Input{
       color: white;
+  }
+
+  mat-icon{
+      font-size: 1vw;
   }
 

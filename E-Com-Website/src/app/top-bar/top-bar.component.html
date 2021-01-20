@@ -8,13 +8,13 @@
   <div class="btnSep"></div>
 
   <mat-form-field class="searchField">
-    <input matInput type="text" [(ngModel)]="value">
+    <input matInput type="text" [(ngModel)]="value" (keyDown.enter)="enterHandling()">
     <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
       <mat-icon>close</mat-icon>
     </button>
   </mat-form-field>
     
-  <button mat-button class = cartbtn (click)="updateSearchTerms()" [routerLink] = "['search']">
+  <button mat-button class = cartbtn id="searchBtn"(click)="updateSearchTerms()" [routerLink] = "['search']">
     <mat-icon>search</mat-icon>
   </button>
 
@@ -24,13 +24,12 @@
 
   <button mat-button class = cartbtn [routerLink] = "['myCart']">
    <div class="btnText">
-      <mat-icon>shopping_cart</mat-icon>
-        My Cart
+      <mat-icon inline = true>shopping_cart</mat-icon>
+      <span>My Cart</span>
     </div>
   </button>
 
   <div class="btnSep"></div>
   <button mat-button class = cartbtn [routerLink] = "['signIn']"><div class="btnText">Sign In</div></button>
   <div class="btnSep"></div>
-  <div class = fill-space></div>
 </mat-toolbar>
