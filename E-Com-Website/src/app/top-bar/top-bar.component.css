@@ -1,4 +1,3 @@
-
 .mat-toolbar{
     margin:0;
     margin-left: -20px;
@@ -9,9 +8,8 @@
 
 .cartbtn {
     height: 64px;
-    width:8vw;
+    min-width: 82px;
     border-radius: 0%;
-    background: transparent;
     color: #F4F6FA; 
     background-color: #262697;
 }
@@ -24,11 +22,11 @@
 }
 
 .btnText{
-    font-size: 1vw;
+    width: 100%;
+    font-size: 1em;
     display:flex;
     vertical-align: middle;
     justify-content: center;
-    padding: 5px;
 }
 
 .searchField {
@@ -45,10 +43,11 @@ h1{
   .title{
       margin-left: 0px;
       margin-right: 6px;
+      padding-bottom: 6px;
       outline: none;
       cursor: pointer;
       height: 58px;
-      min-width: 400px;
+      min-width: 375px;
   }
   .mat-toolbar{
       background-color: #262697;
@@ -59,5 +58,5 @@ h1{
   }
 
   mat-icon{
-      font-size: 1vw;
+      font-size: 24px;
   }
