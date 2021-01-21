@@ -1,3 +1,8 @@
+.topbar{
+    background-color: #262697;
+    overflow: auto;
+}
+
 footer{
     background-color: #262697;
     color: whitesmoke;
@@ -6,6 +11,7 @@ footer{
     margin-top:20px;
     text-align: center;
     font-size: small;
+    overflow: auto;
 }
 a{
     color:whitesmoke;
