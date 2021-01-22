@@ -1,13 +1,12 @@
 mat-grid-list{
-    min-width: 800px;
+    min-width: 850px;
 }
 
 mat-grid-tile {
     background-color: #F4F6FA;
     border: solid 1px #E0E6E6;
     display: block;
-    width: fit-content;
-    min-width: 200px;
+    width: clamp(230px, 270px, 300px);
 }
 mat-grid-tile:hover{
     border: solid 1px darkblue;
@@ -27,8 +26,10 @@ mat-grid-tile:hover{
 
 .gridItemPrice{
     width: 100%; 
+    height: 100%;
     text-align: right; 
     bottom: 0;
+    margin-right: 5px;
 }
 
 .prodName{
