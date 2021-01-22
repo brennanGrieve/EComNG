@@ -1,4 +1,4 @@
-<mat-grid-list cols="4" rowHeight="180px" gutterSize = 4px>
+<mat-grid-list cols="4" rowHeight="30vh" gutterSize = 0.5vw>
   <mat-grid-tile *ngFor="let storeItem of displayData" matRipple [title]="storeItem.name" [routerLink]="['/products', storeItem.id]">
     <img [src]="'/assets/stockImages/' + storeItem.id + '.jpg'" class="gridImageDisplay">
       <div class ="gridTileContent">

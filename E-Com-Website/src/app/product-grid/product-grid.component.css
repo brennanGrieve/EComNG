@@ -1,26 +1,26 @@
 mat-grid-list{
-    min-width: 850px;
+    min-width: 85vw;
 }
 
 mat-grid-tile {
     background-color: #F4F6FA;
-    border: solid 1px #E0E6E6;
-    display: block;
-    width: clamp(230px, 270px, 300px);
+    border: solid 0.15vw #E0E6E6;
+    width: clamp(6vw, 6.6vw, 7vw);
 }
 mat-grid-tile:hover{
-    border: solid 1px darkblue;
+    border: solid 0.15vw darkblue;
 }
 
 .gridTileContent{
     margin: 7px; 
-    width: 80%;
-    font-size: 12px;
+    width: 100%;
+    font-size: 1vw;
+    font-style: italic;
 }
 
 .gridImageDisplay{
-    width: 75px; 
-    height: 75px; 
+    width: 8vw; 
+    height: 10vh; 
     margin-left: 5px;
 }
 
@@ -33,6 +33,7 @@ mat-grid-tile:hover{
 }
 
 .prodName{
-    font-size: 16px;
+    width: 80%;
+    font-size: 1.33vw;
     color: rgb(84, 84, 230);
 }
