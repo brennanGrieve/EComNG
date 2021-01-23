@@ -22,6 +22,10 @@ export class TopBarComponent implements OnInit {
   updateSearchTerms(){
     this.search.updateTerms(this.value);
   }
+
+  enterHandling(){
+    document.getElementById("searchBtn").click();
+  }
   
 }
 

@@ -1,24 +1,39 @@
+mat-grid-list{
+    min-width: 85vw;
+}
+
 mat-grid-tile {
     background-color: #F4F6FA;
-    border: solid 1px #E0E6E6;
-    font-size: 1vw;
+    border: solid 0.15vw #E0E6E6;
+    width: clamp(6vw, 6.6vw, 7vw);
 }
 mat-grid-tile:hover{
-    border: solid 1px darkblue;
+    border: solid 0.15vw darkblue;
 }
 
 .gridTileContent{
     margin: 7px; 
     width: 100%;
+    font-size: 1vw;
+    font-style: italic;
+}
+
+.gridImageDisplay{
+    width: 8vw; 
+    height: 10vh; 
+    margin-left: 5px;
 }
 
 .gridItemPrice{
     width: 100%; 
+    height: 100%;
     text-align: right; 
     bottom: 0;
+    margin-right: 5px;
 }
 
 .prodName{
-    font-size: large;
+    width: 80%;
+    font-size: 1.33vw;
     color: rgb(84, 84, 230);
 }
