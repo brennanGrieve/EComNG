@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "E-Com-Website"
+  "defaultProject": "E-Com-Website",
+  "cli": {
+    "defaultCollection": "@nativescript/schematics"
+  }
 }
