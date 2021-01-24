@@ -1,0 +1,45 @@
+<StackLayout>
+  <Label text="product-details works" textWrap="true"></Label>
+  <Label text="This is a migrated component" textWrap="true"></Label>
+  <Label text="Update it to provide the UI elements required in your mobile app" textWrap="true"></Label>
+</StackLayout>
+
+<!--
+Original Web template:
+
+<h1>
+    {{currentProduct.name}}
+</h1>
+<div class = prodDisplay>
+    <mat-card class="prodDetailsCard">
+        <mat-card-content>
+            <img class="prodDetailedImage" [src]="'/assets/stockImages/' + currentProduct.id + '.jpg'">
+            {{currentProduct.longDesc}}
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card class="customerActionCard">
+        <h1>
+            ${{currentProduct.price}}
+        </h1>
+        <hr>
+        Units in Stock: 
+        <span [ngStyle]="{'color' : stockLevelColor}" class="stockDisplay">{{currentProduct.stockLevel}}</span>
+        <hr>
+        <button mat-button class="cartButton"  (click)= "addToCart()" [routerLink] = "['/myCart']">
+            Add to Cart
+        </button>
+    </mat-card>
+</div>
+
+<h1>Specifications:</h1>
+<hr>
+<table>
+<div *ngFor= "let spec of specs">
+    <tr>
+        <td class="specName">{{spec.specName}}</td>
+        <td class="specDetails">{{spec.specValue}}</td>
+    </tr>
+</div>
+</table>
+-->
