@@ -4,21 +4,28 @@
     height: auto;
     width: stretch;
     background-color: #262697;
+    overflow-y: auto;
+}
+
+.topBarBox{
+    display: flex;
+    vertical-align: middle;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
 }
 
 .cartbtn {
-    height: 64px;
-    min-width: 82px;
     border-radius: 0%;
     color: #F4F6FA; 
     background-color: #262697;
+    margin-left: 4px;
 }
 
 
 
 .btnSep{
     border-left:1px solid silver;
-    height:30px
 }
 
 .btnText{
@@ -43,10 +50,10 @@ h1{
   .title{
       margin-left: 0px;
       margin-right: 6px;
+      margin-top: 12px;
       padding-bottom: 6px;
       outline: none;
       cursor: pointer;
-      height: 58px;
       min-width: 375px;
   }
   .mat-toolbar{

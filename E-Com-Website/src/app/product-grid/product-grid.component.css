@@ -1,13 +1,13 @@
-mat-grid-list{
-    min-width: 85vw;
+.prodGrid{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 5px;
+    column-gap: 5px;
 }
 
-mat-grid-tile {
-    background-color: #F4F6FA;
-    border: solid 0.15vw #E0E6E6;
-    width: clamp(6vw, 6.6vw, 7vw);
-}
-mat-grid-tile:hover{
+
+.gridTileContent:hover{
     border: solid 0.15vw darkblue;
 }
 
@@ -16,6 +16,10 @@ mat-grid-tile:hover{
     width: 100%;
     font-size: 1vw;
     font-style: italic;
+    background-color: #F4F6FA;
+    border: solid 0.15vw #E0E6E6;
+    display:flex;
+    flex-wrap:wrap;
 }
 
 .gridImageDisplay{
