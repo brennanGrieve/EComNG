@@ -3,8 +3,8 @@
     width: 100%;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;
-    row-gap: 1px;
-    column-gap: 5px;
+    row-gap: 1vh;
+    column-gap: 1vw;
 }
 
 
@@ -22,12 +22,14 @@
     border: solid 0.15vw #E0E6E6;
     display:flex;
     flex-wrap:wrap;
+    justify-content: center;
 }
 
 .gridImageDisplay{
-    width: 8vw; 
-    height: 10vh; 
+    width: 150px; 
+    height: 150px; 
     margin-left: 5px;
+    justify-content: center;
 }
 
 .gridItemPrice{
@@ -42,4 +44,5 @@
     width: 80%;
     font-size: 1.33vw;
     color: darkblue;
+    justify-content: center;
 }
