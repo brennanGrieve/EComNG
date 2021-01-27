@@ -1,10 +1,22 @@
 .prodGrid{
     display: grid;
     width: 100%;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-rows: 400px;
     row-gap: 1vh;
-    column-gap: 1vw;
+    column-gap: 0.5vw;
+}
+
+@media screen and (min-width:800px){
+    .prodGrid{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (min-width:650px) and (max-width:750px){
+    .prodGrid{
+        grid-template-columns: 1fr 1fr
+    }
 }
 
 
@@ -28,16 +40,22 @@
 .gridImageDisplay{
     width: 100%; 
     height: 250px; 
-    margin: 5px;
+    margin: 8px;
     justify-content: center;
+    border: solid 0.15vw #E0E6E6;
 }
 
 .gridItemPrice{
     width: 100%; 
-    height: 100%;
+    height: fit-content;
     text-align: right; 
-    bottom: 0;
+    display:flex;
+    align-self:flex-end;
     margin-right: 5px;
+}
+
+.gridPriceDisplay{
+    align-self:flex-end;
 }
 
 .prodName{
@@ -46,4 +64,14 @@
     color: darkblue;
     justify-content: center;
     font-style: normal;
+    text-align: center;
+}
+
+@media screen and (min-width:600px){
+    .gridTileContent{
+        font-size: 1vw;
+    }
+    .prodName{
+        font-size:1.5vw;
+    }
 }

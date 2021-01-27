@@ -2,17 +2,19 @@
     <ng-container class="gridTile" *ngFor="let storeItem of displayData">
       <div class ="gridTileContent" matRipple [routerLink]="['/products', storeItem.id]">
         <img [src]="'/assets/stockImages/' + storeItem.id + '.jpg'" class="gridImageDisplay">
-          <span class="prodName">
+          <div class="prodName">
             {{storeItem.name}}
-          </span>
+          </div>
           <br>
           <span class="prodDesc">
             {{storeItem.shortDesc}}
           </span>
           <br>
           <div class="gridItemPrice">
-            ${{storeItem.price}}
+            <span class="gridPriceDisplay">
+              ${{storeItem.price}}
+            </span>
           </div>
-        </div>
-      </ng-container>
+      </div>
+    </ng-container>
 </div>
