@@ -1,6 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;  height: 100%; width: 100%; background-color: white   ;}
-.router {margin-right: 7%; margin-left: 7%; margin-top: 10px; min-height: 90vh; background-color: white;}
 header {font-size:x-large;}
 h1{
     color: #262697; 
