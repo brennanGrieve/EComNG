@@ -1,18 +1,20 @@
-<mat-grid-list cols="4" rowHeight="30vh" gutterSize = 0.5vw>
-  <mat-grid-tile *ngFor="let storeItem of displayData" matRipple [title]="storeItem.name" [routerLink]="['/products', storeItem.id]">
-    <img [src]="'/assets/stockImages/' + storeItem.id + '.jpg'" class="gridImageDisplay">
-      <div class ="gridTileContent">
-        <span class="prodName">
-          {{storeItem.name}}
-        </span>
-        <br>
-        <span class="prodDesc">
-          {{storeItem.shortDesc}}
-        </span>
-        <br>
-        <div class="gridItemPrice">
-          ${{storeItem.price}}
-        </div>
+<div class = "prodGrid">
+    <ng-container class="gridTile" *ngFor="let storeItem of displayData">
+      <div class ="gridTileContent" matRipple [routerLink]="['/products', storeItem.id]">
+        <img [src]="'/assets/stockImages/' + storeItem.id + '.jpg'" class="gridImageDisplay">
+          <div class="prodName">
+            {{storeItem.name}}
+          </div>
+          <br>
+          <span class="prodDesc">
+            {{storeItem.shortDesc}}
+          </span>
+          <br>
+          <div class="gridItemPrice">
+            <span class="gridPriceDisplay">
+              ${{storeItem.price}}
+            </span>
+          </div>
       </div>
-  </mat-grid-tile>
-</mat-grid-list>   
+    </ng-container>
+</div>
