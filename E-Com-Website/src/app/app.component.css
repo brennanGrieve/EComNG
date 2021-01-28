@@ -1,10 +1,27 @@
+.overflowContainer{
+    overflow-x: scroll;
+    background-color: #262697;
+    width: stretch;
+    min-height: 90vh;
+}
+
+.router { 
+    margin:0px;
+    width: stretch;
+    background-color: white;
+}
+
+.routerContainer{
+    margin:24px;
+}
+
+
 
 footer{
     background-color: #262697;
     color: whitesmoke;
     height:64px;
     bottom: 0px;
-    margin-top:20px;
     text-align: center;
     font-size: small;
     overflow: auto;
