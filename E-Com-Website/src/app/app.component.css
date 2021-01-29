@@ -12,11 +12,11 @@
 }
 
 .router { 
-    flex: 1;
     margin:0px;
     border: solid 2px black;
     min-height: 90vh;
     background-color: white;
+    min-width: fit-content;
 }
 
 .routerContainer{
