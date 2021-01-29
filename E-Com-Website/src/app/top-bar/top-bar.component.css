@@ -66,3 +66,9 @@ h1{
   mat-icon{
       font-size: 24px;
   }
+
+  @media screen and (max-width:900px){
+      .mat-toolbar{
+          overflow-x: scroll;
+      }
+  }

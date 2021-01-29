@@ -1,5 +1,12 @@
 mat-card{
     background-color: #F4F6FA;
+    width: 100%;
+}
+
+.flexContainer{
+    display: flex; 
+    flex-direction: row;
+    width: 100%;
 }
 
 TextArea{

@@ -1,7 +1,10 @@
+
+
 .prodGrid{
     display: grid;
-    width: clamp(100%, 100%, 100%);
-    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    min-width: 100%;
+    grid-template-columns: 1fr;
     grid-template-rows: max-content;
     row-gap: 1vh;
     column-gap: 0.5vw;
@@ -26,6 +29,7 @@
 
 .gridTileContent{
     width: 100%;
+    min-width: fit-content;
     min-height: 400px;
     font-size: 12px;
     font-style: italic;
@@ -45,6 +49,11 @@
     border: solid 0.15vw #E0E6E6;
 }
 
+.gridTile{
+    width: 100%;
+    min-width: 100%;
+}
+
 .gridItemPrice{
     width: 100%; 
     height: fit-content;
@@ -60,6 +69,7 @@
     text-align: right;
     font-size: 18px;
     font-weight: bolder;
+    font-style: normal;
     color: darkblue;
     width: 100%;
     margin-bottom: 3px;
