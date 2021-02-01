@@ -2,7 +2,7 @@
     overflow-x: scroll;
     background-color: #262697;
     width: stretch;
-    height: 100%;
+    height: fit-content;
     border: solid 1px red;
     margin: 0;
     display:flex;
