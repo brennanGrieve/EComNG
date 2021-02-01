@@ -65,6 +65,7 @@ import { SignUpPageComponent } from './sign-up-page/sign-up-page.component';
       { path : 'myCart', component : CartPageComponent },
       { path : 'search', component : SearchPageComponent },
       { path : 'products/:productId', component : ProductDetailsComponent},
+      { path : 'signUp', component : SignUpPageComponent}
     ]),
   HttpClientModule,
   ],
