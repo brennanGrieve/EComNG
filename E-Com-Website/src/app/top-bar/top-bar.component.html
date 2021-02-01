@@ -1,17 +1,14 @@
 <mat-toolbar>
   <div class = "topBarBox">
-  <div class = title [routerLink]="['']" matRipple>
+  <div class = title [routerLink]="['']">
     <img src ="/assets/logo.png" alt="logo">
   </div>
 
   <button mat-button class = cartbtn [routerLink]="['']" ><div class="btnText">Home</div></button>
 
-  <mat-form-field class="searchField">
-    <input matInput type="text" [(ngModel)]="value" (keyDown.enter)="enterHandling()">
-    <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-      <mat-icon>close</mat-icon>
-    </button>
-  </mat-form-field>
+  <div class="searchField">
+    <input class="searchInput" type="text" placeholder="Search..." [(ngModel)]="value" (keyDown.enter)="enterHandling()">
+  </div>
     
   <button mat-button class = cartbtn id="searchBtn"(click)="updateSearchTerms()" [routerLink] = "['search']">
     <mat-icon>search</mat-icon>

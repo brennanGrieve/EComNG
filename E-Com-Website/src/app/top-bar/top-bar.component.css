@@ -2,7 +2,6 @@
     margin:0;
     margin-left: -20px;
     height: auto;
-    min-width: 100%;
     width: stretch;
     background-color: #262697;
 }
@@ -23,6 +22,10 @@
     margin-left: 4px;
 }
 
+.cartbtn:hover{
+    background-color: darkblue;
+}
+
 
 
 .btnSep{
@@ -37,12 +40,7 @@
     justify-content: center;
 }
 
-.searchField {
-    margin-left:15px;
-    margin-top:5px;
-    width: 300px;
-    color: white;
-  }
+
 
 h1{
     color: #F4F6FA;
@@ -51,17 +49,38 @@ h1{
   .title{
       margin-left: 0px;
       margin-right: 6px;
-      margin-top: 12px;
       padding-bottom: 6px;
       outline: none;
       cursor: pointer;
       min-width: 375px;
   }
+  .title:hover{
+      background-color: darkblue;
+  }
   .mat-toolbar{
       background-color: #262697;
   }
 
+  .searchField{
+      width: 300px;
+      display: flex;
+      align-items: center;
+  }
+
   Input{
+      width: 100%;
+      height: 65%;
+      font-size: larger;
+      color: white;
+      background-color: darkblue;
+      border: 0px;
+      padding-left: 15px;
+      border-radius: 30px;
+      outline: none;
+      font-size: 12px;
+  }
+
+  ::placeholder{
       color: white;
   }
 
