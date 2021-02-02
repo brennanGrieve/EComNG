@@ -1,6 +1,6 @@
 <div class = "prodGrid">
     <ng-container class="gridTile" *ngFor="let storeItem of displayData">
-      <div class ="gridTileContent" matRipple [routerLink]="['/products', storeItem.id]">
+      <div class ="gridTileContent" [routerLink]="['/products', storeItem.id]">
         <img [src]="'/assets/stockImages/' + storeItem.id + '.jpg'" class="gridImageDisplay">
           <div class="prodName">
             {{storeItem.name}}

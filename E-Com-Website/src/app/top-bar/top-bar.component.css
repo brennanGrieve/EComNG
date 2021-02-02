@@ -68,7 +68,7 @@ h1{
   }
 
   Input{
-      width: 100%;
+      width: 300px;
       height: 65%;
       font-size: larger;
       color: white;
@@ -89,7 +89,5 @@ h1{
   }
 
   @media screen and (max-width:900px){
-      .mat-toolbar{
-          overflow-x: auto;
-      }
+      
   }

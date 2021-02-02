@@ -1,26 +1,18 @@
-.overflowContainer{
-    overflow-x: scroll;
-    background-color: #262697;
-    width: stretch;
-    height: fit-content;
-    border: solid 1px red;
-    margin: 0;
-    display:flex;
-    flex-direction: column;
-    flex-shrink: 0;
-    align-items: stretch;
-}
-
-.router { 
+.page { 
     margin:0px;
-    border: solid 2px black;
+    margin-top: -20px;
     min-height: 90vh;
-    background-color: white;
+    background-color: #262697;
     min-width: fit-content;
 }
 
-.routerContainer{
-    margin:24px;
+.pageContainer{
+    background-color: white;
+    min-height: 90vh;
+}
+
+.routerOffset{
+    margin: 24px
 }
 
 
