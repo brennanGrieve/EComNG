@@ -2,8 +2,9 @@ mat-card{
     text-align: center;
     background-color: #F4F6FA;
     width: 350px;
-    height:570px;
+    height: 500px;
     margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 Label{
