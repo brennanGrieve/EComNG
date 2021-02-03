@@ -1,15 +1,14 @@
-<div class="overflowContainer">
-    <app-top-bar></app-top-bar>
-    <div class="router">
+    <div class="page">
         <br>
-        <div class="routerContainer">
-            <router-outlet></router-outlet>
+        <div class="pageContainer">
+            <app-top-bar></app-top-bar>
+            <div class="routerOffset">
+                <router-outlet></router-outlet>
+            </div>
+            <br>
         </div>
+        <footer>
+            Brennan Grieve 2020-2021. Not for commercial use. <br>
+            <span><a href= "https://github.com/brennanGrieve">https://github.com/brennanGrieve</a> || brennan.grieve45@gmail.com </span>
+        </footer>
     </div>
-    <footer>
-        <br>
-        Brennan Grieve 2020-2021. Not for commercial use. <br>
-        <a href= "https://github.com/brennanGrieve">https://github.com/brennanGrieve</a>
-        || brennan.grieve45@gmail.com
-    </footer>
-</div>

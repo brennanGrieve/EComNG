@@ -1,38 +1,35 @@
-.overflowContainer{
-    overflow-x: scroll;
-    background-color: #262697;
-    width: stretch;
-    height: 100%;
-    border: solid 1px red;
-    margin: 0;
-    display:flex;
-    flex-direction: column;
-    flex-shrink: 0;
-    align-items: stretch;
-}
-
-.router { 
+.page { 
     margin:0px;
-    border: solid 2px black;
+    margin-top: -20px;
     min-height: 90vh;
-    background-color: white;
+    background-color: #262697;
     min-width: fit-content;
 }
 
-.routerContainer{
-    margin:24px;
+.pageContainer{
+    background-color: white;
+    min-height: 90vh;
+    height: stretch;
+    margin-bottom: 0px;
+}
+
+.routerOffset{
+    margin: 24px;
+    margin-bottom: 0px;
 }
 
 
 
 footer{
+    display: flex;
+    flex-direction: column;
     background-color: #262697;
     color: whitesmoke;
-    height:64px;
-    bottom: 0px;
+    min-height: 64px;
     text-align: center;
-    font-size: small;
-    overflow: auto;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
 }
 a{
     color:whitesmoke;

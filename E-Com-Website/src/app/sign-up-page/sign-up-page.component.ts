@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms'
+import { StoreDataClientService } from '../store-data-client-service.service'
 
 @Component({
   selector: 'app-sign-up-page',
@@ -7,7 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignUpPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private builder : FormBuilder,
+    private client : StoreDataClientService,
+  ) { }
 
   ngOnInit(): void {
   }
