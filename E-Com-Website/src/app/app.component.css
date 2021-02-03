@@ -20,11 +20,9 @@
 footer{
     background-color: #262697;
     color: whitesmoke;
-    height:64px;
-    bottom: 0px;
+    min-height: fit-content;
     text-align: center;
-    font-size: small;
-    overflow: auto;
+    font-size: 1vw;
 }
 a{
     color:whitesmoke;
