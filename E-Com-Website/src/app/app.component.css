@@ -9,20 +9,27 @@
 .pageContainer{
     background-color: white;
     min-height: 90vh;
+    height: stretch;
+    margin-bottom: 0px;
 }
 
 .routerOffset{
-    margin: 24px
+    margin: 24px;
+    margin-bottom: 0px;
 }
 
 
 
 footer{
+    display: flex;
+    flex-direction: column;
     background-color: #262697;
     color: whitesmoke;
-    min-height: fit-content;
+    min-height: 64px;
     text-align: center;
-    font-size: 1vw;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
 }
 a{
     color:whitesmoke;
