@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms'
+import { FormBuilder, FormGroup } from '@angular/forms'
 import { StoreDataClientService } from '../store-data-client-service.service'
 
 @Component({
@@ -9,12 +9,32 @@ import { StoreDataClientService } from '../store-data-client-service.service'
 })
 export class SignUpPageComponent implements OnInit {
 
+  signUpForm
+
   constructor(
     private builder : FormBuilder,
     private client : StoreDataClientService,
   ) { }
 
   ngOnInit(): void {
+    this.signUpForm = this.builder.group({
+      uname : '',
+      pass : '',
+      pass2 : '',
+      email : '',
+      firstName : '',
+      lastName : '',
+      shipAddr : '',
+      phNum : '',
+    })
+  }
+
+  onSubmit(dataToSend){
+    this.checkSubmissionData(dataToSend);
+  }
+
+  checkSubmissionData(toCheck){
+
   }
 
 }
