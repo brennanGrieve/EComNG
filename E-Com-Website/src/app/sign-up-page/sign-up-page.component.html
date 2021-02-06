@@ -3,27 +3,35 @@
         <h1>Create Account</h1>
         <label for='uname'>Username</label>
         <input type=text formControlName="uname">
+        <span class="error" *ngIf="uNameFailed">Invalid or Unavailable username.</span>
         <br>
         <label for='pass'>Password</label>
         <input type=text formControlName="pass">
+        <span class="error" *ngIf="passFailed">Please enter a password at least 6 characters long.</span>
         <br>
         <label for='pass2'>Please confirm your password</label>
         <input type=text formControlName="pass2">
+        <span class="error" *ngIf="pass2Failed">Password does not match.</span>
         <br>
         <label for='email'>Email</label>
         <input type=text formControlName="email">
+        <span class="error" *ngIf="emailFailed">Please enter a valid Email Address.</span>
         <br>
         <label for='fName'>First Name(s)</label>
         <input type=text formControlName="fName">
+        <span class="error" *ngIf="fNameFailed">Please enter your first name.</span>
         <br>
         <label for='lName'>Last Name</label>
         <input type=text formControlName="lName">
+        <span class="error" *ngIf="lNameFailed">Please enter your last name.</span>
         <br>
         <label for='shipAddr'>Shipping Address</label>
         <input type=text formControlName="shipAddr">
+        <span class="error" *ngIf="shipAddrFailed">Please enter a valid shipping address.</span>
         <br>
         <label for='phNum'>Phone Number</label>
         <input type=text formControlName="phNum">
+        <span class="error" *ngIf="phNumFailed">Please enter a valid phone number.</span>
         <button mat-button type="submit">Create Account</button>
     </form>
 

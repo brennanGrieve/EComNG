@@ -37,8 +37,23 @@ export class SignUpPageComponent implements OnInit {
     })
   }
 
+  submitOK(){
+
+  }
+
   onSubmit(dataToSend){
     this.checkSubmissionData(dataToSend);
+    if(this.submitOK){
+      
+    }
+  }
+
+  checkUniqueName(uName){
+    this.client.GETUserNameUniqueness(uName).subscribe(
+      response=>{
+        this.uNameFailed = response["uniqueness"];
+      }
+    );
   }
 
   /**
@@ -50,6 +65,7 @@ export class SignUpPageComponent implements OnInit {
       if(toCheck.uname == "" || toCheck.uname == null){
         this.uNameFailed = true;
       }else{this.uNameFailed = false}
+      this.checkUniqueName(toCheck.uname);
       if(toCheck.pass == "" || toCheck.pass == null){
         this.passFailed = true;
       }else{this.passFailed = false}

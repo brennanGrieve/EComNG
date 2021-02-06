@@ -68,4 +68,8 @@ export class StoreDataClientService {
   POSTContactQuery(queryToPOST){
     this.http.post('http://13.55.122.69/api/post/postQuery.php', queryToPOST).subscribe();
   }
+
+  GETUserNameUniqueness(toCheck : String) : Observable<Object>{
+    return this.http.get<Object>('http://13.55.122.69/api/get/getUserNameUniqueness.php?name=' + toCheck);
+  }
 }

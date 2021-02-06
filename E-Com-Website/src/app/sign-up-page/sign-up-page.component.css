@@ -6,6 +6,10 @@ mat-card{
     min-height: fit-content;
 }
 
+.error{
+    color: red;
+}
+
 Input{
     width: 300px;
 }
