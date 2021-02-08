@@ -36,25 +36,44 @@ export class SignUpPageComponent implements OnInit {
       phNum : '',
     })
   }
+  /**
+   * Checks the failure flags and aborts any attempt to submit to the server if any are set.
+   */
 
-  submitOK(){
-
+  submitOK() : Boolean{
+    if(this.uNameFailed){return false}
+    if(this.passFailed){return false}
+    if(this.pass2Failed){return false}
+    if(this.emailFailed){return false}
+    if(this.fNameFailed){return false}
+    if(this.lNameFailed){return false}
+    if(this.shipAddrFailed){return false}
+    if(this.phNumFailed){return false}
+    return true;
   }
 
   onSubmit(dataToSend){
     this.checkSubmissionData(dataToSend);
-    if(this.submitOK){
-      
-    }
-  }
-
-  checkUniqueName(uName){
-    this.client.GETUserNameUniqueness(uName).subscribe(
+    this.client.GETUserNameUniqueness(dataToSend.uname).subscribe(
       response=>{
-        this.uNameFailed = response["uniqueness"];
+          if(response == null){
+            this.client.GETEmailUniqueness(dataToSend.email).subscribe(
+              response=>{
+                if(response == null){
+                  
+                }else{
+                  this.emailFailed = true;
+                }
+              }
+            )
+          }else{
+            this.uNameFailed = true;
+          }
       }
     );
+    
   }
+
 
   /**
    * Checks to ensure that all form fields have an acceptable value before continuing with submission to the backend.
@@ -65,11 +84,10 @@ export class SignUpPageComponent implements OnInit {
       if(toCheck.uname == "" || toCheck.uname == null){
         this.uNameFailed = true;
       }else{this.uNameFailed = false}
-      this.checkUniqueName(toCheck.uname);
-      if(toCheck.pass == "" || toCheck.pass == null){
+      if(toCheck.pass == "" || toCheck.pass == null || toCheck.pass.length < 6){
         this.passFailed = true;
       }else{this.passFailed = false}
-      if(toCheck.pass2 == "" || toCheck.pass2 == null){
+      if(toCheck.pass2 == "" || toCheck.pass2 == null || toCheck.pass2 !== toCheck.pass){
         this.pass2Failed = true;
       }else{this.pass2Failed = false}
       if(toCheck.email == "" || toCheck.email == null){

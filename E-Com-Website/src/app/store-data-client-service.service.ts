@@ -72,4 +72,8 @@ export class StoreDataClientService {
   GETUserNameUniqueness(toCheck : String) : Observable<Object>{
     return this.http.get<Object>('http://13.55.122.69/api/get/getUserNameUniqueness.php?name=' + toCheck);
   }
+
+  GETEmailUniqueness(toCheck : String) : Observable<Object>{
+    return this.http.get<Object>('http://13.55.122.69/api/get/getEmailUniqueness.php?name=' + toCheck);
+  }
 }
