@@ -60,7 +60,9 @@ export class SignUpPageComponent implements OnInit {
             this.client.GETEmailUniqueness(dataToSend.email).subscribe(
               response=>{
                 if(response == null){
-                  
+                  if(this.submitOK()){
+                    this.client.POSTSignUpForm(dataToSend);
+                  }
                 }else{
                   this.emailFailed = true;
                 }

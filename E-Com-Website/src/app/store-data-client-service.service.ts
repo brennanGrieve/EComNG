@@ -78,6 +78,6 @@ export class StoreDataClientService {
   }
 
   POSTSignUpForm(formToPOST){
-    this.http.post('http://13.55.122.69/api/post/postNewAccountData.php', formToPOST).subscribe();
+    this.http.post('http://13.55.122.69/api/post/postNewAcc.php', formToPOST).subscribe();
   }
 }
