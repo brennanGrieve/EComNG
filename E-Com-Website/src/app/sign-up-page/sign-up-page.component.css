@@ -5,3 +5,27 @@ mat-card{
     height: 100%;
     min-height: fit-content;
 }
+
+.error{
+    color: red;
+}
+
+Input{
+    width: 300px;
+}
+
+Form{
+    display: flex; 
+    flex-direction: column;
+}
+
+Label{
+    margin-bottom: 5px;
+}
+
+button{
+    margin-top: 10px;
+    background-color: #262697;
+    color: white;
+    width: fit-content;
+}
