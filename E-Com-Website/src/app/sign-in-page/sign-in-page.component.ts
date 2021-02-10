@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { StoreDataClientService } from '../store-data-client-service.service'
 
 
 @Component({
@@ -29,6 +30,15 @@ export class SignInPageComponent implements OnInit {
      * Make login call to the backend here.
      */
     console.log(loginData);
+    if(this.checkLoginData(loginData)){
+      
+    }
+  }
+
+  checkLoginData(loginData){
+    if(loginData.user == null || loginData.user == ''){return false}
+    if(loginData.pass == null || loginData.pass == ''){return false}
+    return true;
   }
 
 }

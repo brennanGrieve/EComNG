@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms'
-import { StoreDataClientService } from '../store-data-client-service.service'
+import { StoreDataClientService } from '../store-data-client-service.service';
+import { UserAuthService } from '../user-auth.service';
 
 @Component({
   selector: 'app-sign-up-page',
@@ -22,6 +23,7 @@ export class SignUpPageComponent implements OnInit {
   constructor(
     private builder : FormBuilder,
     private client : StoreDataClientService,
+    private authClient : UserAuthService
   ) { }
 
   ngOnInit(): void {
@@ -61,7 +63,7 @@ export class SignUpPageComponent implements OnInit {
               response=>{
                 if(response == null){
                   if(this.submitOK()){
-                    this.client.POSTSignUpForm(dataToSend);
+                    this.authClient.POSTSignUpForm(dataToSend);
                   }
                 }else{
                   this.emailFailed = true;
