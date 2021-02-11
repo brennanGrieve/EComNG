@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { StoreItem } from './store-item';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 
 @Injectable({
@@ -10,16 +9,27 @@ import { StoreItem } from './store-item';
 export class UserAuthService {
 
   constructor(
-    private http : HttpClient
+    private http : HttpClient,
   ) { }
+
+  private loginStatus = new BehaviorSubject<boolean>(null)
 
   POSTSignUpForm(formToPOST){
     this.http.post('http://13.55.122.69/api/post/postNewAcc.php', formToPOST).subscribe();
   }
 
-  POSTSignInInfo(dataToPOST){
-    this.http.post('http://13.55.122.69/api/post/postLoginAttempt.php', dataToPOST).subscribe(UAuthToken =>{
-       //put the authtoken in a cookie so that the client can use it to access the account, or if a failure is returned, handle it
-    })
+  POSTSignInInfo(dataToPOST) : Observable<Object>{
+    return this.http.post('http://13.55.122.69/api/post/postLoginAttempt.php', dataToPOST)
+  }
+  updateLoginStatus(newStatus : boolean){
+    this.loginStatus.next(newStatus);
+  }
+  getLoginStatus() : BehaviorSubject<boolean>{
+    if(this.loginStatus.value == null){
+      /**
+       * Perform initial check to initialize loginStatus with the correct state
+       */
+    }
+    return this.loginStatus;
   }
 }
