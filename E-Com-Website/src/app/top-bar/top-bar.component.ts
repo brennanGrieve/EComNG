@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchService } from '../search.service';
+import { UserAuthService } from '../user-auth.service';
 
 @Component({
   selector: 'app-top-bar',
@@ -9,8 +10,11 @@ import { SearchService } from '../search.service';
 export class TopBarComponent implements OnInit {
 
   value = '';
+  loggedIn = false;
 
-  constructor(private search : SearchService) { }
+  constructor(
+    private search : SearchService,
+    private authService : UserAuthService) { }
   
   ngOnInit() {
   }
@@ -25,6 +29,10 @@ export class TopBarComponent implements OnInit {
 
   enterHandling(){
     document.getElementById("searchBtn").click();
+  }
+
+  getLoginStatus(){
+    this.authService.getLoginStatus()
   }
   
 }

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { CookiesService } from './cookies.service';
 
 
 @Injectable({
@@ -10,6 +11,7 @@ export class UserAuthService {
 
   constructor(
     private http : HttpClient,
+    private cookies : CookiesService
   ) { }
 
   private loginStatus = new BehaviorSubject<boolean>(null)
