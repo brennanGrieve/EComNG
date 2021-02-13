@@ -27,6 +27,7 @@ import { StoreDataClientService } from './store-data-client-service.service';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { ProductGridComponent } from './product-grid/product-grid.component';
 import { SignUpPageComponent } from './sign-up-page/sign-up-page.component';
+import { DashboardPageComponent } from './dashboard-page/dashboard-page.component';
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import { SignUpPageComponent } from './sign-up-page/sign-up-page.component';
     ProductDetailsComponent,
     ProductGridComponent,
     SignUpPageComponent,
+    DashboardPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -65,7 +67,8 @@ import { SignUpPageComponent } from './sign-up-page/sign-up-page.component';
       { path : 'myCart', component : CartPageComponent },
       { path : 'search', component : SearchPageComponent },
       { path : 'products/:productId', component : ProductDetailsComponent},
-      { path : 'signUp', component : SignUpPageComponent}
+      { path : 'signUp', component : SignUpPageComponent},
+      { path : 'dashboard', component : DashboardPageComponent }
     ]),
   HttpClientModule,
   ],

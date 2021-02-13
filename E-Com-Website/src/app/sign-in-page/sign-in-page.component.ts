@@ -39,6 +39,7 @@ export class SignInPageComponent implements OnInit {
     console.log(loginData);
     if(this.checkLoginData(loginData)){
       this.auth.POSTSignInInfo(loginData).subscribe(UAuthToken =>{
+        console.log(UAuthToken);
         //put the authtoken in a cookie so that the client can use it to access the account, or if a failure is returned, handle it
         if(UAuthToken != null){
           var expiry = new Date();
@@ -46,7 +47,7 @@ export class SignInPageComponent implements OnInit {
           var authCookie = "auth=" + UAuthToken + "; expires=" + expiry + ";path=/";
           this.cookies.addCookie(authCookie);
           this.success = true;
-          this.router.navigateByUrl("/");
+          this.router.navigateByUrl("/dashboard");
         }else{
           this.success = false;
         }
