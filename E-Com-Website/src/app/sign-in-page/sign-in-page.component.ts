@@ -42,11 +42,7 @@ export class SignInPageComponent implements OnInit {
         console.log(UAuthToken);
         //put the authtoken in a cookie so that the client can use it to access the account, or if a failure is returned, handle it
         if(UAuthToken != null){
-          var expiry = new Date();
-          expiry.setDate(expiry.getDate() + 65535);
-          var authCookie = "auth=" + UAuthToken + "; expires=" + expiry + ";path=/";
-          this.cookies.addCookie(authCookie);
-          this.success = true;
+          this.cookies.addAuthCookie(UAuthToken);
           this.router.navigateByUrl("/dashboard");
         }else{
           this.success = false;

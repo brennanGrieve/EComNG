@@ -79,4 +79,10 @@ export class CookiesService {
     var revisedCookie = "cart=" + revisedCookieValue + "; expires=" + expiry.toUTCString() + ";path=/";
     this.addCookie(revisedCookie);
   }
+  addAuthCookie(authToken){
+    var expiry = new Date();
+    expiry.setDate(expiry.getDate() + 65535);
+    var authCookie = "auth=" + authToken + "; expires=" + expiry + ";path=/";
+    this.addCookie(authCookie);
+  }
 }

@@ -16,8 +16,8 @@ export class UserAuthService {
 
   private loginStatus = new BehaviorSubject<boolean>(null)
 
-  POSTSignUpForm(formToPOST){
-    this.http.post('http://13.55.122.69/api/post/postNewAcc.php', formToPOST).subscribe();
+  POSTSignUpForm(formToPOST) : Observable<Object>{
+    return this.http.post('http://13.55.122.69/api/post/postNewAcc.php', formToPOST);
   }
 
   POSTSignInInfo(dataToPOST) : Observable<Object>{

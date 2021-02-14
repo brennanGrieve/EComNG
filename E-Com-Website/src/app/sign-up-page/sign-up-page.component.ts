@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms'
 import { StoreDataClientService } from '../store-data-client-service.service';
 import { UserAuthService } from '../user-auth.service';
+import { CookiesService } from '../cookies.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-up-page',
@@ -23,7 +25,9 @@ export class SignUpPageComponent implements OnInit {
   constructor(
     private builder : FormBuilder,
     private client : StoreDataClientService,
-    private authClient : UserAuthService
+    private authClient : UserAuthService,
+    private cookies : CookiesService,
+    private router : Router,
   ) { }
 
   ngOnInit(): void {
@@ -63,7 +67,10 @@ export class SignUpPageComponent implements OnInit {
               response=>{
                 if(response == null){
                   if(this.submitOK()){
-                    this.authClient.POSTSignUpForm(dataToSend);
+                    this.authClient.POSTSignUpForm(dataToSend).subscribe(authToken=>{
+                      this.cookies.addAuthCookie(authToken);
+                      this.router.navigateByUrl("/dashboard");
+                    });
                   }
                 }else{
                   this.emailFailed = true;
