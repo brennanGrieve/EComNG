@@ -38,7 +38,6 @@ export class SignInPageComponent implements OnInit {
      */
     if(this.checkLoginData(loginData)){
       this.auth.POSTSignInInfo(loginData).subscribe(UAuthToken =>{
-        console.log(UAuthToken);
         //put the authtoken in a cookie so that the client can use it to access the account, or if a failure is returned, handle it
         if(UAuthToken != null){
           this.cookies.addAuthCookie(UAuthToken);
