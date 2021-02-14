@@ -36,7 +36,6 @@ export class SignInPageComponent implements OnInit {
     /**
      * Make login call to the backend here.
      */
-    console.log(loginData);
     if(this.checkLoginData(loginData)){
       this.auth.POSTSignInInfo(loginData).subscribe(UAuthToken =>{
         console.log(UAuthToken);
