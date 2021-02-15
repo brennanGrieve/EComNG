@@ -20,11 +20,29 @@ Label{
 
 .outerPage{
     display:flex;
+    width:100%;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 Input{
     font-size: larger;
     margin-top: 10px;
     border: #E0E6E6 solid 1px;
+}
+
+.warning{
+    background-color: red;
+    height: fit-content;
+    width: 90%;
+}
+
+.warningHeader{
+    color: yellow;
+    font-size: xx-large;
+}
+
+P{
+    color:white;
 }
