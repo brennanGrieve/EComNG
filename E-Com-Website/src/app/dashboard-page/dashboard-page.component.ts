@@ -18,11 +18,12 @@ export class DashboardPageComponent implements OnInit {
 
   constructor(
     private client : StoreDataClientService,
+    private cookies : CookiesService,
     private router :  Router
   ) { }
   
 
-  ngOnInit(): void {
+  ngOnInit(){
     this.getUserData();
   }
 
