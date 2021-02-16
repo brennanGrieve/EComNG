@@ -85,4 +85,12 @@ export class CookiesService {
     var authCookie = "auth=" + authToken + "; expires=" + expiry + ";path=/";
     this.addCookie(authCookie);
   }
+  checkAuthCookie() : boolean{
+    var authCookie = this.extractCookieValue("auth");
+    if(authCookie == null){
+      return false;
+    }else{
+      return true;
+    }
+  }
 }
