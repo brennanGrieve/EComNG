@@ -29,6 +29,7 @@ import { ProductGridComponent } from './product-grid/product-grid.component';
 import { SignUpPageComponent } from './sign-up-page/sign-up-page.component';
 import { DashboardPageComponent } from './dashboard-page/dashboard-page.component';
 import { PasswordUpdateComponent } from './password-update/password-update.component';
+import { SignedOutPageComponent } from './signed-out-page/signed-out-page.component';
 
 
 @NgModule({
@@ -45,6 +46,7 @@ import { PasswordUpdateComponent } from './password-update/password-update.compo
     SignUpPageComponent,
     DashboardPageComponent,
     PasswordUpdateComponent,
+    SignedOutPageComponent,
   ],
   imports: [
     BrowserModule,

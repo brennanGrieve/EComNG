@@ -32,7 +32,9 @@ export class TopBarComponent implements OnInit {
   }
 
   getLoginStatus(){
-    this.authService.getLoginStatus()
+    this.authService.getLoginStatus().subscribe(loginStatus =>{
+      this.loggedIn = loginStatus;
+    })
   }
   
 }
