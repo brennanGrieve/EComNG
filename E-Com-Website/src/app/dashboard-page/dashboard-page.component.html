@@ -1,8 +1,12 @@
 <h1>Your account</h1>
 <hr>
 <div class="details">
+    <span>{{fName}} {{lName}}</span>
     <h2>Registered Email</h2>
+    {{email}}
     <button mat-button [routerLink] = "['/passChange']">Change Password</button>
     <h2>Shipping Address</h2>
+    {{shipAddr}}
     <h2>Phone Number</h2>
+    {{phNum}}
 </div>

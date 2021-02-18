@@ -15,6 +15,7 @@ export class DashboardPageComponent implements OnInit {
   lName;
   phNum;
   email;
+  shipAddr;
 
   constructor(
     private client : StoreDataClientService,
@@ -29,17 +30,17 @@ export class DashboardPageComponent implements OnInit {
 
 
   getUserData(){
-    this.client.fetchUserInfo(this.cookies.extractCookieValue("auth")).subscribe(response=>{
+    this.client.fetchUserInfo(this.cookies.extractCookieValue("auth=")).subscribe(response=>{
+      console.log(response);
       if(response == null){
         this.router.navigateByUrl('/signedOut');
       }
-      console.log(response);
       this.username = response["USER_NAME"];
       this.fName = response["F_NAME"];
       this.lName = response["L_NAME"];
       this.email = response["EMAIL"];
       this.phNum = response["PH_NUM"];
-      this.cookies.addAuthCookie(response["authToken"]);
+      this.shipAddr = response["SHIP_ADDR"];
     })
   }
 }

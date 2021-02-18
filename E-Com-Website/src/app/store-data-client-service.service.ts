@@ -77,7 +77,7 @@ export class StoreDataClientService {
     return this.http.get<Object>('http://13.55.122.69/api/get/getEmailUniqueness.php?email=' + toCheck);
   }
   fetchUserInfo(authToken){
-    return this.http.post('http://13.55.122.69/api/post/postUdataRequest.php', authToken);
+    return this.http.post('http://13.55.122.69/api/post/postUDataRequest.php', authToken);
   }
 
 }

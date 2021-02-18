@@ -23,6 +23,6 @@
     </div>
   </button>
   <button *ngIf="!loggedIn;else dashboard" mat-button class = cartbtn [routerLink] = "['signIn']"><div class="btnText">Sign In</div></button>
-  <button mat-button #dashboard class=cartbtn [routerLink] = "['dashboard']"><div class="btnText">My Account</div></button>
+  <ng-template #dashboard><button mat-button class=cartbtn [routerLink] = "['dashboard']"><div class="btnText">My Account</div></button></ng-template>
   </div>
 </mat-toolbar>

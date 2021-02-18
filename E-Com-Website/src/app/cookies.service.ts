@@ -86,8 +86,8 @@ export class CookiesService {
     this.addCookie(authCookie);
   }
   checkAuthCookie() : boolean{
-    var authCookie = this.extractCookieValue("auth");
-    if(authCookie == null){
+    var authCookie = this.extractCookieValue("auth=");
+    if(authCookie == '' || authCookie == 'undefined'){
       return false;
     }else{
       return true;
