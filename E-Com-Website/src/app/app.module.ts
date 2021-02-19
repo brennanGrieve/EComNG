@@ -30,6 +30,9 @@ import { SignUpPageComponent } from './sign-up-page/sign-up-page.component';
 import { DashboardPageComponent } from './dashboard-page/dashboard-page.component';
 import { PasswordUpdateComponent } from './password-update/password-update.component';
 import { SignedOutPageComponent } from './signed-out-page/signed-out-page.component';
+import { PhNumUpdateComponent } from './ph-num-update/ph-num-update.component';
+import { EmailUpdateComponent } from './email-update/email-update.component';
+import { ShipAddrUpdateComponent } from './ship-addr-update/ship-addr-update.component';
 
 
 @NgModule({
@@ -47,6 +50,9 @@ import { SignedOutPageComponent } from './signed-out-page/signed-out-page.compon
     DashboardPageComponent,
     PasswordUpdateComponent,
     SignedOutPageComponent,
+    PhNumUpdateComponent,
+    EmailUpdateComponent,
+    ShipAddrUpdateComponent,
   ],
   imports: [
     BrowserModule,
@@ -74,6 +80,9 @@ import { SignedOutPageComponent } from './signed-out-page/signed-out-page.compon
       { path : 'signUp', component : SignUpPageComponent},
       { path : 'dashboard', component : DashboardPageComponent },
       { path : 'passChange', component : PasswordUpdateComponent },
+      { path : 'mailChange' , component : EmailUpdateComponent },
+      { path : 'addrChange', component : ShipAddrUpdateComponent},
+      { path : 'phoneChange', component : PhNumUpdateComponent}
     ]),
   HttpClientModule,
   ],
