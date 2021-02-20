@@ -80,4 +80,8 @@ export class StoreDataClientService {
     return this.http.post('http://13.55.122.69/api/post/postUDataRequest.php', authToken);
   }
 
+  POSTNewPass(newPass){
+    return this.http.post('http://13.55.122.69/api/post/postNewPass.php', newPass);
+  }
+
 }
