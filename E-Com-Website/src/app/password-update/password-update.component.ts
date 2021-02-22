@@ -31,7 +31,7 @@ export class PasswordUpdateComponent implements OnInit {
 
   onSubmit(newPass){
     if(newPass.pass1 == newPass.pass2){
-      var postData = [newPass.pass1, newPass.oldPass]
+      var postData = [newPass.pass1, newPass.oldPass];
       this.client.POSTNewPass(postData).subscribe(result =>{
         if(result != null){
           this.cookies.addAuthCookie(result);
