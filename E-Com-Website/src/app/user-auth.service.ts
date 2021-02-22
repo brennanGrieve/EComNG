@@ -28,9 +28,7 @@ export class UserAuthService {
   }
   getLoginStatus() : BehaviorSubject<boolean>{
     if(this.loginStatus.value == null){
-      /**
-       * Perform initial check to initialize loginStatus with the correct state
-       */
+      this.loginStatus.next(this.cookies.checkAuthCookie());
     }
     return this.loginStatus;
   }

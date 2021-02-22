@@ -17,6 +17,7 @@ export class TopBarComponent implements OnInit {
     private authService : UserAuthService) { }
   
   ngOnInit() {
+    this.getLoginStatus();
   }
 
   /** 
@@ -32,7 +33,9 @@ export class TopBarComponent implements OnInit {
   }
 
   getLoginStatus(){
-    this.authService.getLoginStatus()
+    this.authService.getLoginStatus().subscribe(loginStatus =>{
+      this.loggedIn = loginStatus;
+    })
   }
   
 }

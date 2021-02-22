@@ -1,1 +1,34 @@
-<p>dashboard-page works!</p>
+<h1>{{username}}</h1>
+<hr>
+<div class="details">
+    <mat-card>
+        <h2>Registered Email</h2>
+        <span>{{email}}</span>
+        <br>
+        <br>
+        <button mat-button [routerLink] = "['/mailChange']">Update Email</button>
+    </mat-card>
+    <mat-card>
+        <h2>Security</h2>
+        <br>
+        <br>
+        <button mat-button [routerLink] = "['/passChange']">Change Password</button>
+    </mat-card>
+    <mat-card>
+        <h2>Shipping Address</h2>
+        <span>{{fName}} {{lName}}</span>
+        <br>
+        <span>{{shipAddr}}</span>
+        <br>
+        <br>
+        <button mat-button [routerLink] = "['/addrChange']">Update Shipping Address</button>
+    </mat-card>
+    <mat-card>
+        <h2>Phone Number</h2>
+        <span>{{phNum}}</span>
+        <br>
+        <br>
+        <br>
+        <button mat-button [routerLink] = "['/phoneChange']">Update Phone Number</button>
+    </mat-card>
+</div>

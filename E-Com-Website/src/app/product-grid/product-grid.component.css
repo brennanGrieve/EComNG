@@ -4,7 +4,7 @@
     display: grid;
     width: 100%;
     min-width: 100%;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: max-content;
     row-gap: 1vh;
     column-gap: 0.5vw;
@@ -15,13 +15,6 @@
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 }
-
-@media screen and (min-width:650px) and (max-width:750px){
-    .prodGrid{
-        grid-template-columns: 1fr 1fr
-    }
-}
-
 
 .gridTileContent:hover{
     border: solid 0.15vw darkblue;

@@ -85,4 +85,16 @@ export class CookiesService {
     var authCookie = "auth=" + authToken + "; expires=" + expiry + ";path=/";
     this.addCookie(authCookie);
   }
+  checkAuthCookie() : boolean{
+    var authCookie = this.extractCookieValue("auth=");
+    if(authCookie == '' || authCookie == 'undefined'){
+      return false;
+    }else{
+      return true;
+    }
+  }
+  destroyAuthCookie(){
+    var destroyedAuth = "auth=;expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/"
+    this.addCookie(destroyedAuth);
+  }
 }

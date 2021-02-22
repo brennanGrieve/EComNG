@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { StoreDataClientService } from '../store-data-client-service.service';
+import {CookiesService} from '../cookies.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard-page',
@@ -7,9 +10,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardPageComponent implements OnInit {
 
-  constructor() { }
+  username;
+  fName;
+  lName;
+  phNum;
+  email;
+  shipAddr;
 
-  ngOnInit(): void {
+  constructor(
+    private client : StoreDataClientService,
+    private cookies : CookiesService,
+    private router :  Router
+  ) { }
+  
+
+  ngOnInit(){
+    this.getUserData();
   }
 
+
+  getUserData(){
+    this.client.fetchUserInfo(this.cookies.extractCookieValue("auth=")).subscribe(response=>{
+      console.log(response);
+      if(response == null){
+        this.router.navigateByUrl('/signedOut');
+      }
+      this.username = response["USER_NAME"];
+      this.fName = response["F_NAME"];
+      this.lName = response["L_NAME"];
+      this.email = response["EMAIL"];
+      this.phNum = response["PH_NUM"];
+      this.shipAddr = response["SHIP_ADDR"];
+    })
+  }
 }
