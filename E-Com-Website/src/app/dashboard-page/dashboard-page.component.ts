@@ -31,7 +31,6 @@ export class DashboardPageComponent implements OnInit {
 
   getUserData(){
     this.client.fetchUserInfo(this.cookies.extractCookieValue("auth=")).subscribe(response=>{
-      console.log(response);
       if(response == null){
         this.router.navigateByUrl('/signedOut');
       }
