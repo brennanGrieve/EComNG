@@ -1,1 +1,9 @@
-<p>ship-addr-update works!</p>
+<div class="outerPage">
+    <mat-card>
+        <h1>Update your Shipping Address</h1>
+        <form [formGroup] = "addrUpdateForm" (ngSubmit) = "onSubmit(addrUpdateForm.value)">
+            <label>New Shipping Address</label>
+            <input formControlName="newAddr">
+        </form>
+    </mat-card>
+</div>

@@ -1,1 +1,10 @@
-<p>ph-num-update works!</p>
+<div class = "outerPage">
+    <mat-card>
+        <h1>Update Your Phone Number</h1>
+        <hr>
+        <form [formGroup] = "phnForm" (ngSubmit) = "onSubmit(phnForm.value)">
+            <label>New Phone Number</label>
+            <input formControlName="newNumber">
+        </form>
+    </mat-card>
+</div>

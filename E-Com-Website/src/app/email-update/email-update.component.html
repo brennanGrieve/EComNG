@@ -1,1 +1,10 @@
-<p>email-update works!</p>
+<div class="outerPage">
+    <mat-card>
+        <h1>Update your Email</h1>
+        <hr>
+        <form [formGroup]="emailChangeForm" (ngSubmit) = "onSubmit(emailChangeForm.value)">
+            <label>New Email</label>
+            <input formControlName="newEmail">
+        </form>
+    </mat-card>
+</div>
