@@ -14,15 +14,7 @@
         <br>
         <button mat-button [routerLink] = "['/passChange']">Change Password</button>
     </mat-card>
-    <mat-card>
-        <h2>Shipping Address</h2>
-        <span>{{fName}} {{lName}}</span>
-        <br>
-        <span>{{shipAddr}}</span>
-        <br>
-        <br>
-        <button mat-button [routerLink] = "['/addrChange']">Update Shipping Address</button>
-    </mat-card>
+    <app-ship-addr-update [fName] = "fName" [lName] = "lName" [shipAddr] = "shipAddr"></app-ship-addr-update>
     <mat-card>
         <h2>Phone Number</h2>
         <span>{{phNum}}</span>

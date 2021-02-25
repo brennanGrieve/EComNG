@@ -26,7 +26,7 @@ export class EmailUpdateComponent implements OnInit {
 
   onSubmit(newEmail){
     this.client.POSTNewEmail(newEmail).subscribe(response=>{
-      
+      this.router.navigateByUrl("/dashboard");
     })
   }
 

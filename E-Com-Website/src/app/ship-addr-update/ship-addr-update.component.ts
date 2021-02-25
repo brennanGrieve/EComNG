@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { StoreDataClientService } from '../store-data-client-service.service';
 import { Router } from '@angular/router';
@@ -9,6 +9,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./ship-addr-update.component.css']
 })
 export class ShipAddrUpdateComponent implements OnInit {
+
+  @Input() fName;
+  @Input() lName;
+  @Input() shipAddr;
+
 
   addrUpdateForm;
 
@@ -26,7 +31,7 @@ export class ShipAddrUpdateComponent implements OnInit {
 
   onSubmit(newAddr){
     this.client.POSTNewShippingAddress(newAddr).subscribe(response=>{
-      
+      this.shipAddr = newAddr.newAddr;
     })
   }
 

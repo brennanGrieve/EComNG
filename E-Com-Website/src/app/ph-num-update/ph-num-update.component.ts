@@ -26,7 +26,7 @@ export class PhNumUpdateComponent implements OnInit {
 
   onSubmit(newNumber){
     this.client.POSTNewPhoneNumber(newNumber).subscribe(response=>{
-      
+      this.router.navigateByUrl("/dashboard");
     })
   }
 

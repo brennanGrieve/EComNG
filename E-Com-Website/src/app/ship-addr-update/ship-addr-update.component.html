@@ -1,9 +1,16 @@
-<div class="outerPage">
-    <mat-card>
-        <h1>Update your Shipping Address</h1>
-        <form [formGroup] = "addrUpdateForm" (ngSubmit) = "onSubmit(addrUpdateForm.value)">
-            <label>New Shipping Address</label>
-            <input formControlName="newAddr">
-        </form>
-    </mat-card>
-</div>
+<mat-card>
+    <h1>Your Shipping Address</h1>
+    <span>{{fName}} {{lName}}</span>
+    <br>
+    <span>{{shipAddr}}</span>
+    <br>
+    <br>
+    <form [formGroup] = "addrUpdateForm" (ngSubmit) = "onSubmit(addrUpdateForm.value)">
+        <label>New Shipping Address</label>
+        <br>
+        <input formControlName="newAddr">
+        <br>
+        <br>
+        <button mat-button type="submit">Change Address</button>
+    </form>
+</mat-card>

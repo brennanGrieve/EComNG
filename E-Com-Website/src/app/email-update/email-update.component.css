@@ -5,3 +5,8 @@
     align-items: center;
     flex-direction: column;
 }
+
+button{
+    background-color: #262697;
+    color: white;
+}

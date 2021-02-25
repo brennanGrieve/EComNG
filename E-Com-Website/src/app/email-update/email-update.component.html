@@ -4,7 +4,11 @@
         <hr>
         <form [formGroup]="emailChangeForm" (ngSubmit) = "onSubmit(emailChangeForm.value)">
             <label>New Email</label>
+            <br>
             <input formControlName="newEmail">
+            <br>
+            <br>
+            <button mat-button type="submit">Change Email</button>
         </form>
     </mat-card>
 </div>
