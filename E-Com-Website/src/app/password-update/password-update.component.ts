@@ -1,9 +1,7 @@
-import { JsonPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { StoreDataClientService } from '../store-data-client-service.service'
 import { CookiesService } from '../cookies.service'
-import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-password-update',
@@ -13,12 +11,12 @@ import { Router } from '@angular/router'
 export class PasswordUpdateComponent implements OnInit {
 
   passChangeForm;
+  passFormVisible : Boolean = false;
 
   constructor(
     private builder : FormBuilder,
     private client : StoreDataClientService,
     private cookies : CookiesService,
-    private router : Router,
   ) { }
 
   ngOnInit(): void {
@@ -35,13 +33,16 @@ export class PasswordUpdateComponent implements OnInit {
       this.client.POSTNewPass(postData).subscribe(result =>{
         if(result != null){
           this.cookies.addAuthCookie(result);
-          this.router.navigateByUrl("/dashboard");
         }
         else{
           //The password was wrong, so handle notifying the user here
         }
       })
     }
+  }
+  
+  hideShowPassForm(){
+    this.passFormVisible = !this.passFormVisible;
   }
 
 }

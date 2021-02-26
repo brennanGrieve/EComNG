@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { StoreDataClientService } from '../store-data-client-service.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-email-update',
@@ -11,11 +10,12 @@ import { Router } from '@angular/router';
 export class EmailUpdateComponent implements OnInit {
 
   emailChangeForm;
+  @Input() email;
+  showForm : Boolean = false;
 
   constructor(
     private builder : FormBuilder,
     private client : StoreDataClientService,
-    private router : Router,
   ) { }
 
   ngOnInit(): void {
@@ -26,8 +26,12 @@ export class EmailUpdateComponent implements OnInit {
 
   onSubmit(newEmail){
     this.client.POSTNewEmail(newEmail).subscribe(response=>{
-      this.router.navigateByUrl("/dashboard");
+      this.email = newEmail.newEmail;
     })
+  }
+
+  hideShowForm(){
+    this.showForm = !this.showForm;
   }
 
 }

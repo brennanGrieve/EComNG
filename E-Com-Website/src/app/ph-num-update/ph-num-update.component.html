@@ -1,14 +1,16 @@
-<div class = "outerPage">
-    <mat-card>
-        <h1>Update Your Phone Number</h1>
-        <hr>
-        <form [formGroup] = "phnForm" (ngSubmit) = "onSubmit(phnForm.value)">
-            <label>New Phone Number</label>
-            <br>
-            <input formControlName="newNumber">
-            <br>
-            <br>
-            <button mat-button type="submit">Change Phone Number</button>
-        </form>
-    </mat-card>
-</div>
+<mat-card>
+    <h1>Your Phone Number</h1>
+    <hr>
+    <br>
+    {{phNum}}
+    <br>
+    <button mat-button (click) = "hideShowForm()">Change Phone Number</button>
+    <form [formGroup] = "phnForm" (ngSubmit) = "onSubmit(phnForm.value)" *ngIf = "showForm">
+        <label>New Phone Number</label>
+        <br>
+        <input formControlName="newNumber">
+        <br>
+        <br>
+        <button mat-button type="submit">Change Phone Number</button>
+    </form>
+</mat-card>

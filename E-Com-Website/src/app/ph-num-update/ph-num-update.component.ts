@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { StoreDataClientService } from '../store-data-client-service.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ph-num-update',
@@ -11,11 +10,12 @@ import { Router } from '@angular/router';
 export class PhNumUpdateComponent implements OnInit {
 
   phnForm;
+  @Input() phNum;
+  showForm : Boolean = false;
 
   constructor(
     private builder : FormBuilder,
     private client : StoreDataClientService,
-    private router : Router,
   ) { }
 
   ngOnInit(): void {
@@ -26,8 +26,11 @@ export class PhNumUpdateComponent implements OnInit {
 
   onSubmit(newNumber){
     this.client.POSTNewPhoneNumber(newNumber).subscribe(response=>{
-      this.router.navigateByUrl("/dashboard");
     })
+  }
+
+  hideShowForm(){
+    this.showForm = !this.showForm;
   }
 
 }
