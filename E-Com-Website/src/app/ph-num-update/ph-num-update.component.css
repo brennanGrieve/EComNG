@@ -2,3 +2,8 @@ button{
     background-color: #262697;
     color: white;
 }
+
+mat-card{
+    text-align: center;
+    min-height: 175px;
+}

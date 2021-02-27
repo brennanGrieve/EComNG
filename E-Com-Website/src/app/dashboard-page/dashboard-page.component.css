@@ -1,6 +1,7 @@
 .details{
     display:grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: fit-content;
     row-gap: 20px;
     column-gap: 30px;
 }

@@ -1,14 +1,11 @@
 <mat-card>
     <h1>Your Shipping Address</h1>
-    <hr>
-    <br>
     <span>{{fName}} {{lName}}</span>
     <br>
     <span>{{shipAddr}}</span>
-    <br>
+    <hr>
     <br>
     <button mat-button (click)="hideShowForm()">Update Address</button>
-    <br>
     <form [formGroup] = "addrUpdateForm" (ngSubmit) = "onSubmit(addrUpdateForm.value)" *ngIf = "showForm">
         <br>
         <label>New Shipping Address</label>
