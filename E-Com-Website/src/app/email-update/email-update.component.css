@@ -1,7 +1,9 @@
-.outerPage{
-    display:flex;
-    width:100%;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+button{
+    background-color: #262697;
+    color: white;
+}
+
+mat-card{
+    text-align: center;
+    min-height: 175px;
 }

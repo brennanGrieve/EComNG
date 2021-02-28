@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
+import { StoreDataClientService } from '../store-data-client-service.service';
 
 @Component({
   selector: 'app-ship-addr-update',
@@ -7,9 +9,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShipAddrUpdateComponent implements OnInit {
 
-  constructor() { }
+  @Input() fName;
+  @Input() lName;
+  @Input() shipAddr;
+
+
+  showForm : Boolean = false;
+  addrUpdateForm;
+
+  constructor(
+    private builder : FormBuilder,
+    private client : StoreDataClientService,
+  ) { }
 
   ngOnInit(): void {
+    this.addrUpdateForm = this.builder.group({
+      newAddr : ''
+    })
+  }
+
+  onSubmit(newAddr){
+    this.client.POSTNewShippingAddress(newAddr).subscribe(response=>{
+      this.shipAddr = newAddr.newAddr;
+    })
+  }
+  
+  hideShowForm(){
+    this.showForm = !this.showForm;
   }
 
 }

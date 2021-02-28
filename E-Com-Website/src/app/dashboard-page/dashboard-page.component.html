@@ -1,34 +1,8 @@
 <h1>{{username}}</h1>
 <hr>
 <div class="details">
-    <mat-card>
-        <h2>Registered Email</h2>
-        <span>{{email}}</span>
-        <br>
-        <br>
-        <button mat-button [routerLink] = "['/mailChange']">Update Email</button>
-    </mat-card>
-    <mat-card>
-        <h2>Security</h2>
-        <br>
-        <br>
-        <button mat-button [routerLink] = "['/passChange']">Change Password</button>
-    </mat-card>
-    <mat-card>
-        <h2>Shipping Address</h2>
-        <span>{{fName}} {{lName}}</span>
-        <br>
-        <span>{{shipAddr}}</span>
-        <br>
-        <br>
-        <button mat-button [routerLink] = "['/addrChange']">Update Shipping Address</button>
-    </mat-card>
-    <mat-card>
-        <h2>Phone Number</h2>
-        <span>{{phNum}}</span>
-        <br>
-        <br>
-        <br>
-        <button mat-button [routerLink] = "['/phoneChange']">Update Phone Number</button>
-    </mat-card>
+    <app-email-update [email] = "email"></app-email-update>
+    <app-password-update></app-password-update>
+    <app-ship-addr-update [fName] = "fName" [lName] = "lName" [shipAddr] = "shipAddr"></app-ship-addr-update>
+    <app-ph-num-update [phNum] = "phNum"></app-ph-num-update>
 </div>

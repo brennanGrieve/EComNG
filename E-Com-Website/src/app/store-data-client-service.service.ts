@@ -84,4 +84,16 @@ export class StoreDataClientService {
     return this.http.post('http://13.55.122.69/api/post/postNewPass.php', newPass);
   }
 
+  POSTNewEmail(newEmail){
+    return this.http.post('http://13.55.122.69/api/post/postNewEmail.php', newEmail);
+  }
+  
+  POSTNewPhoneNumber(newNumber){
+    return this.http.post('http://13.55.122.69/api/post/postNewPhoneNumber.php', newNumber);
+  }
+
+  POSTNewShippingAddress(newAddr){
+    return this.http.post('http://13.55.122.69/api/post/postNewShippingAddress.php', newAddr);
+  }
+
 }
