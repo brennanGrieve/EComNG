@@ -12,6 +12,7 @@ export class PasswordUpdateComponent implements OnInit {
 
   passChangeForm;
   passFormVisible : Boolean = false;
+  passMatch : Boolean = true;
 
   constructor(
     private builder : FormBuilder,
@@ -29,6 +30,7 @@ export class PasswordUpdateComponent implements OnInit {
 
   onSubmit(newPass){
     if(newPass.pass1 == newPass.pass2){
+      this.passMatch = true;
       var postData = [newPass.pass1, newPass.oldPass];
       this.client.POSTNewPass(postData).subscribe(result =>{
         if(result != null){
@@ -38,6 +40,8 @@ export class PasswordUpdateComponent implements OnInit {
           //The password was wrong, so handle notifying the user here
         }
       })
+    }else{
+      this.passMatch = false;
     }
   }
   

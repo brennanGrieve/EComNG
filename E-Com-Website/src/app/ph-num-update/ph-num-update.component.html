@@ -12,6 +12,8 @@
         <br>
         <input formControlName="newNumber">
         <br>
+        <span id="warning" *ngIf="!inputGood">Please enter a Phone Number.</span>
+        <br>
         <br>
         <button mat-button type="submit">Submit</button>
     </form>

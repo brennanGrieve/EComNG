@@ -10,6 +10,8 @@
         <br>
         <input formControlName="newEmail">
         <br>
+        <span *ngIf="!inputGood" id="warning">Please enter a valid Email Address.</span>
+        <br>
         <br>
         <button mat-button type="submit">Submit</button>
     </form>

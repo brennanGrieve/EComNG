@@ -7,3 +7,7 @@ mat-card{
     text-align: center;
     min-height: 175px;
 }
+
+#warning{
+    color: red;
+}
