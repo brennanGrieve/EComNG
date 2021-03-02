@@ -12,6 +12,7 @@ export class PhNumUpdateComponent implements OnInit {
   phnForm;
   @Input() phNum;
   showForm : Boolean = false;
+  inputGood : Boolean = true;
 
   constructor(
     private builder : FormBuilder,
@@ -25,8 +26,15 @@ export class PhNumUpdateComponent implements OnInit {
   }
 
   onSubmit(newNumber){
-    this.client.POSTNewPhoneNumber(newNumber).subscribe(response=>{
-    })
+    console.log(newNumber.newNumber);
+    if(!isNaN(newNumber.newNumber) && newNumber.newNumber != null){
+      this.inputGood = true;
+      this.client.POSTNewPhoneNumber(newNumber).subscribe(response=>{
+        this.phNum = newNumber.newNumber;
+      })
+    }else{
+      this.inputGood = false;
+    }
   }
 
   hideShowForm(){
