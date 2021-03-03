@@ -94,7 +94,6 @@ export class CookiesService {
     }
   }
   destroyAuthCookie(){
-    var destroyedAuth = "auth=;expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/"
-    this.addCookie(destroyedAuth);
+    this.addCookie("auth=;expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/");
   }
 }

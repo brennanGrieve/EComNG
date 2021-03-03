@@ -42,6 +42,7 @@ export class SignInPageComponent implements OnInit {
         if(UAuthToken != null){
           this.cookies.addAuthCookie(UAuthToken);
           this.router.navigateByUrl("/dashboard");
+          this.auth.updateLoginStatus(true);
         }else{
           this.success = false;
         }
