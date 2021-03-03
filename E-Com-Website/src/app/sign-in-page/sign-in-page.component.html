@@ -25,6 +25,8 @@
             <br>
             <br>
             <button mat-button type="submit">Login</button>
+            <br>
+            <span id = "warning" *ngIf="!success">Login Failed.</span>
         </form>
         <br>
         Don't have an account?

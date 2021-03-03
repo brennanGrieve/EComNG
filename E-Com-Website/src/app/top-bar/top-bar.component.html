@@ -1,28 +1,29 @@
 <mat-toolbar>
   <div class = "topBarBox">
-  <div class = title [routerLink]="['']">
-    <img src ="/assets/logo.png" alt="logo">
-  </div>
-
-  <button mat-button class = cartbtn [routerLink]="['']" ><div class="btnText">Home</div></button>
-
-  <div class="searchField">
-    <input class="searchInput" type="text" placeholder="Search..." [(ngModel)]="value" (keyDown.enter)="enterHandling()">
-  </div>
-    
-  <button mat-button class = cartbtn id="searchBtn"(click)="updateSearchTerms()" [routerLink] = "['search']">
-    <mat-icon>search</mat-icon>
-  </button>
-
-  <button mat-button class = cartbtn [routerLink]="['contactUs']"><div class="btnText">Contact Us</div></button>
-
-  <button mat-button class = cartbtn [routerLink] = "['myCart']">
-   <div class="btnText">
-      <mat-icon inline = true>shopping_cart</mat-icon>
-      <span>My Cart</span>
+    <div class = title [routerLink]="['']">
+      <img src ="/assets/logo.png" alt="logo">
     </div>
-  </button>
-  <button *ngIf="!loggedIn;else dashboard" mat-button class = cartbtn [routerLink] = "['signIn']"><div class="btnText">Sign In</div></button>
-  <ng-template #dashboard><button mat-button class=cartbtn [routerLink] = "['dashboard']"><div class="btnText">My Account</div></button></ng-template>
+
+    <button mat-button class = cartbtn [routerLink]="['']" ><div class="btnText">Home</div></button>
+
+    <div class="searchField">
+      <input class="searchInput" type="text" placeholder="Search..." [(ngModel)]="value" (keyDown.enter)="enterHandling()">
+    </div>
+      
+    <button mat-button class = cartbtn id="searchBtn"(click)="updateSearchTerms()" [routerLink] = "['search']">
+      <mat-icon>search</mat-icon>
+    </button>
+
+    <button mat-button class = cartbtn [routerLink]="['contactUs']"><div class="btnText">Contact Us</div></button>
+
+    <button mat-button class = cartbtn [routerLink] = "['myCart']">
+    <div class="btnText">
+        <mat-icon inline = true>shopping_cart</mat-icon>
+        <span>My Cart</span>
+      </div>
+    </button>
+    <button *ngIf="!loggedIn;else dashboard" mat-button class = cartbtn [routerLink] = "['signIn']"><div class="btnText">Sign In</div></button>
+    <ng-template #dashboard><button mat-button class=cartbtn [routerLink] = "['dashboard']"><div class="btnText">My Account</div></button></ng-template>
+    <button *ngIf="loggedIn" mat-button class= cartbtn (click) = "logOut()"><div class="btnText">Sign Out</div></button>
   </div>
 </mat-toolbar>

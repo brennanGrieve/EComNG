@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchService } from '../search.service';
 import { UserAuthService } from '../user-auth.service';
+import {CookiesService} from '../cookies.service';
 
 @Component({
   selector: 'app-top-bar',
@@ -14,7 +15,8 @@ export class TopBarComponent implements OnInit {
 
   constructor(
     private search : SearchService,
-    private authService : UserAuthService) { }
+    private authService : UserAuthService,
+    private cookies : CookiesService) { }
   
   ngOnInit() {
     this.getLoginStatus();
@@ -36,6 +38,11 @@ export class TopBarComponent implements OnInit {
     this.authService.getLoginStatus().subscribe(loginStatus =>{
       this.loggedIn = loginStatus;
     })
+  }
+
+  logOut(){
+    this.cookies.destroyAuthCookie();
+    this.authService.updateLoginStatus(false);
   }
   
 }
