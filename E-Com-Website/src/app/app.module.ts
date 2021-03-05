@@ -33,6 +33,8 @@ import { SignedOutPageComponent } from './signed-out-page/signed-out-page.compon
 import { PhNumUpdateComponent } from './ph-num-update/ph-num-update.component';
 import { EmailUpdateComponent } from './email-update/email-update.component';
 import { ShipAddrUpdateComponent } from './ship-addr-update/ship-addr-update.component';
+import { AverageReviewDisplayComponent } from './average-review-display/average-review-display.component';
+import { ReviewListDisplayComponent } from './review-list-display/review-list-display.component';
 
 
 @NgModule({
@@ -53,6 +55,8 @@ import { ShipAddrUpdateComponent } from './ship-addr-update/ship-addr-update.com
     PhNumUpdateComponent,
     EmailUpdateComponent,
     ShipAddrUpdateComponent,
+    AverageReviewDisplayComponent,
+    ReviewListDisplayComponent,
   ],
   imports: [
     BrowserModule,
