@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 export class SignUpPageComponent implements OnInit {
 
   signUpForm : FormGroup;
-  uNameFailed : boolean = false;
+  userFailed : boolean = false;
   passFailed : boolean = false;
   pass2Failed : boolean = false;
   emailFailed : boolean = false;
@@ -32,7 +32,7 @@ export class SignUpPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.signUpForm = this.builder.group({
-      uname : '',
+      user : '',
       pass : '',
       pass2 : '',
       email : '',
@@ -47,7 +47,7 @@ export class SignUpPageComponent implements OnInit {
    */
 
   submitOK() : Boolean{
-    if(this.uNameFailed){return false}
+    if(this.userFailed){return false}
     if(this.passFailed){return false}
     if(this.pass2Failed){return false}
     if(this.emailFailed){return false}
@@ -60,7 +60,7 @@ export class SignUpPageComponent implements OnInit {
 
   onSubmit(dataToSend){
     this.checkSubmissionData(dataToSend);
-    this.client.GETUserNameUniqueness(dataToSend.uname).subscribe(
+    this.client.GETUserNameUniqueness(dataToSend.user).subscribe(
       response=>{
           if(response == null){
             this.client.GETEmailUniqueness(dataToSend.email).subscribe(
@@ -78,7 +78,7 @@ export class SignUpPageComponent implements OnInit {
               }
             )
           }else{
-            this.uNameFailed = true;
+            this.userFailed = true;
           }
       }
     );
@@ -92,9 +92,9 @@ export class SignUpPageComponent implements OnInit {
    */
 
   checkSubmissionData(toCheck){
-      if(toCheck.uname == "" || toCheck.uname == null){
-        this.uNameFailed = true;
-      }else{this.uNameFailed = false}
+      if(toCheck.user == "" || toCheck.user == null){
+        this.userFailed = true;
+      }else{this.userFailed = false}
       if(toCheck.pass == "" || toCheck.pass == null || toCheck.pass.length < 6){
         this.passFailed = true;
       }else{this.passFailed = false}
