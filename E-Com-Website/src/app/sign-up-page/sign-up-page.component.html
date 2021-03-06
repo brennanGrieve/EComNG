@@ -1,9 +1,9 @@
 <mat-card>
     <form [formGroup] = "signUpForm" (ngSubmit)="onSubmit(signUpForm.value)">
         <h1>Create Account</h1>
-        <label for='uname'>Username</label>
-        <input type=text formControlName="uname">
-        <span class="error" *ngIf="uNameFailed">Invalid or Unavailable username.</span>
+        <label for='user'>Username</label>
+        <input type=text formControlName="user">
+        <span class="error" *ngIf="userFailed">Invalid or Unavailable username.</span>
         <br>
         <label for='pass'>Password</label>
         <input type=text formControlName="pass">
