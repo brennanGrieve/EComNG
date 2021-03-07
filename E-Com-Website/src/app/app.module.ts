@@ -35,6 +35,7 @@ import { EmailUpdateComponent } from './email-update/email-update.component';
 import { ShipAddrUpdateComponent } from './ship-addr-update/ship-addr-update.component';
 import { AverageReviewDisplayComponent } from './average-review-display/average-review-display.component';
 import { ReviewListDisplayComponent } from './review-list-display/review-list-display.component';
+import { POSTProductReviewComponent } from './postproduct-review/postproduct-review.component';
 
 
 @NgModule({
@@ -57,6 +58,7 @@ import { ReviewListDisplayComponent } from './review-list-display/review-list-di
     ShipAddrUpdateComponent,
     AverageReviewDisplayComponent,
     ReviewListDisplayComponent,
+    POSTProductReviewComponent,
   ],
   imports: [
     BrowserModule,
