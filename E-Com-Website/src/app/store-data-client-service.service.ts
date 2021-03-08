@@ -95,5 +95,9 @@ export class StoreDataClientService {
   POSTNewShippingAddress(newAddr){
     return this.http.post('http://13.55.122.69/api/post/postNewShippingAddress.php', newAddr);
   }
+  
+  POSTReview(toPOST){
+    return this.http.post('', toPOST);
+  }
 
 }

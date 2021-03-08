@@ -36,6 +36,7 @@ import { ShipAddrUpdateComponent } from './ship-addr-update/ship-addr-update.com
 import { AverageReviewDisplayComponent } from './average-review-display/average-review-display.component';
 import { ReviewListDisplayComponent } from './review-list-display/review-list-display.component';
 import { POSTProductReviewComponent } from './postproduct-review/postproduct-review.component';
+import { StarscoreselectorComponent } from './starscoreselector/starscoreselector.component';
 
 
 @NgModule({
@@ -59,6 +60,7 @@ import { POSTProductReviewComponent } from './postproduct-review/postproduct-rev
     AverageReviewDisplayComponent,
     ReviewListDisplayComponent,
     POSTProductReviewComponent,
+    StarscoreselectorComponent,
   ],
   imports: [
     BrowserModule,

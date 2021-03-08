@@ -1,0 +1,9 @@
+.display{
+    display: flex;
+    flex-direction: column;
+}
+
+button{
+    background-color: #262697;
+    color: white;
+}
