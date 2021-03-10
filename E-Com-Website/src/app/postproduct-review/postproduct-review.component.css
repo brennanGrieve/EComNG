@@ -7,3 +7,13 @@ button{
     background-color: #262697;
     color: white;
 }
+
+#background{
+    background-color: #F4F6FA;
+}
+
+textarea{
+    width: 800px;
+    height: 250px;
+    resize: none;
+}

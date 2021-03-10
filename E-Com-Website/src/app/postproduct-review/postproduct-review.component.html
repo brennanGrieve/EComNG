@@ -1,14 +1,17 @@
-<h1>Post Review</h1>
-<hr>
-<div class="display">
-    <div class="avgstars">
-        <app-starscoreselector></app-starscoreselector>
+<mat-card id="background">
+    <div class="display">
+        <div class="textbox">
+            <form [formGroup] = "textComment" (ngSubmit) = "onSubmit(textComment.value)">
+                <h2>Say something about this product</h2>
+                <div class="avgstars">
+                    <app-starscoreselector></app-starscoreselector>
+                </div>
+                <br>
+                <textarea form="textComment" formControlName = "desc"></textarea>
+                <br>
+                <br>
+                <button mat-button type="submit">Submit</button>
+            </form>
+        </div>
     </div>
-    <div class="textbox">
-        <form [formGroup] = "textComment" (ngSubmit) = "onSubmit()">
-            <h2>Say something about this product</h2>
-            <input type="text" [formControlName] = "desc">
-            <button mat-button type="submit">Submit</button>
-        </form>
-    </div>
-</div>
+</mat-card>

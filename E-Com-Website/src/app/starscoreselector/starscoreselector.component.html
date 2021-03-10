@@ -1,15 +1,17 @@
-<span (click) = starChange(1)>
-    <img src="/assets/starDim.png" *ngIf = "star1Dim;else Star1Lit"><ng-template #Star1Lit><img src="/assets/starLit.png"></ng-template>
-</span>
-<span (click) = starChange(2)>
-    <img src="/assets/starDim.png" *ngIf = "star2Dim;else Star2Lit"><ng-template #Star2Lit><img src="/assets/starLit.png"></ng-template>
-</span>
-<span (click) = starChange(3)>
-    <img src="/assets/starDim.png" *ngIf = "star3Dim;else Star3Lit"><ng-template #Star3Lit><img src="/assets/starLit.png"></ng-template>
-</span>
-<span (click) = starChange(4)>
-    <img src="/assets/starDim.png" *ngIf = "star4Dim;else Star4Lit"><ng-template #Star4Lit><img src="/assets/starLit.png"></ng-template>
-</span>
-<span (click) = starChange(5)>
-    <img src="/assets/starDim.png" *ngIf = "star5Dim;else Star5Lit"><ng-template #Star5Lit><img src="/assets/starLit.png"></ng-template>
-</span>
+<div id="background">
+    <span (click) = starChange(0)>
+        <img src="/assets/starDim.png" *ngIf = "starDim[0];else Star1Lit"><ng-template #Star1Lit><img src="/assets/starLit.png"></ng-template>
+    </span>
+    <span (click) = starChange(1)>
+        <img src="/assets/starDim.png" *ngIf = "starDim[1];else Star2Lit"><ng-template #Star2Lit><img src="/assets/starLit.png"></ng-template>
+    </span>
+    <span (click) = starChange(2)>
+        <img src="/assets/starDim.png" *ngIf = "starDim[2];else Star3Lit"><ng-template #Star3Lit><img src="/assets/starLit.png"></ng-template>
+    </span>
+    <span (click) = starChange(3)>
+        <img src="/assets/starDim.png" *ngIf = "starDim[3];else Star4Lit"><ng-template #Star4Lit><img src="/assets/starLit.png"></ng-template>
+    </span>
+    <span (click) = starChange(4)>
+        <img src="/assets/starDim.png" *ngIf = "starDim[4];else Star5Lit"><ng-template #Star5Lit><img src="/assets/starLit.png"></ng-template>
+    </span>
+</div>
