@@ -97,7 +97,7 @@ export class StoreDataClientService {
   }
   
   POSTReview(toPOST){
-    return this.http.post('', toPOST);
+    return this.http.post('http://13.55.122.69/api/post/postReview.php', toPOST);
   }
 
 }
