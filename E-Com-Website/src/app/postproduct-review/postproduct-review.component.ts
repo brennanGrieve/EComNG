@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { StoreDataClientService } from '../store-data-client-service.service';
 import { FormBuilder } from '@angular/forms';
 import { ReviewDetailService } from '../review-detail-service.service'
@@ -12,6 +12,7 @@ export class POSTProductReviewComponent implements OnInit {
 
   starScore;
   textComment;
+  @Input()
   prodID;
 
   constructor(
@@ -27,10 +28,11 @@ export class POSTProductReviewComponent implements OnInit {
   }
 
   onSubmit(value){
-    var toPOST : Array<Object>;
-    toPOST[0] = this.prodID;
-    toPOST[1] = this.details.getStarScore();
-    toPOST[2] = value.desc;
+    console.log("Attempting submission");
+    var toPOST = [];
+    toPOST.push(this.prodID);
+    toPOST.push(this.details.getStarScore());
+    toPOST.push(value.desc);
     this.client.POSTReview(toPOST).subscribe(response =>{
       
     })
