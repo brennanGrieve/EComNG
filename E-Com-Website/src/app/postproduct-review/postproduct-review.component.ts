@@ -14,6 +14,9 @@ export class POSTProductReviewComponent implements OnInit {
   textComment;
   @Input()
   prodID;
+  reviewExists : Boolean
+  existingScore;
+  existingComment;
 
   constructor(
     private builder : FormBuilder,
@@ -25,6 +28,11 @@ export class POSTProductReviewComponent implements OnInit {
     this.textComment = this.builder.group({
       desc : ''
     })
+    this.reviewExists = this.details.getCurrentPageReviewStatus(this.prodID);
+    if(this.reviewExists){
+      this.existingScore = this.details.getExistingScore();
+      this.existingComment = this.details.getExistingComment();
+    }
   }
 
   onSubmit(value){

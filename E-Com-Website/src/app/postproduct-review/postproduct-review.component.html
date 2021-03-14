@@ -1,6 +1,6 @@
 <mat-card id="background">
-    <div class="display">
-        <div class="textbox">
+    <div class="display" *ngIf="!reviewExists;else editReview">
+        <div class="post">
             <form [formGroup] = "textComment" (ngSubmit) = "onSubmit(textComment.value)">
                 <h2>Say something about this product</h2>
                 <div class="avgstars">
@@ -14,4 +14,9 @@
             </form>
         </div>
     </div>
+    <ng-template #editReview>
+        <div class="display">
+            
+        </div>
+    </ng-template>
 </mat-card>

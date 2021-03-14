@@ -60,6 +60,10 @@ export class StoreDataClientService {
     return this.http.get<StoreItem[]>('http://13.55.122.69/api/get/getSearchResults.php?name=' + searchTerms);
   }
 
+  getUserReview(prodId : String){
+    return this.http.get<Object>('http://13.55.122.69/api/get/getSpecs.php?getUserReview?=id' + prodId);
+  }
+
   /**
    * Performs HTTP POST request to send a user query to the server for storage.
    * @param queryToPOST Query data to be POSTed to the server.
