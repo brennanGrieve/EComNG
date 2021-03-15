@@ -61,7 +61,7 @@ export class StoreDataClientService {
   }
 
   getUserReview(prodId : String){
-    return this.http.get<Object>('http://13.55.122.69/api/get/getSpecs.php?getUserReview?=id' + prodId);
+    return this.http.get<Object>('http://13.55.122.69/api/get/getUserReview.php?id=' + prodId);
   }
 
   /**

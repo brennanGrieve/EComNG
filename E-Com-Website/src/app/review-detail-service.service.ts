@@ -37,6 +37,7 @@ export class ReviewDetailService {
     //call this oninit of the product details page
     this.client.getUserReview(id).subscribe(response =>{
       //check the result; if we get something back, a review exists and should be displayed for editing instead of initial creation
+      console.log(response);
     })
     return false;
   }
