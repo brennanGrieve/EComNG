@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { StoreDataClientService } from './store-data-client-service.service';
 
 @Injectable({
@@ -8,9 +9,9 @@ export class ReviewDetailService {
 
 
   private starScore : number;
-  private reviewExists : Boolean;
-  private existingScore;
-  private existingComment;
+  private reviewExists = new BehaviorSubject(false);
+  private existingScore = new BehaviorSubject(0);
+  private existingComment = new BehaviorSubject("");
 
 
   constructor(
@@ -33,12 +34,18 @@ export class ReviewDetailService {
     return this.existingComment;
   }
 
-  getCurrentPageReviewStatus(id) : Boolean{
-    //call this oninit of the product details page
+  getCurrentPageReviewStatus(id) : BehaviorSubject<boolean>{
     this.client.getUserReview(id).subscribe(response =>{
-      //check the result; if we get something back, a review exists and should be displayed for editing instead of initial creation
-      console.log(response);
+      if(response[0] === undefined){
+        this.reviewExists.next(false);
+        return this.reviewExists;
+      }
+      if(response[0].score !== undefined && response[0].comment !== undefined){
+        this.existingScore.next(response[0].score);
+        this.existingComment.next(response[0].comment); 
+        this.reviewExists.next(true);
+      }
     })
-    return false;
+    return this.reviewExists;
   }
 }
