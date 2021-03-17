@@ -7,7 +7,7 @@
                     <app-starscoreselector></app-starscoreselector>
                 </div>
                 <br>
-                <textarea form="textComment" formControlName = "desc"></textarea>
+                <textarea form="textComment" formControlName = "desc">{{existingComment}}</textarea>
                 <br>
                 <br>
                 <button mat-button type="submit">Submit</button>
@@ -16,7 +16,20 @@
     </div>
     <ng-template #editReview>
         <div class="display">
-            Review exists.
+            <form [formGroup] = "textComment" (ngSubmit) = "onSubmit(textComment.value)">
+                <h2>Your review</h2>
+                <div class = "avgstars" [disabled] = "!editMode">
+                    <app-starscoreselector></app-starscoreselector>
+                </div>
+                <br>
+                <textarea form="textComment" formControlName = "desc" [disabled]="!editMode">{{existingComment}}</textarea>
+                <br>
+                <br>
+                <button *ngIf="!editMode;else editButton" mat-button type="submit">Submit</button>
+                <ng-template #editButton>
+                    <button mat-button (click) = "toggleEditing()">Edit Review</button>
+                </ng-template>
+            </form>
         </div>
     </ng-template>
 </mat-card>

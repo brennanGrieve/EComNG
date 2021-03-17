@@ -19,6 +19,7 @@ export class POSTProductReviewComponent implements OnInit {
   reviewExists : Boolean = false;
   existingScore;
   existingComment;
+  readOnlyMode : Boolean = true;
 
   constructor(
     private builder : FormBuilder,
@@ -31,10 +32,12 @@ export class POSTProductReviewComponent implements OnInit {
       desc : ''
     })
     this.details.getCurrentPageReviewStatus(this.prodID).pipe(take(1)).subscribe(exists =>{
+      console.log(exists);
       if(exists === true){
         this.existingScore = this.details.getExistingScore().subscribe();
         this.existingComment = this.details.getExistingComment().subscribe();
         this.reviewExists = true;
+        console.log("Exists");
       }else{
         this.reviewExists = false;
       }
@@ -50,6 +53,10 @@ export class POSTProductReviewComponent implements OnInit {
     this.client.POSTReview(toPOST).subscribe(response =>{
       
     })
+  }
+
+  toggleEditing(){
+    this.readOnlyMode = !this.readOnlyMode;
   }
 
 }
