@@ -3,7 +3,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { StoreDataClientService } from './store-data-client-service.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'any'
 })
 export class ReviewDetailService {
 
@@ -35,7 +35,9 @@ export class ReviewDetailService {
   }
 
   getCurrentPageReviewStatus(id) : BehaviorSubject<boolean>{
+    console.log(id);
     this.client.getUserReview(id).subscribe(response =>{
+      console.log(response);
       if(response[0] === undefined){
         this.reviewExists.next(false);
         return this.reviewExists;

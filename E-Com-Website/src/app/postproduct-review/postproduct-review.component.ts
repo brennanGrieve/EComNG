@@ -8,7 +8,8 @@ import { take } from 'rxjs/operators';
 @Component({
   selector: 'app-postproduct-review',
   templateUrl: './postproduct-review.component.html',
-  styleUrls: ['./postproduct-review.component.css']
+  styleUrls: ['./postproduct-review.component.css'],
+  providers: [ ReviewDetailService ]
 })
 export class POSTProductReviewComponent implements OnInit {
 
@@ -37,7 +38,6 @@ export class POSTProductReviewComponent implements OnInit {
         this.existingScore = this.details.getExistingScore().subscribe();
         this.existingComment = this.details.getExistingComment().subscribe();
         this.reviewExists = true;
-        console.log("Exists");
       }else{
         this.reviewExists = false;
       }
