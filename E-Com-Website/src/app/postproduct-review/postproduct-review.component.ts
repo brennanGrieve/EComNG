@@ -20,7 +20,7 @@ export class POSTProductReviewComponent implements OnInit {
   reviewExists : Boolean = false;
   existingScore;
   existingComment;
-  readOnlyMode : Boolean = true;
+  editMode : Boolean = false;
 
   constructor(
     private builder : FormBuilder,
@@ -32,11 +32,14 @@ export class POSTProductReviewComponent implements OnInit {
     this.textComment = this.builder.group({
       desc : ''
     })
-    this.details.getCurrentPageReviewStatus(this.prodID).pipe(take(1)).subscribe(exists =>{
-      console.log(exists);
+    this.details.getExistingComment().subscribe(existingComment =>{
+      this.existingComment = existingComment;
+    })
+    this.details.getExistingScore().subscribe(existingScore =>{
+      this.existingScore = existingScore;
+    })
+    this.details.getCurrentPageReviewStatus(this.prodID).subscribe(exists =>{
       if(exists === true){
-        this.existingScore = this.details.getExistingScore().subscribe();
-        this.existingComment = this.details.getExistingComment().subscribe();
         this.reviewExists = true;
       }else{
         this.reviewExists = false;
@@ -56,7 +59,7 @@ export class POSTProductReviewComponent implements OnInit {
   }
 
   toggleEditing(){
-    this.readOnlyMode = !this.readOnlyMode;
+    this.editMode = !this.editMode;
   }
 
 }

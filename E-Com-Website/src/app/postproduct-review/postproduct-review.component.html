@@ -7,7 +7,7 @@
                     <app-starscoreselector></app-starscoreselector>
                 </div>
                 <br>
-                <textarea form="textComment" formControlName = "desc">{{existingComment}}</textarea>
+                <textarea form="textComment" formControlName = "desc"></textarea>
                 <br>
                 <br>
                 <button mat-button type="submit">Submit</button>
@@ -15,21 +15,34 @@
         </div>
     </div>
     <ng-template #editReview>
-        <div class="display">
+        <div class="display" *ngIf="editMode;else viewMode">
             <form [formGroup] = "textComment" (ngSubmit) = "onSubmit(textComment.value)">
-                <h2>Your review</h2>
-                <div class = "avgstars" [disabled] = "!editMode">
+                <h2>Edit Your review.</h2>
+                <div class = "avgstars">
                     <app-starscoreselector></app-starscoreselector>
                 </div>
                 <br>
-                <textarea form="textComment" formControlName = "desc" [disabled]="!editMode">{{existingComment}}</textarea>
+                <textarea form="textComment" formControlName = "desc"></textarea>
                 <br>
                 <br>
-                <button *ngIf="!editMode;else editButton" mat-button type="submit">Submit</button>
-                <ng-template #editButton>
-                    <button mat-button (click) = "toggleEditing()">Edit Review</button>
-                </ng-template>
+                <button mat-button type="submit">Submit</button>
             </form>
         </div>
+        <ng-template #viewMode>
+            <div class="display">
+                <h2>Your Review.</h2>
+                <div class = "avgstars">
+                    <app-starscoreselector></app-starscoreselector>
+                </div>
+                <br>
+                <div class="displayComment">
+                    {{existingComment}}
+                </div>
+                <br>
+                <br>
+                <button mat-button (click) = "toggleEditing()">Edit Review</button>
+
+            </div>
+        </ng-template>
     </ng-template>
 </mat-card>
