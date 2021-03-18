@@ -10,9 +10,25 @@ export class StarScoreDisplayComponent implements OnInit {
   @Input()
   displayScore : Number;
 
+  stateArray = [];
+
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.displayScore);
+    this.prepareStateArray();
+  }
+
+
+  prepareStateArray(){
+    for(var i = 0; i > 5; i++){
+      if(i <= this.displayScore){
+        this.stateArray[i] = true;
+      }
+      else{
+        this.stateArray[i] = false;
+      }
+    }
   }
 
 }

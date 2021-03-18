@@ -32,7 +32,7 @@
             <div class="display">
                 <h2>Your Review.</h2>
                 <div class = "avgstars">
-                    <app-starscoreselector></app-starscoreselector>
+                    <app-star-score-display [displayScore] = "existingScore"></app-star-score-display>
                 </div>
                 <br>
                 <div class="displayComment">
@@ -41,7 +41,6 @@
                 <br>
                 <br>
                 <button mat-button (click) = "toggleEditing()">Edit Review</button>
-
             </div>
         </ng-template>
     </ng-template>

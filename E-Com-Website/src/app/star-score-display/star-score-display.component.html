@@ -1,3 +1,8 @@
 <div>
-    
+    <img src="/assets/starDim.png" *ngIf="stateArray[0];else starLit">
+    <img src="/assets/starDim.png" *ngIf="stateArray[1];else starLit">
+    <img src="/assets/starDim.png" *ngIf="stateArray[2];else starLit">
+    <img src="/assets/starDim.png" *ngIf="stateArray[3];else starLit">
+    <img src="/assets/starDim.png" *ngIf="stateArray[4];else starLit">
+    <ng-template #starLit><img src="/assets/starLit.png"></ng-template>
 </div>

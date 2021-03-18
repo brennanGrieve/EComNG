@@ -48,11 +48,13 @@ export class POSTProductReviewComponent implements OnInit {
   }
 
   onSubmit(value){
-    console.log("Attempting submission");
     var toPOST = [];
     toPOST.push(this.prodID);
     toPOST.push(this.details.getStarScore());
     toPOST.push(value.desc);
+
+    //perform a check here; if the review already exists, a different api call should be made to preserve RESTfulness.
+
     this.client.POSTReview(toPOST).subscribe(response =>{
       
     })
