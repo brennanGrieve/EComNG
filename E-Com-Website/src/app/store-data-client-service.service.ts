@@ -103,5 +103,8 @@ export class StoreDataClientService {
   POSTReview(toPOST){
     return this.http.post('http://13.55.122.69/api/post/postReview.php', toPOST);
   }
+  POSTReviewEdit(toPOST){
+    return this.http.post('http://13.55.122.69/api/post/postReviewEdit.php', toPOST)
+  }
 
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ReviewDetailService } from '../review-detail-service.service';
 
 @Component({
@@ -10,12 +10,17 @@ export class StarscoreselectorComponent implements OnInit {
 
 
   starDim : Array<Boolean> = [true,true,true,true,true];
+  @Input()
+  existingScore = null;
 
   constructor(
     private details : ReviewDetailService,
   ) { }
 
   ngOnInit(): void {
+    if(this.existingScore != null){
+      this.starChange(this.existingScore);
+    }
   }
 
 

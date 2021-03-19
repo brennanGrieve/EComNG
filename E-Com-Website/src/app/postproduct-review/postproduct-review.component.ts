@@ -53,14 +53,22 @@ export class POSTProductReviewComponent implements OnInit {
     toPOST.push(this.details.getStarScore());
     toPOST.push(value.desc);
 
-    //perform a check here; if the review already exists, a different api call should be made to preserve RESTfulness.
+    if(this.reviewExists){
+      this.client.POSTReviewEdit(toPOST).subscribe(response =>{
+        
+      })
+    }else{
+      //perform a check here; if the review already exists, a different api call should be made to preserve RESTfulness.
+      this.client.POSTReview(toPOST).subscribe(response =>{
 
-    this.client.POSTReview(toPOST).subscribe(response =>{
-      
-    })
+      })
+    }
   }
 
   toggleEditing(){
+    this.textComment.patchValue({
+      desc: this.existingComment
+    })
     this.editMode = !this.editMode;
   }
 
