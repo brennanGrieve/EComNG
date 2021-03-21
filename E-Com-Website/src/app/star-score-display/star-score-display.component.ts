@@ -21,12 +21,12 @@ export class StarScoreDisplayComponent implements OnInit {
 
 
   prepareStateArray(){
-    for(var i = 0; i > 5; i++){
+    for(var i = 0; i < 5; i++){
       if(i <= this.displayScore){
-        this.stateArray[i] = true;
+        this.stateArray[i] = false;
       }
       else{
-        this.stateArray[i] = false;
+        this.stateArray[i] = true;
       }
     }
   }

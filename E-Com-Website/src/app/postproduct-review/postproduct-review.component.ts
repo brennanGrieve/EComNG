@@ -2,7 +2,6 @@ import { Component, Input, OnInit } from '@angular/core';
 import { StoreDataClientService } from '../store-data-client-service.service';
 import { FormBuilder } from '@angular/forms';
 import { ReviewDetailService } from '../review-detail-service.service'
-import { take } from 'rxjs/operators';
 
 
 @Component({
@@ -37,7 +36,7 @@ export class POSTProductReviewComponent implements OnInit {
     })
     this.details.getExistingScore().subscribe(existingScore =>{
       this.existingScore = existingScore;
-    })
+    });
     this.details.getCurrentPageReviewStatus(this.prodID).subscribe(exists =>{
       if(exists === true){
         this.reviewExists = true;
@@ -52,15 +51,11 @@ export class POSTProductReviewComponent implements OnInit {
     toPOST.push(this.prodID);
     toPOST.push(this.details.getStarScore());
     toPOST.push(value.desc);
-
     if(this.reviewExists){
       this.client.POSTReviewEdit(toPOST).subscribe(response =>{
-        
       })
     }else{
-      //perform a check here; if the review already exists, a different api call should be made to preserve RESTfulness.
       this.client.POSTReview(toPOST).subscribe(response =>{
-
       })
     }
   }
