@@ -17,9 +17,10 @@ export class POSTProductReviewComponent implements OnInit {
   @Input()
   prodID;
   reviewExists : Boolean = false;
-  existingScore;
+  existingScore : Number = -1;
   existingComment;
   editMode : Boolean = false;
+  missingScore : Boolean = false;
 
   constructor(
     private builder : FormBuilder,
@@ -47,15 +48,27 @@ export class POSTProductReviewComponent implements OnInit {
   }
 
   onSubmit(value){
+    var check = this.details.getStarScore();
+    if(check === -1 || check === undefined || check === NaN){
+      this.missingScore = true;
+      return;
+    }
+    this.missingScore = false;
     var toPOST = [];
     toPOST.push(this.prodID);
     toPOST.push(this.details.getStarScore());
     toPOST.push(value.desc);
     if(this.reviewExists){
       this.client.POSTReviewEdit(toPOST).subscribe(response =>{
+        if(response["success"] != undefined){
+          //we should do something to indicate that the review was a success.
+        }
       })
     }else{
       this.client.POSTReview(toPOST).subscribe(response =>{
+        if(response["success"] != undefined)[
+          //we should do something to indicate that the edit was a success.
+        ]
       })
     }
   }

@@ -8,9 +8,9 @@ import { StoreDataClientService } from './store-data-client-service.service';
 export class ReviewDetailService {
 
 
-  private starScore : number;
+  private starScore : number = -1;
   private reviewExists = new BehaviorSubject(false);
-  private existingScore = new BehaviorSubject(0);
+  private existingScore = new BehaviorSubject(-1);
   private existingComment = new BehaviorSubject("");
 
 

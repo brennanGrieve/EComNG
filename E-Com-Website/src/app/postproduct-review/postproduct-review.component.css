@@ -17,3 +17,7 @@ textarea{
     height: 250px;
     resize: none;
 }
+
+#warning{
+    color: red;
+}

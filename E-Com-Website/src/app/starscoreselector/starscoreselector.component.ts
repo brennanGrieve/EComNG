@@ -23,6 +23,7 @@ export class StarscoreselectorComponent implements OnInit {
 
 
   starChange(newScore : number){
+    if(newScore < 0 || newScore > 4 || newScore === undefined || newScore === NaN){return}
     this.details.setStarScore(newScore);
     /* 
     * All flags < Newscore must be set to false.
@@ -30,7 +31,7 @@ export class StarscoreselectorComponent implements OnInit {
     * The inverse should also be true; All flags > Newscore must be set to true.
     * This will dim out all stars of a higher placement to the user selection.
     */
-    for(var i = 0; i <= 5; i++){
+    for(var i = 0; i < 5; i++){
       if(i <= newScore){
         this.starDim[i] = false;
       }else{
