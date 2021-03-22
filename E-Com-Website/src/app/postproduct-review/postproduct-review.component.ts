@@ -60,15 +60,22 @@ export class POSTProductReviewComponent implements OnInit {
     toPOST.push(value.desc);
     if(this.reviewExists){
       this.client.POSTReviewEdit(toPOST).subscribe(response =>{
+        console.log(response);
         if(response["success"] != undefined){
           //we should do something to indicate that the review was a success.
+          this.details.setExistingComment(value.desc);
+          this.toggleEditing();
+          console.log(this);
         }
       })
     }else{
       this.client.POSTReview(toPOST).subscribe(response =>{
-        if(response["success"] != undefined)[
+        if(response["success"] != undefined){
+          console.log(response);
+          this.details.setExistingComment(value.desc);
+          this.reviewExists = true;
           //we should do something to indicate that the edit was a success.
-        ]
+        }
       })
     }
   }

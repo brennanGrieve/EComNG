@@ -34,6 +34,10 @@ export class ReviewDetailService {
     return this.existingComment;
   }
 
+  setExistingComment(newValue : string){
+    this.existingComment.next(newValue);
+  }
+
   getCurrentPageReviewStatus(id) : BehaviorSubject<boolean>{
     this.client.getUserReview(id).subscribe(response =>{
       if(response[0] === undefined){
