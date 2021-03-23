@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ReviewDetailService } from '../review-detail-service.service';
 
 @Component({
@@ -6,31 +6,30 @@ import { ReviewDetailService } from '../review-detail-service.service';
   templateUrl: './starscoreselector.component.html',
   styleUrls: ['./starscoreselector.component.css']
 })
-export class StarscoreselectorComponent implements OnInit {
+export class StarscoreselectorComponent implements OnInit, OnDestroy {
 
 
   starDim : Array<Boolean> = [true,true,true,true,true];
+  scoreSubscription;
 
   constructor(
     private details : ReviewDetailService,
   ) { }
 
   ngOnInit(): void {
-    this.details.getExistingScore().subscribe(newScore =>{
+    this.scoreSubscription = this.details.getExistingScore().subscribe(newScore =>{
       this.starChange(newScore);
     })
+  }
+
+  ngOnDestroy(): void{
+    this.scoreSubscription.unsubscribe();
   }
 
 
   starChange(newScore : number){
     if(newScore < 0 || newScore > 4 || newScore === undefined || newScore === NaN){return}
     this.details.setStarScore(newScore);
-    /* 
-    * All flags < Newscore must be set to false.
-    * This will light up every star of a lower placement.
-    * The inverse should also be true; All flags > Newscore must be set to true.
-    * This will dim out all stars of a higher placement to the user selection.
-    */
     for(var i = 0; i < 5; i++){
       if(i <= newScore){
         this.starDim[i] = false;

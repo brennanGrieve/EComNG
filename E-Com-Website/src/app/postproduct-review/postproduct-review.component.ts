@@ -1,8 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { StoreDataClientService } from '../store-data-client-service.service';
 import { FormBuilder } from '@angular/forms';
 import { ReviewDetailService } from '../review-detail-service.service'
-import { take } from 'rxjs/operators';
 
 
 @Component({
@@ -11,7 +10,7 @@ import { take } from 'rxjs/operators';
   styleUrls: ['./postproduct-review.component.css'],
   providers: [ ReviewDetailService ]
 })
-export class POSTProductReviewComponent implements OnInit {
+export class POSTProductReviewComponent implements OnInit, OnDestroy {
 
   starScore;
   textComment;
@@ -23,6 +22,9 @@ export class POSTProductReviewComponent implements OnInit {
   editMode : Boolean = false;
   missingScore : Boolean = false;
 
+  commentSub;
+  scoreSub;
+
   constructor(
     private builder : FormBuilder,
     private client : StoreDataClientService,
@@ -33,11 +35,11 @@ export class POSTProductReviewComponent implements OnInit {
     this.textComment = this.builder.group({
       desc : ''
     })
-    this.details.getExistingComment().subscribe(existingComment =>{
+    this.commentSub = this.details.getExistingComment().subscribe(existingComment =>{
       console.log("Comment callback fired");
       this.existingComment = existingComment;
     })
-    this.details.getExistingScore().subscribe(existingScore =>{
+    this.scoreSub = this.details.getExistingScore().subscribe(existingScore =>{
       console.log("Score callback Fired.");
       this.existingScore = existingScore;
     });
@@ -49,6 +51,11 @@ export class POSTProductReviewComponent implements OnInit {
         this.reviewExists = false;
       }
     })
+  }
+
+  ngOnDestroy() : void{
+    this.scoreSub.unsubscribe();
+    this.commentSub.unsubscribe();
   }
 
   onSubmit(value){
@@ -64,14 +71,14 @@ export class POSTProductReviewComponent implements OnInit {
     toPOST.push(this.details.getStarScore());
     toPOST.push(value.desc);
     if(this.reviewExists){
-      this.client.POSTReviewEdit(toPOST).pipe(take(1)).subscribe(response =>{
+      this.client.POSTReviewEdit(toPOST).subscribe(response =>{
         if(response["success"] != undefined){
           this.details.setExistingComment(value.desc);
           this.editMode = false;
         }
       })
     }else{
-      this.client.POSTReview(toPOST).pipe(take(1)).subscribe(response =>{
+      this.client.POSTReview(toPOST).subscribe(response =>{
         if(response["success"] != undefined){
           this.details.setExistingComment(value.desc);
           this.reviewExists = true;
