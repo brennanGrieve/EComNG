@@ -1,7 +1,9 @@
-import { Component, Input, OnInit, OnDestroy } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { StoreDataClientService } from '../store-data-client-service.service';
-import { FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder } from '@angular/forms';
 import { ReviewDetailService } from '../review-detail-service.service'
+import { take } from 'rxjs/operators';
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -12,18 +14,18 @@ import { ReviewDetailService } from '../review-detail-service.service'
 })
 export class POSTProductReviewComponent implements OnInit, OnDestroy {
 
-  starScore;
-  textComment;
+  starScore : number;
+  textComment : FormGroup;
   @Input()
-  prodID;
+  prodID : number;
   reviewExists : Boolean = false;
-  existingScore : Number = -1;
-  existingComment;
+  existingScore : number = -1;
+  existingComment : string;
   editMode : Boolean = false;
   missingScore : Boolean = false;
 
-  commentSub;
-  scoreSub;
+  scoreSub : Subscription;
+  commentSub : Subscription;
 
   constructor(
     private builder : FormBuilder,
@@ -36,15 +38,12 @@ export class POSTProductReviewComponent implements OnInit, OnDestroy {
       desc : ''
     })
     this.commentSub = this.details.getExistingComment().subscribe(existingComment =>{
-      console.log("Comment callback fired");
       this.existingComment = existingComment;
     })
     this.scoreSub = this.details.getExistingScore().subscribe(existingScore =>{
-      console.log("Score callback Fired.");
       this.existingScore = existingScore;
     });
     this.details.getCurrentPageReviewStatus(this.prodID).subscribe(exists =>{
-      console.log("Status callback fired.");
       if(exists === true){
         this.reviewExists = true;
       }else{
@@ -53,13 +52,12 @@ export class POSTProductReviewComponent implements OnInit, OnDestroy {
     })
   }
 
-  ngOnDestroy() : void{
-    this.scoreSub.unsubscribe();
-    this.commentSub.unsubscribe();
+  ngOnDestroy() : void {
+    this.scoreSub.unsubscribe;
+    this.commentSub.unsubscribe;
   }
 
   onSubmit(value){
-    console.log("Submitting");
     var check = this.details.getStarScore();
     if(check === -1 || check === undefined || check === NaN){
       this.missingScore = true;
@@ -71,14 +69,14 @@ export class POSTProductReviewComponent implements OnInit, OnDestroy {
     toPOST.push(this.details.getStarScore());
     toPOST.push(value.desc);
     if(this.reviewExists){
-      this.client.POSTReviewEdit(toPOST).subscribe(response =>{
+      this.client.POSTReviewEdit(toPOST).pipe(take(1)).subscribe(response =>{
         if(response["success"] != undefined){
           this.details.setExistingComment(value.desc);
           this.editMode = false;
         }
       })
     }else{
-      this.client.POSTReview(toPOST).subscribe(response =>{
+      this.client.POSTReview(toPOST).pipe(take(1)).subscribe(response =>{
         if(response["success"] != undefined){
           this.details.setExistingComment(value.desc);
           this.reviewExists = true;
