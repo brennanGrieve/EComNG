@@ -60,6 +60,10 @@ export class StoreDataClientService {
     return this.http.get<StoreItem[]>('http://13.55.122.69/api/get/getSearchResults.php?name=' + searchTerms);
   }
 
+  getUserReview(prodId : String){
+    return this.http.get<Object>('http://13.55.122.69/api/get/getUserReview.php?id=' + prodId);
+  }
+
   /**
    * Performs HTTP POST request to send a user query to the server for storage.
    * @param queryToPOST Query data to be POSTed to the server.
@@ -94,6 +98,13 @@ export class StoreDataClientService {
 
   POSTNewShippingAddress(newAddr){
     return this.http.post('http://13.55.122.69/api/post/postNewShippingAddress.php', newAddr);
+  }
+  
+  POSTReview(toPOST){
+    return this.http.post('http://13.55.122.69/api/post/postReview.php', toPOST);
+  }
+  POSTReviewEdit(toPOST){
+    return this.http.post('http://13.55.122.69/api/post/postReviewEdit.php', toPOST)
   }
 
 }

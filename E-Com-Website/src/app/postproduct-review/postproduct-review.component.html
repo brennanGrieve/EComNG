@@ -1,0 +1,49 @@
+<mat-card id="background">
+    <div class="display" *ngIf="!reviewExists;else editReview">
+        <div class="post">
+            <form [formGroup] = "textComment" (ngSubmit) = "onSubmit(textComment.value)">
+                <h2>Say something about this product</h2>
+                <div class="avgstars">
+                    <app-starscoreselector></app-starscoreselector>
+                </div>
+                <br>
+                <textarea form="textComment" formControlName = "desc"></textarea>
+                <br>
+                <br>
+                <button mat-button type="submit">Submit</button>
+                <br>
+                <span id="warning" *ngIf="missingScore">Please enter a rating out of 5 stars.</span>
+            </form>
+        </div>
+    </div>
+    <ng-template #editReview>
+        <div class="display" *ngIf="editMode;else viewMode">
+            <form [formGroup] = "textComment" (ngSubmit) = "onSubmit(textComment.value)">
+                <h2>Edit Your review.</h2>
+                <div class = "avgstars">
+                    <app-starscoreselector></app-starscoreselector>
+                </div>
+                <br>
+                <textarea form="textComment" formControlName = "desc"></textarea>
+                <br>
+                <br>
+                <button mat-button type="submit">Submit</button>
+            </form>
+        </div>
+        <ng-template #viewMode>
+            <div class="display">
+                <h2>Your Review.</h2>
+                <div class = "avgstars">
+                    <app-star-score-display></app-star-score-display>
+                </div>
+                <br>
+                <div class="displayComment">
+                    {{existingComment}}
+                </div>
+                <br>
+                <br>
+                <button mat-button (click) = "toggleEditing()">Edit Review</button>
+            </div>
+        </ng-template>
+    </ng-template>
+</mat-card>

@@ -33,8 +33,10 @@ import { SignedOutPageComponent } from './signed-out-page/signed-out-page.compon
 import { PhNumUpdateComponent } from './ph-num-update/ph-num-update.component';
 import { EmailUpdateComponent } from './email-update/email-update.component';
 import { ShipAddrUpdateComponent } from './ship-addr-update/ship-addr-update.component';
-import { AverageReviewDisplayComponent } from './average-review-display/average-review-display.component';
 import { ReviewListDisplayComponent } from './review-list-display/review-list-display.component';
+import { POSTProductReviewComponent } from './postproduct-review/postproduct-review.component';
+import { StarscoreselectorComponent } from './starscoreselector/starscoreselector.component';
+import { StarScoreDisplayComponent } from './star-score-display/star-score-display.component';
 
 
 @NgModule({
@@ -55,8 +57,10 @@ import { ReviewListDisplayComponent } from './review-list-display/review-list-di
     PhNumUpdateComponent,
     EmailUpdateComponent,
     ShipAddrUpdateComponent,
-    AverageReviewDisplayComponent,
     ReviewListDisplayComponent,
+    POSTProductReviewComponent,
+    StarscoreselectorComponent,
+    StarScoreDisplayComponent,
   ],
   imports: [
     BrowserModule,
