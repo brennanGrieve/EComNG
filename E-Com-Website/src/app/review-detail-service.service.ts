@@ -24,10 +24,19 @@ export class ReviewDetailService {
 
   setStarScore(newScore : number){
     this.starScore = newScore;
+    if(this.existingScore.value != newScore){
+      this.existingScore.next(newScore);
+    }
   }
 
   getExistingScore(){
     return this.existingScore;
+  }
+
+  setExistingScore(newScore : number){
+    if(this.existingScore.value != newScore){
+      this.existingScore.next(newScore);
+    }
   }
   
   getExistingComment(){
@@ -35,7 +44,9 @@ export class ReviewDetailService {
   }
 
   setExistingComment(newValue : string){
-    this.existingComment.next(newValue);
+    if(newValue != this.existingComment.value){
+      this.existingComment.next(newValue);
+    }
   }
 
   getCurrentPageReviewStatus(id) : BehaviorSubject<boolean>{

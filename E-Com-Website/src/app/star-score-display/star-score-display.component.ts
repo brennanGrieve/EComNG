@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ReviewDetailService } from '../review-detail-service.service';
 
 @Component({
   selector: 'app-star-score-display',
@@ -7,22 +8,22 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class StarScoreDisplayComponent implements OnInit {
 
-  @Input()
-  displayScore : Number;
-
   stateArray = [];
 
-  constructor() { }
+  constructor(
+    private details : ReviewDetailService
+  ) { }
 
   ngOnInit(): void {
-    console.log(this.displayScore);
-    this.prepareStateArray();
+    this.details.getExistingScore().subscribe(newScore =>{
+      this.updateStateArray(newScore);
+    })
   }
 
 
-  prepareStateArray(){
-    for(var i = 0; i < 5; i++){
-      if(i <= this.displayScore){
+  updateStateArray(newScore){
+    for(var i = 0; i < 5; ++i){
+      if(i <= newScore){
         this.stateArray[i] = false;
       }
       else{

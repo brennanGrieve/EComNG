@@ -10,15 +10,15 @@ export class StarscoreselectorComponent implements OnInit {
 
 
   starDim : Array<Boolean> = [true,true,true,true,true];
-  @Input()
-  existingScore;
 
   constructor(
     private details : ReviewDetailService,
   ) { }
 
   ngOnInit(): void {
-      this.starChange(this.existingScore);
+    this.details.getExistingScore().subscribe(newScore =>{
+      this.starChange(newScore);
+    })
   }
 
 

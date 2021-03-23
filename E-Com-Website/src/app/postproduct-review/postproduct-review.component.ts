@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { StoreDataClientService } from '../store-data-client-service.service';
 import { FormBuilder } from '@angular/forms';
 import { ReviewDetailService } from '../review-detail-service.service'
+import { take } from 'rxjs/operators';
 
 
 @Component({
@@ -33,12 +34,15 @@ export class POSTProductReviewComponent implements OnInit {
       desc : ''
     })
     this.details.getExistingComment().subscribe(existingComment =>{
+      console.log("Comment callback fired");
       this.existingComment = existingComment;
     })
     this.details.getExistingScore().subscribe(existingScore =>{
+      console.log("Score callback Fired.");
       this.existingScore = existingScore;
     });
     this.details.getCurrentPageReviewStatus(this.prodID).subscribe(exists =>{
+      console.log("Status callback fired.");
       if(exists === true){
         this.reviewExists = true;
       }else{
@@ -48,6 +52,7 @@ export class POSTProductReviewComponent implements OnInit {
   }
 
   onSubmit(value){
+    console.log("Submitting");
     var check = this.details.getStarScore();
     if(check === -1 || check === undefined || check === NaN){
       this.missingScore = true;
@@ -59,22 +64,17 @@ export class POSTProductReviewComponent implements OnInit {
     toPOST.push(this.details.getStarScore());
     toPOST.push(value.desc);
     if(this.reviewExists){
-      this.client.POSTReviewEdit(toPOST).subscribe(response =>{
-        console.log(response);
+      this.client.POSTReviewEdit(toPOST).pipe(take(1)).subscribe(response =>{
         if(response["success"] != undefined){
-          //we should do something to indicate that the review was a success.
           this.details.setExistingComment(value.desc);
-          this.toggleEditing();
-          console.log(this);
+          this.editMode = false;
         }
       })
     }else{
-      this.client.POSTReview(toPOST).subscribe(response =>{
+      this.client.POSTReview(toPOST).pipe(take(1)).subscribe(response =>{
         if(response["success"] != undefined){
-          console.log(response);
           this.details.setExistingComment(value.desc);
           this.reviewExists = true;
-          //we should do something to indicate that the edit was a success.
         }
       })
     }

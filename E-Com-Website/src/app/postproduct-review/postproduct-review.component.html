@@ -21,7 +21,7 @@
             <form [formGroup] = "textComment" (ngSubmit) = "onSubmit(textComment.value)">
                 <h2>Edit Your review.</h2>
                 <div class = "avgstars">
-                    <app-starscoreselector [existingScore] = "existingScore"></app-starscoreselector>
+                    <app-starscoreselector></app-starscoreselector>
                 </div>
                 <br>
                 <textarea form="textComment" formControlName = "desc"></textarea>
@@ -34,7 +34,7 @@
             <div class="display">
                 <h2>Your Review.</h2>
                 <div class = "avgstars">
-                    <app-star-score-display [displayScore] = "existingScore"></app-star-score-display>
+                    <app-star-score-display></app-star-score-display>
                 </div>
                 <br>
                 <div class="displayComment">
