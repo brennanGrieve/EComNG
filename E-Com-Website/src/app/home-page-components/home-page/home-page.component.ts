@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { StoreDataClientService } from '../services/store-data-client-service.service';
-import { StoreItem } from '../store-item';
-import { CookiesService } from '../services/cookies.service';
+import { StoreDataClientService } from '../../services/store-data-client-service.service';
+import { StoreItem } from '../../store-item';
+import { CookiesService } from '../../services/cookies.service';
 
 @Component({
   selector: 'app-home-page',

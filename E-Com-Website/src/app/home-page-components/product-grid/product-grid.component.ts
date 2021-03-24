@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { StoreItem } from '../store-item';
+import { StoreItem } from '../../store-item';
 
 @Component({
   selector: 'app-product-grid',
