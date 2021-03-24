@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { StoreDataClientService } from '../services/store-data-client-service.service';
-import {CookiesService} from '../services/cookies.service';
+import { StoreDataClientService } from '../../services/store-data-client-service.service';
+import {CookiesService} from '../../services/cookies.service';
 import { Router } from '@angular/router';
 
 @Component({

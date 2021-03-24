@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ReviewDetailService } from '../services/review-detail-service.service';
+import { ReviewDetailService } from '../../services/review-detail-service.service';
 
 @Component({
   selector: 'app-starscoreselector',
