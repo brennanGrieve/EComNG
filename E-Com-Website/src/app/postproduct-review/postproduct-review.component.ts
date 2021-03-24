@@ -1,7 +1,7 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { StoreDataClientService } from '../store-data-client-service.service';
+import { StoreDataClientService } from '../services/store-data-client-service.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { ReviewDetailService } from '../review-detail-service.service'
+import { ReviewDetailService } from '../services/review-detail-service.service'
 import { take } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
 

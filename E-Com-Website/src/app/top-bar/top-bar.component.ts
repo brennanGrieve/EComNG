@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { SearchService } from '../search.service';
-import { UserAuthService } from '../user-auth.service';
-import {CookiesService} from '../cookies.service';
+import { SearchService } from '../services/search.service';
+import { UserAuthService } from '../services/user-auth.service';
+import {CookiesService} from '../services/cookies.service';
 
 @Component({
   selector: 'app-top-bar',

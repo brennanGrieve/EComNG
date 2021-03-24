@@ -23,7 +23,7 @@ import { SignInPageComponent } from './sign-in-page/sign-in-page.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { SearchPageComponent } from './search-page/search-page.component';
 import { HttpClientModule } from '@angular/common/http';
-import { StoreDataClientService } from './store-data-client-service.service';
+import { StoreDataClientService } from './services/store-data-client-service.service';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { ProductGridComponent } from './product-grid/product-grid.component';
 import { SignUpPageComponent } from './sign-up-page/sign-up-page.component';

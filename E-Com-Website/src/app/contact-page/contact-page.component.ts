@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { StoreDataClientService } from '../store-data-client-service.service';
+import { StoreDataClientService } from '../services/store-data-client-service.service';
 
 
 @Component({

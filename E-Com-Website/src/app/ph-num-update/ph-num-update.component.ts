@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { StoreDataClientService } from '../store-data-client-service.service';
+import { StoreDataClientService } from '../services/store-data-client-service.service';
 
 @Component({
   selector: 'app-ph-num-update',

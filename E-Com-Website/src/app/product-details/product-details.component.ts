@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { StoreDataClientService } from '../store-data-client-service.service';
+import { StoreDataClientService } from '../services/store-data-client-service.service';
 import { StoreItem } from '../store-item';
-import { CookiesService} from '../cookies.service';
-import { UserAuthService } from '../user-auth.service';
+import { CookiesService} from '../services/cookies.service';
+import { UserAuthService } from '../services/user-auth.service';
 
 
 @Component({

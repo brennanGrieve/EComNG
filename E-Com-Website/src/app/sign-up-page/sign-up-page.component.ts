@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms'
-import { StoreDataClientService } from '../store-data-client-service.service';
-import { UserAuthService } from '../user-auth.service';
-import { CookiesService } from '../cookies.service';
+import { StoreDataClientService } from '../services/store-data-client-service.service';
+import { UserAuthService } from '../services/user-auth.service';
+import { CookiesService } from '../services/cookies.service';
 import { Router } from '@angular/router';
 
 @Component({
