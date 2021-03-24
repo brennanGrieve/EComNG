@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { SearchService } from '../search.service';
-import { StoreDataClientService } from '../store-data-client-service.service';
+import { SearchService } from '../services/search.service';
+import { StoreDataClientService } from '../services/store-data-client-service.service';
 import { StoreItem } from '../store-item';
 
 

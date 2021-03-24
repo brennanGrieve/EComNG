@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { StoreDataClientService } from '../store-data-client-service.service';
-import { StoreItem } from '../store-item';
-import { CookiesService } from '../cookies.service';
+import { StoreDataClientService } from '../../services/store-data-client-service.service';
+import { StoreItem } from '../../store-item';
+import { CookiesService } from '../../services/cookies.service';
 
 @Component({
   selector: 'app-home-page',

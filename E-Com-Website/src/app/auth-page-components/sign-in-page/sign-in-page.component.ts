@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { UserAuthService } from '../user-auth.service';
-import { CookiesService } from '../cookies.service';
+import { UserAuthService } from '../../services/user-auth.service';
+import { CookiesService } from '../../services/cookies.service';
 import {Router} from '@angular/router';
 
 
