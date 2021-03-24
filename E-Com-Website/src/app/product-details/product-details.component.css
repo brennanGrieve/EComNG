@@ -74,10 +74,14 @@ td {
     font-size: large;
 }
 
-.cartButton{
+.button{
     background-color: #262697;
     color: white;
     min-width: fit-content;
     width: 100%;
     font-size: 14px;
+}
+
+#buttonContainer{
+    width: 42px;
 }

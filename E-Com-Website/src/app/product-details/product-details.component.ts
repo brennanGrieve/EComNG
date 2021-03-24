@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { StoreDataClientService } from '../store-data-client-service.service';
 import { StoreItem } from '../store-item';
 import { CookiesService} from '../cookies.service';
+import { UserAuthService } from '../user-auth.service';
 
 
 @Component({
@@ -16,12 +17,14 @@ export class ProductDetailsComponent implements OnInit {
   specs : Object[] = [];
   columnsToDisplay = ['Key', 'Value'];
   stockLevelColor;
+  loggedIn : boolean;
   currentProductId = this.currentRoute.snapshot.paramMap.get('productId');
 
   constructor(    
     private clientService : StoreDataClientService,
     private cookies : CookiesService,
     private currentRoute: ActivatedRoute,
+    private auth : UserAuthService
     ) {   }
 
   /**
@@ -32,6 +35,10 @@ export class ProductDetailsComponent implements OnInit {
     this.currentProductId = this.currentRoute.snapshot.paramMap.get('productId');
     this.getProductById(this.currentProductId);
     this.addToRecent();
+    this.auth.getLoginStatus().subscribe(status =>{
+      this.loggedIn = status;
+    });
+
   }
 
   /**

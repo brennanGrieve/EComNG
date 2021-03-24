@@ -16,7 +16,7 @@
         <hr>
         <span>Units in Stock: <span [ngStyle]="{'color' : stockLevelColor}" class="stockDisplay">{{currentProduct.stockLevel}}</span></span>
         <hr>
-        <button mat-button class="cartButton"  (click)= "addToCart()" [routerLink] = "['/myCart']">
+        <button mat-button class="button"  (click)= "addToCart()" [routerLink] = "['/myCart']">
             Add to Cart
         </button>
     </mat-card>
@@ -35,6 +35,11 @@
 <br>
 <h1>Post Review</h1>
 <hr>
-<app-postproduct-review [prodID] = "currentProductId"></app-postproduct-review>
+<app-postproduct-review *ngIf="loggedIn;else loginPrompt"[prodID] = "currentProductId"></app-postproduct-review>
+<ng-template #loginPrompt>
+    <div id="buttonContainer">
+        <button mat-button class="button" [routerLink]="['/signIn']">Log In to post a Review.</button>
+    </div>
+</ng-template>
 
 
