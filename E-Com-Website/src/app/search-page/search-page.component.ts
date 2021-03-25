@@ -16,7 +16,7 @@ export class SearchPageComponent implements OnInit {
     private clientService : StoreDataClientService
     ) { }
 
-  value;
+  value : string = '';
   results : StoreItem[];
 
   /**

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { StoreDataClientService } from '../../services/store-data-client-service.service'
 import { CookiesService } from '../../services/cookies.service'
 
@@ -10,7 +10,7 @@ import { CookiesService } from '../../services/cookies.service'
 })
 export class PasswordUpdateComponent implements OnInit {
 
-  passChangeForm;
+  passChangeForm : FormGroup;
   passFormVisible : Boolean = false;
   passMatch : Boolean = true;
   currentPassWrong : Boolean = false;

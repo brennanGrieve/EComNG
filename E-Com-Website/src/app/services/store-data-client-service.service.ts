@@ -46,7 +46,7 @@ export class StoreDataClientService {
    * @param view To be sent server-side so the server knows if it should increment the view count of the item.
    */
 
-  getItemById(currentId : number, view : boolean) : Observable<StoreItem>{
+  getItemById(currentId : string, view : boolean) : Observable<StoreItem>{
     if(view){return this.http.get<StoreItem>('http://13.55.122.69/api/get/getById.php?id='+currentId + '&inc=1');}
     else{return this.http.get<StoreItem>('http://13.55.122.69/api/get/getById.php?id='+currentId)}
   }
@@ -88,15 +88,15 @@ export class StoreDataClientService {
     return this.http.post('http://13.55.122.69/api/post/postNewPass.php', newPass);
   }
 
-  POSTNewEmail(newEmail){
+  POSTNewEmail(newEmail : string){
     return this.http.post('http://13.55.122.69/api/post/postNewEmail.php', newEmail);
   }
   
-  POSTNewPhoneNumber(newNumber){
+  POSTNewPhoneNumber(newNumber : string ){
     return this.http.post('http://13.55.122.69/api/post/postNewPhoneNumber.php', newNumber);
   }
 
-  POSTNewShippingAddress(newAddr){
+  POSTNewShippingAddress(newAddr : string){
     return this.http.post('http://13.55.122.69/api/post/postNewShippingAddress.php', newAddr);
   }
   

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { StoreDataClientService } from '../../services/store-data-client-service.service';
 
 @Component({
@@ -9,8 +9,8 @@ import { StoreDataClientService } from '../../services/store-data-client-service
 })
 export class PhNumUpdateComponent implements OnInit {
 
-  phnForm;
-  @Input() phNum;
+  phnForm : FormGroup;
+  @Input() phNum : string;
   showForm : Boolean = false;
   inputGood : Boolean = true;
 

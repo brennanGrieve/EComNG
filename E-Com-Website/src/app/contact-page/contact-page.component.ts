@@ -9,11 +9,11 @@ import { StoreDataClientService } from '../services/store-data-client-service.se
   styleUrls: ['./contact-page.component.css']
 })
 export class ContactPageComponent implements OnInit {
-  contactForm;  
-  nameFailed;
-  mailFailed;
-  queryFailed;
-  sendSuccess;
+  contactForm : FormGroup;  
+  nameFailed : boolean;
+  mailFailed : boolean;
+  queryFailed : boolean;
+  sendSuccess : boolean;
 
   constructor(
     private builder: FormBuilder,
