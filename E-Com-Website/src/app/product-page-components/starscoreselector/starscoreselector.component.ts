@@ -1,4 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { ReviewDetailService } from '../../services/review-detail-service.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class StarscoreselectorComponent implements OnInit, OnDestroy {
 
 
   starDim : Array<Boolean> = [true,true,true,true,true];
-  scoreSubscription;
+  scoreSubscription : Subscription;
 
   constructor(
     private details : ReviewDetailService,

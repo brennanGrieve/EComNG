@@ -10,8 +10,8 @@ import {CookiesService} from '../services/cookies.service';
 })
 export class TopBarComponent implements OnInit {
 
-  value = '';
-  loggedIn = false;
+  value : string = '';
+  loggedIn : boolean = false;
 
   constructor(
     private search : SearchService,

@@ -44,7 +44,7 @@ export class CookiesService {
    * @param toAdd The full form of the cookie to be added.
    */
 
-  addCookie(toAdd){
+  addCookie(toAdd : string){
     document.cookie = toAdd;
   }
 

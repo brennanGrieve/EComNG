@@ -13,7 +13,7 @@ export class CartPageComponent implements OnInit {
 
   cartItems : StoreItem[] = [];
   cartList : number[] = [];
-  totalPrice = 0;
+  totalPrice : number = 0;
 
   constructor(
     private cookies : CookiesService,
@@ -30,7 +30,7 @@ export class CartPageComponent implements OnInit {
     this.cartList = this.cookies.splitCookie(this.cookies.extractCookieValue("cart="));
     this.cartList.pop();
     for(var i = 0; i < this.cartList.length; i++){
-      this.client.getItemById(this.cartList[i],false).subscribe(itemData =>{
+      this.client.getItemById(this.cartList[i].toString(),false).subscribe(itemData =>{
         this.cartItems.push(itemData[0]);
         this.totalPrice += parseInt(itemData[0].price);
      })

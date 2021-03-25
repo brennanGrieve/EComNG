@@ -16,7 +16,7 @@ export class ProductDetailsComponent implements OnInit {
   currentProduct : StoreItem;
   specs : Object[] = [];
   columnsToDisplay = ['Key', 'Value'];
-  stockLevelColor;
+  stockLevelColor : string;
   loggedIn : boolean;
   currentProductId = this.currentRoute.snapshot.paramMap.get('productId');
 
@@ -46,7 +46,7 @@ export class ProductDetailsComponent implements OnInit {
    * @param toFetch id of the product to be fetched. Passed into clientService.getItemByID()
    */
 
-  getProductById(toFetch){
+  getProductById(toFetch : string){
     this.clientService.getItemById(toFetch, true).subscribe(
       currentProduct => {
         this.currentProduct = currentProduct[0];

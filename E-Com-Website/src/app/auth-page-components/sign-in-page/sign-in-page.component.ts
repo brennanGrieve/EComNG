@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { UserAuthService } from '../../services/user-auth.service';
 import { CookiesService } from '../../services/cookies.service';
 import {Router} from '@angular/router';
@@ -12,7 +12,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./sign-in-page.component.css']
 })
 export class SignInPageComponent implements OnInit {
-  loginForm;
+  loginForm : FormGroup;
   success : Boolean = true;
   constructor(
     private builder : FormBuilder,

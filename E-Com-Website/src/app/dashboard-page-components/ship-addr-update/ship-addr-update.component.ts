@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { StoreDataClientService } from '../../services/store-data-client-service.service';
 
 @Component({
@@ -9,13 +9,13 @@ import { StoreDataClientService } from '../../services/store-data-client-service
 })
 export class ShipAddrUpdateComponent implements OnInit {
 
-  @Input() fName;
-  @Input() lName;
-  @Input() shipAddr;
+  @Input() fName : string;
+  @Input() lName : string;
+  @Input() shipAddr : string;
 
 
   showForm : Boolean = false;
-  addrUpdateForm;
+  addrUpdateForm : FormGroup;
 
   constructor(
     private builder : FormBuilder,

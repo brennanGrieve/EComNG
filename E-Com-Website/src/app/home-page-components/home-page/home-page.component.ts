@@ -55,7 +55,7 @@ export class HomePageComponent implements OnInit {
   getMyRecent() : void{
     var recentViews : number[] = this.cookiesService.splitCookie(this.cookiesService.extractCookieValue("recent="));
     for(var i = 0; i < recentViews.length; i++){
-      this.clientService.getItemById(recentViews[i], false).subscribe(itemData => {
+      this.clientService.getItemById(recentViews[i].toString(), false).subscribe(itemData => {
         this.myRecent.push(itemData[0]);
       })
     }

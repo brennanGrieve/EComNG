@@ -14,7 +14,7 @@ export class SearchService {
    * Updates the BehaviorSubject this.searchTerms with a new set of seach terms from the top bar's search input.
    * @param newTerms The search terms being pushed to the BehaviorSubject.
    */
-  public updateTerms(newTerms) : void {
+  public updateTerms(newTerms : string) : void {
     this.searchTerms.next(newTerms);
   }
 

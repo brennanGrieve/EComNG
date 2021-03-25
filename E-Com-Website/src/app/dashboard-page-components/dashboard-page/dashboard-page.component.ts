@@ -10,12 +10,12 @@ import { Router } from '@angular/router';
 })
 export class DashboardPageComponent implements OnInit {
 
-  username;
-  fName;
-  lName;
-  phNum;
-  email;
-  shipAddr;
+  username : string;
+  fName : string;
+  lName : string;
+  phNum : string;
+  email : string;
+  shipAddr : string;
 
   constructor(
     private client : StoreDataClientService,
