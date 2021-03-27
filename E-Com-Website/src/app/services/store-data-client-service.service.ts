@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, JsonpClientBackend } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { StoreItem } from '../store-item';
+import { Review } from '../interfaces/review';
 
 
 @Injectable({
@@ -80,6 +81,11 @@ export class StoreDataClientService {
   GETEmailUniqueness(toCheck : String) : Observable<Object>{
     return this.http.get<Object>('http://13.55.122.69/api/get/getEmailUniqueness.php?email=' + toCheck);
   }
+
+  GETReviewsByOffset(offset: number, id : number){
+    return this.http.get<Review[]>('http://13.55.122.69/api/get/getItemReviews.php?id='+ id + '&offset=' + offset);
+  }
+
   fetchUserInfo(authToken){
     return this.http.post('http://13.55.122.69/api/post/postUDataRequest.php', authToken);
   }
