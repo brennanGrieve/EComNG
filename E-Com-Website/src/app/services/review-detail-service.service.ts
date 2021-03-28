@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { StoreDataClientService } from './store-data-client-service.service';
+import { CookiesService } from './cookies.service'
 
 @Injectable({
   providedIn: 'any'
@@ -15,8 +16,14 @@ export class ReviewDetailService {
 
 
   constructor(
-    private client : StoreDataClientService
+    private client : StoreDataClientService,
+    private cookies : CookiesService
   ) { }
+
+
+  fetchUserName(){
+    return this.client.fetchUserName(this.cookies.extractCookieValue("auth="));
+  }
 
   getStarScore() : number{
     return this.starScore;

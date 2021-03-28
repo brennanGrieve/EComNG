@@ -1,14 +1,15 @@
-Showing Review {{indexOffset}}-{{topOffset}}
 <div *ngFor="let review of displayedReviews">
     <div *ngIf="review != null">
         <mat-card>
-            <h2>{{review.USER_NAME}}</h2>
             <app-read-only-star-score [toDisplay] = "review.score"></app-read-only-star-score>
+            <br>
             {{review.comment}}
+            <br>
+            <br>
+            <span id="userSig">By {{review.USER_NAME}}</span>
         </mat-card>
     </div>
     <br>
 </div>
-<button mat-button (click) = "getReviews(-5)" [disabled] = "firstPage">-1</button>
-<button mat-button (click) = "getReviews(0)">Home</button>
-<button mat-button (click) = "getReviews(5)" [attr.disabled] = "lastPage">+1</button>
+<button mat-button (click) = "getReviews(-5)" [disabled] = "firstPage">&#8592;</button>
+<button mat-button (click) = "getReviews(5)" [attr.disabled] = "lastPage">&#8594;</button>
