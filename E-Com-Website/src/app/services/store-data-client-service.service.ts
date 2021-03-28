@@ -90,8 +90,8 @@ export class StoreDataClientService {
     return this.http.post('http://13.55.122.69/api/post/postUDataRequest.php', authToken);
   }
 
-  fetchUserName(authToken) : Observable<string>{
-    return this.http.post<string>('http://13.55.122.69/api/post/postUNameRequest.php', authToken);
+  fetchUserName(authToken){
+    return this.http.post('http://13.55.122.69/api/post/postUNameRequest.php', authToken);
   }
 
   POSTNewPass(newPass){

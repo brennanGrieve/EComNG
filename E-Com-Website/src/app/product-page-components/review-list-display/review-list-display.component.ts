@@ -26,10 +26,9 @@ export class ReviewListDisplayComponent implements OnInit {
 
   ngOnInit(): void {
     this.details.fetchUserName().subscribe(name =>{
-      this.currentUser = name;
+      this.currentUser = name["USER_NAME"];
       this.getReviews(0);
     })
-    console.log(this.currentUser);
   }
 
   getReviews(offsetChange : number){
@@ -44,8 +43,7 @@ export class ReviewListDisplayComponent implements OnInit {
     this.client.GETReviewsByOffset(this.indexOffset, this.prodID).subscribe(response =>{
       var i = 0
       for(i; i < response.length; i++){
-        console.log(this.currentUser);
-        console.log(response[i].USER_NAME);
+        if(this.currentUser === response[i].USER_NAME){continue}
         this.displayedReviews[i] = response[i];
       }
       if(i < 4){
