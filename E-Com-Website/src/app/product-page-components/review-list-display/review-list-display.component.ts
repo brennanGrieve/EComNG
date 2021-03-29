@@ -18,6 +18,7 @@ export class ReviewListDisplayComponent implements OnInit {
   lastPage : boolean = false;
   firstPage : boolean = true;
   currentUser = "";
+  reviewsExist : boolean = true;
 
   constructor(
     private client : StoreDataClientService,
@@ -41,6 +42,7 @@ export class ReviewListDisplayComponent implements OnInit {
       this.firstPage = true;
     }else{this.firstPage = false};
     this.client.GETReviewsByOffset(this.indexOffset, this.prodID).subscribe(response =>{
+      if(response["empty"] != null){this.reviewsExist = false}
       var i = 0
       for(i; i < response.length; i++){
         if(this.currentUser === response[i].USER_NAME){continue}
