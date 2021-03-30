@@ -46,7 +46,7 @@ export class ReviewListDisplayComponent implements OnInit {
         if(this.indexOffset == 0){
           this.reviewsExist = false
         }else{
-          this.indexOffset = 0;
+          this.indexOffset =- 5;
           return;
         }
       }
