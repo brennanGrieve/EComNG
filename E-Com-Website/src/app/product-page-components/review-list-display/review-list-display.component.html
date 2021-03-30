@@ -10,7 +10,6 @@
                 <span id="userSig">By {{review.USER_NAME}}</span>
             </mat-card>
         </div>
-        <br>
     </div>
     <button mat-button (click) = "getReviews(-5)" [disabled] = "firstPage">&#8592;</button>
     <button mat-button (click) = "getReviews(5)" [attr.disabled] = "lastPage">&#8594;</button>
