@@ -41,5 +41,7 @@
         <button mat-button class="button" [routerLink]="['/signIn']">Log In to post a Review.</button>
     </div>
 </ng-template>
-
-
+<br>
+<h1>User Reviews</h1>
+<hr>
+<app-review-list-display [prodID] = "currentProductId"></app-review-list-display>

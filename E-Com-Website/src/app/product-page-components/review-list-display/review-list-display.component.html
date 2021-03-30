@@ -1,1 +1,19 @@
-<p>review-list-display works!</p>
+<div *ngIf="reviewsExist;else empty">
+    <div *ngFor="let review of displayedReviews">
+        <div *ngIf="review != null">
+            <mat-card>
+                <app-read-only-star-score [toDisplay] = "review.score"></app-read-only-star-score>
+                <br>
+                {{review.comment}}
+                <br>
+                <br>
+                <span id="userSig">By {{review.USER_NAME}}</span>
+            </mat-card>
+        </div>
+    </div>
+    <button mat-button (click) = "getReviews(-5)" [disabled] = "firstPage">&#8592;</button>
+    <button mat-button (click) = "getReviews(5)" [attr.disabled] = "lastPage">&#8594;</button>
+</div>
+<ng-template #empty>
+    <h2>No other users have reviewed this product yet.</h2>
+</ng-template>

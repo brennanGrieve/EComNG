@@ -37,6 +37,7 @@ import { ReviewListDisplayComponent } from './product-page-components/review-lis
 import { POSTProductReviewComponent } from './product-page-components/postproduct-review/postproduct-review.component';
 import { StarscoreselectorComponent } from './product-page-components/starscoreselector/starscoreselector.component';
 import { StarScoreDisplayComponent } from './prod-info-display-components/star-score-display/star-score-display.component';
+import { ReadOnlyStarScoreComponent } from './prod-info-display-components/read-only-star-score/read-only-star-score.component';
 
 
 @NgModule({
@@ -61,6 +62,7 @@ import { StarScoreDisplayComponent } from './prod-info-display-components/star-s
     POSTProductReviewComponent,
     StarscoreselectorComponent,
     StarScoreDisplayComponent,
+    ReadOnlyStarScoreComponent,
   ],
   imports: [
     BrowserModule,

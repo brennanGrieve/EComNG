@@ -1,0 +1,10 @@
+button{
+    color: white;
+    background-color: #262697;
+}
+
+button:disabled{
+    color:white;
+    background-color: silver;
+}
+
