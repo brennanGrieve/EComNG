@@ -42,7 +42,14 @@ export class ReviewListDisplayComponent implements OnInit {
       this.firstPage = true;
     }else{this.firstPage = false};
     this.client.GETReviewsByOffset(this.indexOffset, this.prodID).subscribe(response =>{
-      if(response["empty"] != null){this.reviewsExist = false}
+      if(response["empty"] != null){
+        if(this.indexOffset == 0){
+          this.reviewsExist = false
+        }else{
+          this.indexOffset = 0;
+          return;
+        }
+      }
       var i = 0
       for(i; i < response.length; i++){
         if(this.currentUser === response[i].USER_NAME){continue}
