@@ -6,4 +6,5 @@ export interface StoreItem {
     shortDesc: string;
     longDesc: string;
     specs: Object[];
+    avgScore : number;
 }

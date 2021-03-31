@@ -10,6 +10,7 @@
             {{storeItem.shortDesc}}
           </span>
           <br>
+          <app-read-only-star-score [toDisplay] = "storeItem.avgScore"></app-read-only-star-score>
           <div class="gridItemPrice">
             <span class="gridPriceDisplay">
               ${{storeItem.price}}
