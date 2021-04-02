@@ -35,7 +35,9 @@ export class HomePageComponent implements OnInit {
    */
 
   getRecent() : void {
-    this.clientService.getRecentItems().subscribe(catalog => this.catalog = catalog);
+    this.clientService.getRecentItems().subscribe(catalog => {
+      this.catalog = catalog
+    });
   }
 
   /**
@@ -44,7 +46,9 @@ export class HomePageComponent implements OnInit {
    */
 
   getPopular() : void{
-    this.clientService.getPopularItems().subscribe(popular => this.popular = popular);
+    this.clientService.getPopularItems().subscribe(popular => {
+      this.popular = popular;
+    });
   }
 
   /**

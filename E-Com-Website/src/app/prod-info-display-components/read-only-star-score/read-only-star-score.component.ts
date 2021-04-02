@@ -16,6 +16,9 @@ export class ReadOnlyStarScoreComponent implements OnInit {
 
 
   ngOnInit(): void {
+    if(this.toDisplay == null){
+      this.toDisplay = -1;
+    }
     this.updateStateArray(this.toDisplay);
   }
 
