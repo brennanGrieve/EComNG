@@ -30,6 +30,7 @@
     border: solid 0.15vw #E0E6E6;
     display:flex;
     flex-wrap:wrap;
+    flex-direction: column;
     justify-content: center;
     text-align: center;
 }
@@ -47,7 +48,7 @@
     min-width: 100%;
 }
 
-.gridItemPrice{
+.gridItemStats{
     width: 100%; 
     height: fit-content;
     text-align: right; 
@@ -55,6 +56,7 @@
     align-self:flex-end;
     justify-content: right;
     margin-right: 5px;
+    margin-bottom: 3px;
 }
 
 .gridPriceDisplay{
@@ -67,6 +69,14 @@
     width: 100%;
     margin-bottom: 3px;
     margin-right: 3px;
+}
+
+.gridStarDisplay{
+    align-self: flex-end;
+    text-align: left;
+    margin-left: 3px;
+    margin-bottom: 3px;
+    min-width: fit-content;
 }
 
 .prodName{
