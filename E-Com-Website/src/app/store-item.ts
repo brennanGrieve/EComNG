@@ -5,5 +5,5 @@ export interface StoreItem {
     stockLevel: number;
     shortDesc: string;
     longDesc: string;
-    specs: Object[];
+    avgScore : number;
 }

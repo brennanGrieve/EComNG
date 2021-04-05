@@ -6,11 +6,14 @@
             {{storeItem.name}}
           </div>
           <br>
-          <span class="prodDesc">
+          <div class="prodDesc">
             {{storeItem.shortDesc}}
-          </span>
+          </div>
           <br>
-          <div class="gridItemPrice">
+          <div class="gridItemStats">
+            <span class ="gridStarDisplay">
+              <app-read-only-star-score [toDisplay] = "storeItem.avgScore"></app-read-only-star-score>
+            </span>
             <span class="gridPriceDisplay">
               ${{storeItem.price}}
             </span>

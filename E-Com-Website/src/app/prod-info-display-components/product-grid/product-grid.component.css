@@ -30,6 +30,7 @@
     border: solid 0.15vw #E0E6E6;
     display:flex;
     flex-wrap:wrap;
+    flex-direction: column;
     justify-content: center;
     text-align: center;
 }
@@ -40,6 +41,8 @@
     margin: 8px;
     justify-content: center;
     border: solid 0.15vw #E0E6E6;
+    align-self: flex-start;
+    margin-bottom: auto;
 }
 
 .gridTile{
@@ -47,14 +50,17 @@
     min-width: 100%;
 }
 
-.gridItemPrice{
+.gridItemStats{
     width: 100%; 
     height: fit-content;
     text-align: right; 
     display:flex;
+    flex-direction: row;
     align-self:flex-end;
     justify-content: right;
     margin-right: 5px;
+    margin-bottom: 3px;
+    margin-top: auto;
 }
 
 .gridPriceDisplay{
@@ -69,6 +75,14 @@
     margin-right: 3px;
 }
 
+.gridStarDisplay{
+    align-self: flex-end;
+    text-align: left;
+    margin-left: 3px;
+    margin-bottom: 3px;
+    min-width: fit-content;
+}
+
 .prodName{
     width: 90%;
     font-size: 18px;
@@ -76,6 +90,13 @@
     justify-content: center;
     font-style: normal;
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.prodDesc{
+    font-size: 14px;
+    width: 98%;
 }
 
 @media screen and (min-width:600px){

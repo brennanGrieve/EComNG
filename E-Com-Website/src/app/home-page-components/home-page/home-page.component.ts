@@ -35,7 +35,9 @@ export class HomePageComponent implements OnInit {
    */
 
   getRecent() : void {
-    this.clientService.getRecentItems().subscribe(catalog => this.catalog = catalog);
+    this.clientService.getRecentItems().subscribe(catalog => {
+      this.catalog = catalog
+    });
   }
 
   /**
@@ -44,7 +46,9 @@ export class HomePageComponent implements OnInit {
    */
 
   getPopular() : void{
-    this.clientService.getPopularItems().subscribe(popular => this.popular = popular);
+    this.clientService.getPopularItems().subscribe(popular => {
+      this.popular = popular;
+    });
   }
 
   /**
@@ -56,6 +60,9 @@ export class HomePageComponent implements OnInit {
     var recentViews : number[] = this.cookiesService.splitCookie(this.cookiesService.extractCookieValue("recent="));
     for(var i = 0; i < recentViews.length; i++){
       this.clientService.getItemById(recentViews[i].toString(), false).subscribe(itemData => {
+        if(itemData["empty"] != null){
+          return;
+        }
         this.myRecent.push(itemData[0]);
       })
     }
