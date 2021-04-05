@@ -12,7 +12,12 @@ export class ReadOnlyStarScoreComponent implements OnInit {
   @Input()
   toDisplay : number;
 
-  stateArray : boolean[] = [];
+
+  dimPath : string = '/assets/starDim.png';
+  halfLitPath : string = '/assets/starHalf.png';
+  litPath : string = '/assets/starLit.png';
+  
+  stateArray : string[] = [this.dimPath, this.dimPath, this.dimPath, this.dimPath, this.dimPath];
 
 
   ngOnInit(): void {
@@ -25,10 +30,11 @@ export class ReadOnlyStarScoreComponent implements OnInit {
   updateStateArray(newScore){
     for(var i = 0; i < 5; ++i){
       if(i <= newScore){
-        this.stateArray[i] = false;
-      }
-      else{
-        this.stateArray[i] = true;
+        this.stateArray[i] = this.litPath;
+      } 
+      if(newScore - i > 0.25 && newScore - i < 0.76){
+        this.stateArray[i + 1] = this.halfLitPath;
+        return
       }
     }
   }
