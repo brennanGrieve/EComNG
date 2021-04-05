@@ -32,7 +32,7 @@ export class ReadOnlyStarScoreComponent implements OnInit {
       if(i <= newScore){
         this.stateArray[i] = this.litPath;
       } 
-      if(newScore - i > 0.24 && newScore - i < 0.76){
+      if(newScore - i > 0.24 && newScore - i < 0.74){
         this.stateArray[i + 1] = this.halfLitPath;
         return
       }
