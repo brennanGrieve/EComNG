@@ -1,6 +1,7 @@
 <h1>
     {{currentProduct.name}}
 </h1>
+<app-read-only-star-score [toDisplay]="currentProduct.avgScore"></app-read-only-star-score>
 <div class = prodDisplay>
     <mat-card class="prodDetailsCard">
         <mat-card-content>
